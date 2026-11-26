@@ -1,0 +1,2782 @@
+{
+  "run_at": "2026-11-26T22:54:29+03:00",
+  "baseline": "outputs/softline-review.zip :: evidence/evaluation-results.json",
+  "elapsed_seconds": 71.39256879999994,
+  "metrics_baseline": {
+    "hybrid": {
+      "HitRate@1": 0.5923076923076923,
+      "HitRate@4": 0.7538461538461538,
+      "MRR@4": 0.6634615384615384,
+      "Recall@4": 0.5530769230769231,
+      "nDCG@4": 0.573255073983528
+    },
+    "e5": {
+      "HitRate@1": 0.6,
+      "HitRate@4": 0.7538461538461538,
+      "MRR@4": 0.6628205128205129,
+      "Recall@4": 0.543076923076923,
+      "nDCG@4": 0.5676815042312108
+    },
+    "bm25": {
+      "HitRate@1": 0.47692307692307695,
+      "HitRate@4": 0.6307692307692307,
+      "MRR@4": 0.5352564102564102,
+      "Recall@4": 0.4676923076923077,
+      "nDCG@4": 0.48046597519151174
+    }
+  },
+  "metrics_v2": {
+    "hybrid": {
+      "HitRate@1": 0.5923076923076923,
+      "HitRate@4": 0.7538461538461538,
+      "MRR@4": 0.6634615384615384,
+      "Recall@4": 0.5530769230769231,
+      "nDCG@4": 0.573255073983528
+    },
+    "e5": {
+      "HitRate@1": 0.6,
+      "HitRate@4": 0.7538461538461538,
+      "MRR@4": 0.6628205128205129,
+      "Recall@4": 0.543076923076923,
+      "nDCG@4": 0.5676815042312108
+    },
+    "bm25": {
+      "HitRate@1": 0.47692307692307695,
+      "HitRate@4": 0.6307692307692307,
+      "MRR@4": 0.5352564102564102,
+      "Recall@4": 0.4676923076923077,
+      "nDCG@4": 0.48046597519151174
+    }
+  },
+  "n_queries": 130,
+  "mapped": 130,
+  "changed_queries": [],
+  "queries": [
+    {
+      "query": "фаервол Ideco Novum",
+      "target_url": "https://store.softline.ru/ideco/ngfw-100-541688/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Айдеко Ideco NGFW (лицензия), 50 Users",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Айдеко Ideco NGFW (лицензия), 100 Users",
+      "cutoff": 4
+    },
+    {
+      "query": "вайтборд VK WorkSpace",
+      "target_url": "https://store.softline.ru/vkworkspace/v3-wsp2-dsbplus-s-bls-y-538580/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "VK Tech Тариф: Доска+ Лицензия на ПО Доска VK WorkSpace, на 1 год",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "VK Tech Тариф: Доска+ Лицензия на ПО Доска VK WorkSpace, на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "Workpsad",
+      "target_url": "https://store.softline.ru/astralinux/rp-wp-calp-xs-0000-455798/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Группа Астра WorksPad DX Base (клиентские лицензии, срочные), WorksPad DX Base клиентская лицензия на 1 пользователя,",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Группа Астра WorksPad (клиентские лицензии, бессрочные), WorksPad клиентская лицензия на 1 пользователя, на срок",
+      "cutoff": 4
+    },
+    {
+      "query": "Kaspersky Saef Kids",
+      "target_url": "https://store.softline.ru/kaspersky/kl1962rdafs-5313/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Kaspersky Safe Kids лицензия Base Download Pack на 1 пользователя на 1 год",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Kaspersky Safe Kids лицензия Base Download Pack на 1 пользователя на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "удаленный рабчий стол с GPT",
+      "target_url": "https://store.softline.ru/advion/-540020/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "ООО «Эдвижн» Сертификат на получение доступа к Удаленный рабочий стол с GPT на 1 месяц, Тариф Старт. Подписка для 1",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "ООО «Эдвижн» Сертификат на получение доступа к Удаленный рабочий стол с GPT на 1 месяц, Тариф Старт. Подписка для 1",
+      "cutoff": 4
+    },
+    {
+      "query": "антивирь для дома",
+      "target_url": "https://store.softline.ru/drweb/lhw-bk-12m-1-a3-231538/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3
+        ],
+        "e5": [
+          1,
+          4
+        ],
+        "bm25": [
+          1,
+          2,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Доктор Веб Dr.Web Security Space (лицензия, коробочный продукт/карта с 1 серийным номером на 2 ПК на 2 года),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Доктор Веб Dr.Web Security Space (лицензия Комплексная защита на 1 год), 1 ПК",
+      "cutoff": 4
+    },
+    {
+      "query": "корпоративный антивирь",
+      "target_url": "https://store.softline.ru/pro32/pro32-pss-ns-1-81-398991/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [
+          4
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "PRO32 Endpoint Security Advanced новая продажа 3 года и 56 пользователей",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "PRO32 Endpoint Security Standard версия на 1 год  и 81 узел",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для бэкапов",
+      "target_url": "https://store.softline.ru/novosoft/hbo-339669/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          3
+        ],
+        "e5": [
+          1,
+          3
+        ],
+        "bm25": [
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Softline Резервное копирование на площадке заказчика, Сервис резервного копирования и репликации Корпоративный+",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Новософт Handy Backup (лицензии), стоимость 1 лицензии версии Office Expert",
+      "cutoff": 4
+    },
+    {
+      "query": "графредактор для компа",
+      "target_url": "https://store.softline.ru/akvis-1/ac-b-1-9-413847/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "GraphicRegion Advanced TIFF Editor (персональная лицензия, для использования на 2-х домашних ПК),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "«АКВИС» AliveColors Business (коммерческая лицензия), Количество пользователей",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для монтажа видосов",
+      "target_url": "https://store.softline.ru/icecreamsoftware/-434182/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3
+        ],
+        "e5": [
+          1,
+          3
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "AMS Software ВидеоМОНТАЖ (лицензия на 1 год), Делюкс",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Icecream Apps Icecream Video Editor PRO (лицензия на 1 ПК), цена за 1 лицензию",
+      "cutoff": 4
+    },
+    {
+      "query": "почтовик для компа",
+      "target_url": "https://store.softline.ru/ritlabs/-541149/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "MDaemon Technologies, Ltd. MDaemon Messaging Server (лицензия с подпиской на обновления на 1 год), 9 пользователей",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Ritlabs The Bat! Лицензия Home (доступна только для физических лиц), 1 рабочее место",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для айпи-телефонии",
+      "target_url": "https://store.softline.ru/brekeke-software-inc/-31107/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Yealink BLT60 Световой индикатор занятости для гарнитур WH6x и USB-телефона MP50.",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Brekeke Software, Inc. Лицензия Brekeke PBX, верси 3.x",
+      "cutoff": 4
+    },
+    {
+      "query": "файломенеджер",
+      "target_url": "https://store.softline.ru/mobilesystems/fcatv1-520463/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "MobiSystems File Commander (лицензия, AndroidTV на 1 год),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "MobiSystems File Commander (лицензия, AndroidTV на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для восстановления снесённых файлов",
+      "target_url": "https://store.softline.ru/ams-software/-541430/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Wondershare Dr.Fone (бессрочная лицензия for Mac Perpetual Plan), Data Recovery (iOS)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "AMS Software Феникс (лицензия на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для администрирования баз",
+      "target_url": "https://store.softline.ru/navicat/npre-xeen-esd-1ys-283701/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "EMS SQL Manager for InterBase/Firebird (техподдержка для некоммерческой лицензии), 1 год",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Navicat Premium (подписка, Subscription), на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "ocr для сканов",
+      "target_url": "https://store.softline.ru/wondershare/-375704/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "ООО «Корпоративные системы Плюс» Электронный курс «Станочник, Заточные станки» (лицензия), базовая версия",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Wondershare PDFelement (коммерческие лицензии), Professional for Windows Team, бессрочная версия",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для рендера 3д-графики",
+      "target_url": "https://store.softline.ru/cebas/-367451/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "iCubeVisualization Madcar 3 (лицензия),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "cebas Visual Technology Inc. cebas finalRender (подписка на лицензию Unlimited Network на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "софт для запила сайтов",
+      "target_url": "https://store.softline.ru/netcat/-45778/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2,
+          3
+        ],
+        "e5": [
+          1,
+          2,
+          3
+        ],
+        "bm25": [
+          1,
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "NetCat (лицензия), Версия Standard+",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "NetCat (лицензия), Версия E-Commerce",
+      "cutoff": 4
+    },
+    {
+      "query": "гис для работы с геоданными",
+      "target_url": "https://store.softline.ru/nextgis/-233103/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "ГИС INTEGRO, Базовый пакет + специализированные аналитические модули, скважины, прогноз, геофизика, геологическая",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "NextGIS, Тарифный план Мини (подписка), На 1 месяц",
+      "cutoff": 4
+    },
+    {
+      "query": "рэковый сервак",
+      "target_url": "https://store.softline.ru/depo/3470s2a-1-438239/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Rack-сервер DEPO Storm 3470Z1A",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Rack-сервер DEPO Storm 3470S2A",
+      "cutoff": 4
+    },
+    {
+      "query": "ноут",
+      "target_url": "https://store.softline.ru/lenovo/82x7004bps-436655/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Ноутбук Dell Technologies Pro 14 Intel Core Ultra 5 235U (неизвестно)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Ноутбук LENOVO IdeaPad Slim 3 Gen 8 15IRU8 Intel Core i3-1305U (серый)",
+      "cutoff": 4
+    },
+    {
+      "query": "клава и мышь комплектом",
+      "target_url": "https://store.softline.ru/oklick/351701-436739/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Клавиатура+мышь Oklick Комплект S290W 351701, цвет черный",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Клавиатура+мышь Oklick Комплект S290W 351701, цвет черный",
+      "cutoff": 4
+    },
+    {
+      "query": "моник для компа",
+      "target_url": "https://store.softline.ru/aoc/24p1-210743/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Монитор ACER EK271Gbi 27.0-inch черный",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Монитор AOC 24P1 23.8-inch черный",
+      "cutoff": 4
+    },
+    {
+      "query": "видюха",
+      "target_url": "https://store.softline.ru/asus/gt730-sl-2gd5-brk-77838/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Видеокарта Gigabyte GeForce RTX 5070 Ti 16 ΓБ Retail",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Видеокарта ASUS GeForce GT 730 2 ΓБ Retail",
+      "cutoff": 4
+    },
+    {
+      "query": "внутренняя ссдшка",
+      "target_url": "https://store.softline.ru/kingston/sa400s37-240g-79883/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Внутренний твердотельный накопитель HP Inc. Server SSD 1.92TB",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Внутренний твердотельный накопитель Kingston A400 SATA3 2.5\" 7mm 240GB",
+      "cutoff": 4
+    },
+    {
+      "query": "оперативка для компа",
+      "target_url": "https://store.softline.ru/patriotmemory/pv38g160c9k-77745/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Память оперативная/ Hynix 64GB 5600MHz DDR5 RDIMM",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Оперативная память Patriot Desktop DDR3 1600МГц 2x4GB, PV38G160C9K, RTL",
+      "cutoff": 4
+    },
+    {
+      "query": "проц для пк",
+      "target_url": "https://store.softline.ru/amd/yd3200c5m4mfh-250639/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Процессор Intel Core i5-13400F OEM",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Процессор AMD Ryzen 3 3200G OEM",
+      "cutoff": 4
+    },
+    {
+      "query": "мать для системника",
+      "target_url": "https://store.softline.ru/asus/prime-b550m-a-wifi-ii-374710/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Материнская плата SUPERMICRO LGA-4710 (Socket E2) System on Chip X14SBW-F",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Материнская плата ASUS AMD B550 PRIME B550M-A WIFI II",
+      "cutoff": 4
+    },
+    {
+      "query": "бп для системника",
+      "target_url": "https://store.softline.ru/accord/acc-p300w-75408/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Блок питания Ubiquiti POE-54-80W блок питания для EdgePoint R8 и S16 54 В 1.5 А (624580)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Блок питания Accord ACC 300W",
+      "cutoff": 4
+    },
+    {
+      "query": "бесперебойник",
+      "target_url": "https://store.softline.ru/apcc/srt2200rmxli-nc-82106/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Источник бесперебойного питания Powercom Vanguard-II-33 VGD-II-30R33 30000Вт 30000ВА",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "ИБП APC Smart-UPS  2200VA (SRT2200RMXLI-NC)",
+      "cutoff": 4
+    },
+    {
+      "query": "аккум для бесперебойника",
+      "target_url": "https://store.softline.ru/apcc/rbc23-81976/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Парус-электро Аккумуляторная батарея для ИБП HM-12-7 (AGM/12В/7,2Ач/клемма F2)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Сменная батарея для ИБП APC Батареи ИБП RBC23",
+      "cutoff": 4
+    },
+    {
+      "query": "свитч для локалки",
+      "target_url": "https://store.softline.ru/d-link/des-1008d-l2b-85372/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Коммутатор TP-LINK LS105LP",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Коммутатор D-LINK DES-1008D",
+      "cutoff": 4
+    },
+    {
+      "query": "сетевуха для компа",
+      "target_url": "https://store.softline.ru/asus/usb-n10-nano-85860/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          4
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": [
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Сетевая карта ASUS USB-C2500",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Сетевая карта ASUS USB-N10 NANO",
+      "cutoff": 4
+    },
+    {
+      "query": "вайфайный свисток usb",
+      "target_url": "https://store.softline.ru/tp-link/tl-wn725n-85238/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Адаптер Wi-Fi ASUS USB-AC58",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Адаптер Wi-Fi TP-LINK TL-WN725N",
+      "cutoff": 4
+    },
+    {
+      "query": "вебка для видеозвонков",
+      "target_url": "https://store.softline.ru/logitech/960-000972-89389/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          3
+        ],
+        "e5": [
+          3
+        ],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Веб-камера A4 PK-910H, с микрофоном, 4608x3456, черный",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Вебкамера Logitech WebCam C930",
+      "cutoff": 4
+    },
+    {
+      "query": "хард для системника",
+      "target_url": "https://store.softline.ru/seagate/st4000dm004-119312/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": [
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Жесткий диск Western Digital Red Plus 3.5 4TB 5.4K SATA3",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Жесткий диск  SEAGATE Barracuda 3.5 3,5\" SATA3 4TB 5.4K SATA3",
+      "cutoff": 4
+    },
+    {
+      "query": "тсд для склада",
+      "target_url": "https://store.softline.ru/mertech/m-er9050-382864/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Терминалы сбора данных M3 Mobile SL20K",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Терминал сбора данных MERTECH SEUIC AutoID Q9C серии 8 (Android10,2GB/16GB)",
+      "cutoff": 4
+    },
+    {
+      "query": "nas для офиса",
+      "target_url": "https://store.softline.ru/qnap/ts-1232pxu-rp-4g-335574/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Точка доступа ASUS RP-N12",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Сетевое хранилище QNAP 12 disks TS-1232PXU",
+      "cutoff": 4
+    },
+    {
+      "query": "винрар для распаковки архивов",
+      "target_url": "https://store.softline.ru/rarsoft/-149018/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "RARSoft WinRAR (лицензия), Количество пользователей (от 1 до 999)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "RARSoft WinRAR (лицензия), Количество пользователей (от 1 до 999)",
+      "cutoff": 4
+    },
+    {
+      "query": "финридер 15 стандарт для сканов",
+      "target_url": "https://store.softline.ru/contentai/cr15-1s1w01-324027/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Content AI FineReader 15 Standard (лицензия Standalone на 1 год), Электронная лицензия",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Content AI FineReader 15 Standard (лицензия Standalone на 1 год), Электронная лицензия",
+      "cutoff": 4
+    },
+    {
+      "query": "радмин 3 для удалёнки",
+      "target_url": "https://store.softline.ru/famatech/-451872/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Фаматек Radmin 3 (корпоративная лицензия),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Фаматек Radmin 3 (стандартная лицензия),",
+      "cutoff": 4
+    },
+    {
+      "query": "летучая мышь почта",
+      "target_url": "https://store.softline.ru/ritlabs/-541149/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Ritlabs Переход с The Bat! Home на The Bat! Prof (за одно рабочее место), цена за 1 переход",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Ritlabs The Bat! Лицензия Home (доступна только для физических лиц), 1 рабочее место",
+      "cutoff": 4
+    },
+    {
+      "query": "корел дро 2026 для вектора",
+      "target_url": "https://store.softline.ru/corel/esdcdgs2026ml-526920/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Corel Corporation CorelDRAW Graphics Suite 2026 (лицензия), цена за 1 лицензию",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Corel Corporation CorelDRAW Graphics Suite 2026 (лицензия), цена за 1 лицензию",
+      "cutoff": 4
+    },
+    {
+      "query": "антивирь доктор веб секьюрити спейс",
+      "target_url": "https://store.softline.ru/drweb/lhw-bk-12m-1-a3-231538/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Доктор Веб Dr.Web Security Space (акция из рассылки), 5 устройств, 1 год",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Доктор Веб Dr.Web Security Space (лицензия Комплексная защита на 1 год), 1 ПК",
+      "cutoff": 4
+    },
+    {
+      "query": "нанокад бим электро 26 для электрики",
+      "target_url": "https://store.softline.ru/nanosoft/ncel260-cnl-box-534203/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Нанософт nanoCAD BIM Электро 26 для Linux (продление лицензии), nanoCAD BIM Электро 26, локальная лицензия для Linux на",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Нанософт nanoCAD BIM Электро 26 (постоянная лицензия), локальная лицензия",
+      "cutoff": 4
+    },
+    {
+      "query": "битрикс24 коробка",
+      "target_url": "https://store.softline.ru/1s-bitriks/-383027/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "1С-Битрикс24 (стандартное продление Энтерпрайз для Постгрес), Холдинг на 12 месяцев",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "1С-Битрикс24 (лицензия на 12 месяцев), Интернет-магазин + CRM",
+      "cutoff": 4
+    },
+    {
+      "query": "ось альт сервер 11",
+      "target_url": "https://store.softline.ru/basealt/alt11-0100s-495106/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Сервер INFERIT RS110 R1G2D24/2x4216/4x32GB/2x960GB/6x1.8ТB/9361-8i/2x800W",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "BaseALT Альт Сервер 11 (бессрочная лицензия), архитектура х86_64",
+      "cutoff": 4
+    },
+    {
+      "query": "постгрес про стандарт субд",
+      "target_url": "https://store.softline.ru/postgrespro/ppt-86-lic-66758/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Postgres Professional Лицензия Субд Postgres Pro Standard на 1 ядро x86-64, зарегистрировано в ЕДИНОМ РЕЕСТРЕ",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Postgres Professional Postgres Pro Standard (лицензии), Лицензия на 1 ядро х86",
+      "cutoff": 4
+    },
+    {
+      "query": "пдф командер бизнес для правки пдфок",
+      "target_url": "https://store.softline.ru/ams-software/-541420/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          3
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "SETERE Сертификат технической поддержки СЕТЕРЕ ПДФ Редактор (базовая версия 1.0 для рабочей станции, локальная",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "AMS Software PDF Commander Бизнес (бессрочная лицензия), Количество рабочих мест",
+      "cutoff": 4
+    },
+    {
+      "query": "фотомастер для правки фоток",
+      "target_url": "https://store.softline.ru/ams-software/-371421/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "AMS Software ФотоМАСТЕР (лицензия на 1 год), Профи",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "AMS Software ФотоМАСТЕР (лицензия на 1 год), Профи",
+      "cutoff": 4
+    },
+    {
+      "query": "контур толк для созвонов",
+      "target_url": "https://store.softline.ru/kontur/-439345/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "СКБ Контур Контур.Толк (тарифный план Сервер Беспинговый на 12 месяцев),",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "СКБ Контур Контур.Толк (лицензия Бизнес), для 1 виртуальной комнаты на 12 месяцев",
+      "cutoff": 4
+    },
+    {
+      "query": "бессрочка Mobile SMARTS Склад 15 Маркировка Расширенный",
+      "target_url": "https://store.softline.ru/kleverens-soft/wh15bmkg-any-541267/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Клеверенс Софт Mobile SMARTS Склад 15 (лицензия), Mobile SMARTS Склад 15. Маркировка, расширенный. Бессрочная лицензия",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Клеверенс Софт Mobile SMARTS Склад 15 (лицензия), Mobile SMARTS Склад 15. Маркировка, расширенный. Бессрочная лицензия",
+      "cutoff": 4
+    },
+    {
+      "query": "бесперебойник SC450RMI1U",
+      "target_url": "https://store.softline.ru/apcc/sc450rmi1u-82161/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "ИБП APC Smart-UPS SC 450VA (SC450RMI1U)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "ИБП APC Smart-UPS SC 450VA (SC450RMI1U)",
+      "cutoff": 4
+    },
+    {
+      "query": "программы для видеонаблюдния",
+      "target_url": "https://store.softline.ru/sarsys/-176956/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3
+        ],
+        "e5": [
+          1,
+          3
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 4,
+      "first_hybrid_result": "Сарапульские системы IPVideoRecord Видеонаблюдение (лицензия на 1 канал),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сарапульские системы IPVideoRecord Видеонаблюдение (лицензия на 1 канал),",
+      "cutoff": 4
+    },
+    {
+      "query": "текстовые ковнертеры",
+      "target_url": "https://store.softline.ru/icecreamsoftware/-282306/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2,
+          3
+        ],
+        "e5": [
+          1,
+          2,
+          3
+        ],
+        "bm25": [
+          1,
+          2,
+          3
+        ]
+      },
+      "relevant_count": 3,
+      "first_hybrid_result": "RosreestrXML (лицензии), для юридических лиц",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Icecream Apps Icecream PDF Converter PRO (лицензия на 1 пользователя, 1 ПК),",
+      "cutoff": 4
+    },
+    {
+      "query": "программы для восстановления даных",
+      "target_url": "https://store.softline.ru/ams-software/-541430/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          3
+        ],
+        "bm25": [
+          3
+        ]
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Wondershare Dr.Fone (лицензия, Mac Screen Unlock, Android Mobile Device), без ограничений по лицензиям",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "AMS Software Феникс (лицензия на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "архивтаоры",
+      "target_url": "https://store.softline.ru/rarsoft/-149018/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "SETERE СЕТЕРЕ Архиватор (базовая версия 1.0 для рабочей станции, локальная лицензия для Linux для образовательных",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "RARSoft WinRAR (лицензия), Количество пользователей (от 1 до 999)",
+      "cutoff": 4
+    },
+    {
+      "query": "межсетвые экраны",
+      "target_url": "https://store.softline.ru/ideco/ngfw-100-541688/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Код безопасности: Secret Net LSP (модуль персонального межсетевого экрана), Электронная лицензия на 1 год",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Айдеко Ideco NGFW (лицензия), 100 Users",
+      "cutoff": 4
+    },
+    {
+      "query": "роутеры с подержкой LTE",
+      "target_url": "https://store.softline.ru/tp-link/tl-mr100-371481/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2,
+          3
+        ],
+        "e5": [
+          1,
+          2,
+          3
+        ],
+        "bm25": [
+          1,
+          2,
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "3G/LTE-роутер ASUS N16",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "3G/LTE-роутер TP-LINK TL-MR100",
+      "cutoff": 4
+    },
+    {
+      "query": "беспровдные маршрутизаторы Wi-Fi",
+      "target_url": "https://store.softline.ru/tp-link/archer-c50-85096/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Wi-Fi роутер MikroTik RB941-2ND",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Wi-Fi роутер TP-LINK Archer ARCHER C50",
+      "cutoff": 4
+    },
+    {
+      "query": "док-станции для ноубтуков",
+      "target_url": "https://store.softline.ru/hp/5tw10aa-abb-260093/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          4
+        ],
+        "e5": [
+          1,
+          3
+        ],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Док-станция DIGMA DS-945",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Док-станция HP Inc. USB-C Dock G5 for business",
+      "cutoff": 4
+    },
+    {
+      "query": "лазерные принтеры и мфв",
+      "target_url": "https://store.softline.ru/hp/ce712a-93656/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "МФУ лазерный HP Color LaserJet Pro 3303fdw (499M8A) A4 Duplex WiFi белый",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "HP Inc. LaserJet Pro CP5225dn",
+      "cutoff": 4
+    },
+    {
+      "query": "системы охлжадения для компьютера",
+      "target_url": "https://store.softline.ru/zalman/zm-f3-sf-78845/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          4
+        ],
+        "e5": [
+          4
+        ],
+        "bm25": [
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Система жидкостного охлаждения/ Water Cooling System Thermalright Frozen Horizon 360 Digital (360mm, LED temp., Black,",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Вентилятор Zalman Case Fan ZM-F3",
+      "cutoff": 4
+    },
+    {
+      "query": "сканеры штирхкодов",
+      "target_url": "https://store.softline.ru/honeywell/1472g2d-2usb-5-r-320795/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Сканер штрихкодов Honeywell Voyager 1472g",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сканер штрихкодов Honeywell Voyager 1472g",
+      "cutoff": 4
+    },
+    {
+      "query": "проводные телефоын",
+      "target_url": "https://store.softline.ru/panasonic/kx-ts2358rub-84917/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          3
+        ],
+        "e5": [
+          4
+        ],
+        "bm25": [
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Телефон проводной Ritmix RT-311 черный",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Проводной телефоны Panasonic KX TS2358",
+      "cutoff": 4
+    },
+    {
+      "query": "ctntdst abkmnhs b cnf,bkbpfnjhs",
+      "target_url": "https://store.softline.ru/defender/99489-82489/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          4
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Сетевой фильтр Defender DFS 151",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сетевой фильтр Defender DFS 151",
+      "cutoff": 4
+    },
+    {
+      "query": "ihtlths",
+      "target_url": "https://store.softline.ru/fellowes/fs-46536-97611/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Шредер GLADWORK iShred 16CD",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Шредер Fellowes AutoMax 200C",
+      "cutoff": 4
+    },
+    {
+      "query": "ctntdst dbltjrfvths",
+      "target_url": "https://store.softline.ru/tp-link/tapo-c210-371483/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": [
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "IP-камера Hikvision DS-2CD2H23G2-IZS",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "IP-камера TP-LINK Tapo C210",
+      "cutoff": 4
+    },
+    {
+      "query": "CyberLink PwoerDVD 24",
+      "target_url": "https://store.softline.ru/cyberlink-corp/dvd-usdeur-ut-24-esd-499324/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "CyberLink Corporation CyberLink PowerDVD 24 (лицензия Ultra Commercial &amp; Gov&#039;t Win),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "CyberLink Corporation CyberLink PowerDVD 24 (лицензия), Ultra",
+      "cutoff": 4
+    },
+    {
+      "query": "Pinnacle Studoi 26",
+      "target_url": "https://store.softline.ru/corel/esdpnst26stml-526933/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Corel Corporation Corel Pinnacle Studio 26 (лицензия), Standard",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Corel Corporation Corel Pinnacle Studio 26 (лицензия), Standard",
+      "cutoff": 4
+    },
+    {
+      "query": "Wondershare PDFelemnt",
+      "target_url": "https://store.softline.ru/wondershare/-375704/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Wondershare PDFelement (лицензия Wondershare Bundle Solution), Windows Team+iOS+Android",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Wondershare PDFelement (коммерческие лицензии), Professional for Windows Team, бессрочная версия",
+      "cutoff": 4
+    },
+    {
+      "query": "Icecram PDF Editor PRO",
+      "target_url": "https://store.softline.ru/icecreamsoftware/-446519/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Icecream Apps Icecream PDF Editor PRO (лицензия на 1 ПК), версия 3.14",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Icecream Apps Icecream PDF Editor PRO (лицензия на 1 ПК), версия  3.14",
+      "cutoff": 4
+    },
+    {
+      "query": "Master PDF Edotor",
+      "target_url": "https://store.softline.ru/codeindustry/-455668/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Code Industry Master Pdf Editor (конкурентная лицензия на 1 год),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Code Industry Master Pdf Editor (конкурентная лицензия на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "CyberLink PowerDirecor 2027",
+      "target_url": "https://store.softline.ru/cyberlink-corp/pdr-usdeur-um-25-esd-541938/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          2
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "CyberLink Corporation CyberLink PowerDirector 2027 (лицензия Ultra Commercial &amp; Gov&#039;t Win),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "CyberLink Corporation CyberLink PowerDirector 2027 (лицензия Ultra), цена за 1 лицензию",
+      "cutoff": 4
+    },
+    {
+      "query": "фотошоу proo",
+      "target_url": "https://store.softline.ru/ams-software/-541434/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "AMS Software ФотоШОУ PRO (лицензия на 1 год), Премиум",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "AMS Software ФотоШОУ PRO (лицензия на 1 год), Премиум",
+      "cutoff": 4
+    },
+    {
+      "query": "видеомнотаж",
+      "target_url": "https://store.softline.ru/ams-software/-541428/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "AMS Software ВидеоМОНТАЖ (лицензия на 1 год), Делюкс",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "AMS Software ВидеоМОНТАЖ (лицензия на 1 год), Делюкс",
+      "cutoff": 4
+    },
+    {
+      "query": "Wondershare EdarwMax",
+      "target_url": "https://store.softline.ru/wondershare/-376435/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Wondershare EdrawMax (подписка Individuals Plans), цена за 1 подписку",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Wondershare EdrawMax (коммерческая лицензия), Business License. Подписка на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "тфмшсфе зкуьшгь",
+      "target_url": "https://store.softline.ru/navicat/npre-xeen-esd-1ys-283701/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Navicat Premium (обновление), from Navicat for Snowflake Enterprise",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Navicat Premium (подписка, Subscription), на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "PRO32 Total Securuty",
+      "target_url": "https://store.softline.ru/pro32/pro32-pts-ns-ekey-1-1-399199/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "PRO32 Total Security лицензии на 2 года и 3 устройства",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "PRO32 Total Security лицензии на 1 год и на 1 устройство",
+      "cutoff": 4
+    },
+    {
+      "query": "Kaspersky Standart",
+      "target_url": "https://store.softline.ru/kaspersky/kl1041rdefs-416859/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          4
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Kaspersky Стандартный Certified media Pack Russian Edition Media Pack - Установочный комплект Дистрибутив. Русская",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Kaspersky Standard лицензия Base Download Pack Russian Edition на 1 год и на 5 устройств",
+      "cutoff": 4
+    },
+    {
+      "query": "Rnega Standard",
+      "target_url": "https://store.softline.ru/renga/-539709/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Renga Standard (годовая сетевая лицензия для 1 рабочего места), цена за 1 лицензию",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Renga Standard (локальная лицензия для 1 рабочего места), на 1 месяц",
+      "cutoff": 4
+    },
+    {
+      "query": "nanoCAD BIM Отоплние 26",
+      "target_url": "https://store.softline.ru/nanosoft/ncov260-cnl-box-531124/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Нанософт nanoCAD BIM Отопление 26 (продление лицензии), nanoCAD BIM Отопление 26, сетевая лицензия (серверная часть) на",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Нанософт nanoCAD BIM Отопление 26 (постоянная лицензия), локальная лицензия",
+      "cutoff": 4
+    },
+    {
+      "query": "КОМПАС-Электрки Express v25",
+      "target_url": "https://store.softline.ru/ascon/ascon-time-0071516-535195/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "АСКОН КОМПАС-Электрик Express V25 (обновление с Библиотеки элементов электрических схем на Компaс-Электрик Express",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "АСКОН КОМПАС-Электрик Express V25 (лицензия), Лицензия на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "Лира-САПИФР 2026",
+      "target_url": "https://store.softline.ru/lira-sapr/-531919/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Лира сервис Лира-САПФИР 2026 (стержневые и пластинчатые аналоги),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Лира сервис Лира-САПФИР 2026 (лицензия Стандарт плюс),",
+      "cutoff": 4
+    },
+    {
+      "query": "GstarCD 2027 LT",
+      "target_url": "https://store.softline.ru/greatstar-technology-development-co-ltd/-532973/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "GreatStar Technology Development GstarCAD 2027 LT (локальная лицензия, постоянная),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "GreatStar Technology Development GstarCAD 2027 LT (локальная лицензия, постоянная),",
+      "cutoff": 4
+    },
+    {
+      "query": "Аспро.Agiel",
+      "target_url": "https://store.softline.ru/aspro/-376962/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Аспро.Agile (лицензия Стандарт), на 1 месяц",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Аспро.Agile (лицензия Стандарт), на 1 месяц",
+      "cutoff": 4
+    },
+    {
+      "query": "Hnady Backup",
+      "target_url": "https://store.softline.ru/novosoft/hbo-339669/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Новософт Handy Backup (техподдержка Расширенная, в час),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Новософт Handy Backup (лицензии), стоимость 1 лицензии версии Office Expert",
+      "cutoff": 4
+    },
+    {
+      "query": "Wondershare EdrawMimd",
+      "target_url": "https://store.softline.ru/wondershare/-376504/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Wondershare EdrawMind (лицензия Education), на 2 года",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Wondershare EdrawMind (лицензия для образовательных учреждений), Education License. Подписка на 1 год",
+      "cutoff": 4
+    },
+    {
+      "query": "Weeekk",
+      "target_url": "https://store.softline.ru/weeek/-308501/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "ООО «ВИИИК» Weeek (база знаний на 1 месяц), Business",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "ООО «ВИИИК» Weeek (лицензия Professional на 1 месяц / члена команды), цена за 1 лицензию",
+      "cutoff": 4
+    },
+    {
+      "query": "SCAD Ofifce",
+      "target_url": "https://store.softline.ru/scad-soft/-525169/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "SCAD Soft SCAD Office (SCAD Office Full, расширенная конфигурация), S392max",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "SCAD Soft SCAD Office (конфигурация SCAD Office Full, полная конфигурация), S64max",
+      "cutoff": 4
+    },
+    {
+      "query": "Corel PaintShp Pro 2023",
+      "target_url": "https://store.softline.ru/corel/esdpsp2023ml-491583/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Corel Corporation Corel PaintShop Pro 2023 (лицензия), цена за 1 лицензию",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Corel Corporation Corel PaintShop Pro 2023 (лицензия), цена за 1 лицензию",
+      "cutoff": 4
+    },
+    {
+      "query": "VentaFax MiniOfice",
+      "target_url": "https://store.softline.ru/venta/-410948/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Вента VentaFax (лицензия MiniOffice, электронная версия),",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Вента VentaFax (лицензия MiniOffice, электронная версия),",
+      "cutoff": 4
+    },
+    {
+      "query": "Postgres Pro Enterpirse",
+      "target_url": "https://store.softline.ru/postgrespro/ppe-86-lic-66748/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [
+          3
+        ],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Postgres Professional Сертификат поддержки Субд Postgres Pro Enterprise (сертифицированная версия) на 8 ядер Эльбрус,",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Postgres Professional Postgres Pro Enterprise (лицензии), Лицензия на 1 ядро х86",
+      "cutoff": 4
+    },
+    {
+      "query": "AOC Q24V4AE",
+      "target_url": "https://store.softline.ru/aoc/q24v4ea-345026/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Монитор AOC Q24V4EA 23.8-inch черный",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Монитор AOC Q24V4EA 23.8-inch черный",
+      "cutoff": 4
+    },
+    {
+      "query": "Kingston SA400S73/240G",
+      "target_url": "https://store.softline.ru/kingston/sa400s37-240g-79883/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Внутренний твердотельный накопитель Kingston A400 SATA3 2.5&quot; 7mm 240GB",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Внутренний твердотельный накопитель Kingston A400 SATA3 2.5\" 7mm 240GB",
+      "cutoff": 4
+    },
+    {
+      "query": "TP-Link TL-WR84N",
+      "target_url": "https://store.softline.ru/tp-link/tl-wr841n-85114/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Wi-Fi роутер TP-LINK TL-WR840N",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Wi-Fi роутер TP-LINK TL-WR841N",
+      "cutoff": 4
+    },
+    {
+      "query": "Pinnacle Studio 26 Ultimte",
+      "target_url": "https://store.softline.ru/corel/esdpnst26ulml-526934/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Corel Corporation Corel Pinnacle Studio 26 (лицензия), Ultimate",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Corel Corporation Corel Pinnacle Studio 26 (лицензия), Ultimate",
+      "cutoff": 4
+    },
+    {
+      "query": "Zebra DS2208-SR7U2100AWZ",
+      "target_url": "https://store.softline.ru/zebra/ds2208-sr7u2100azw-320907/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Сканер штрихкодов Zebra DS2208-SR",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сканер штрихкодов Zebra DS2208-SR",
+      "cutoff": 4
+    },
+    {
+      "query": "Synology RS1221PR+",
+      "target_url": "https://store.softline.ru/synology/rs1221rp-449259/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Сетевое хранилище Synology RackStation RS1221RP+",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сетевое хранилище Synology RackStation RS1221RP+",
+      "cutoff": 4
+    },
+    {
+      "query": "Kaspresky Standard KL1041RDCFS",
+      "target_url": "https://store.softline.ru/kaspersky/kl1041rdcfs-416858/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Kaspersky Standard лицензия Base Download Pack Russian Edition на 1 год и на 3 устройства",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Kaspersky Standard лицензия Base Download Pack Russian Edition на 1 год и на 3 устройства",
+      "cutoff": 4
+    },
+    {
+      "query": "касперский этот антивирь на год",
+      "target_url": "https://store.softline.ru/kaspersky/kl1041rdafs-474870/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 3,
+      "first_hybrid_result": "Kaspersky Security для систем хранения данных для серверов продление академической лицензии на 1 год. Количество",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Kaspersky Standard лицензия Base Download Pack Russian Edition на 1 год и на 1 устройство",
+      "cutoff": 4
+    },
+    {
+      "query": "винда 11 лицуха",
+      "target_url": "https://store.softline.ru/microsoft/kw9-00664-380389/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Microsoft Windows 11 Pro FQC-10572, электронный ключ",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Microsoft Windows 11 Home (Домашняя) KW9-00664, электронный ключ",
+      "cutoff": 4
+    },
+    {
+      "query": "надо комп малому для учебы",
+      "target_url": "https://store.softline.ru/digma/dpp3-8cxw01-461266/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "ПК SL 2487",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "МиниПК DIGMA Pro Minimax U1, DPP3-8CXW01",
+      "cutoff": 4
+    },
+    {
+      "query": "мышка без провада недарагая",
+      "target_url": "https://store.softline.ru/oklick/1885186-435870/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Беспроводная мышь SVEN RX-425W белая (5+1кл. 800-1600DPI, блист)",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Мышь Oklick Мышь 509MW 1885186, цвет белый",
+      "cutoff": 4
+    },
+    {
+      "query": "ворд ексель купить раз и навсигда",
+      "target_url": "https://store.softline.ru/microsoft/ep2-06797-473568/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Wondershare PDFelement (бессрочная лицензия), Professional for Windows Business Concurrent/Floating Perpetual Plan",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Microsoft Office для дома 2024, Электронная лицензия на 1 ПК, бессрочная",
+      "cutoff": 4
+    },
+    {
+      "query": "флешка на 128 г",
+      "target_url": "https://store.softline.ru/netac/nt03u197n-128g-20bk-471001/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Флешка GoPower TITAN 128GB",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Флешка Netac U197 mini 128GB",
+      "cutoff": 4
+    },
+    {
+      "query": "телефон самсунг",
+      "target_url": "https://store.softline.ru/samsung/sm-g556bzkdr06-495581/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 1,
+      "first_hybrid_result": "Смартфон Samsung SM-G556B Galaxy XCover7 128Gb 6Gb черный моноблок 3G 4G 6.6\" 1080x2408 Android 14 50Mpix 802.11",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Смартфон Samsung SM-G556B Galaxy XCover7 128Gb 6Gb черный моноблок 3G 4G 6.6\" 1080x2408 Android 14 50Mpix 802.11",
+      "cutoff": 4
+    },
+    {
+      "query": "жоский диск на терабайт",
+      "target_url": "https://store.softline.ru/a-data/ahv620s-1tu31-cwh-539568/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          3
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": [
+          1,
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Жесткий диск ADATA 2.5 HV620S 1TB USB 3.1",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Жесткий диск  ADATA  2.5 HV620 Slim 1 TB 5.4K USB 3.1",
+      "cutoff": 4
+    },
+    {
+      "query": "жёсткий диск на терабайт",
+      "target_url": "https://store.softline.ru/a-data/ahv620s-1tu31-cwh-539568/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          4
+        ],
+        "e5": [
+          3
+        ],
+        "bm25": [
+          1,
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Жесткий диск ADATA 2.5 HV620S 1TB USB 3.1",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Жесткий диск  ADATA  2.5 HV620 Slim 1 TB 5.4K USB 3.1",
+      "cutoff": 4
+    },
+    {
+      "query": "оперативка ддр4 16 гиг",
+      "target_url": "https://store.softline.ru/patriotmemory/psd416g320081-384543/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          3,
+          4
+        ],
+        "e5": [
+          1,
+          3,
+          4
+        ],
+        "bm25": [
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Оперативная память ADATA Desktop DDR4 3200МГц 16GB, AD4U320016G22-SGN",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Оперативная память Patriot Desktop DDR4 3200МГц 16Gb, PSD416G320081, RTL",
+      "cutoff": 4
+    },
+    {
+      "query": "блок питаня на 700 ват",
+      "target_url": "https://store.softline.ru/deepcool/r-pf700d-ha0b-wdeu-477528/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          4
+        ],
+        "e5": [
+          1,
+          4
+        ],
+        "bm25": [
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Блок питания Chieftec Task TPS-700S",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Блок питания Deepcool PF700 80 PLUS WHITE",
+      "cutoff": 4
+    },
+    {
+      "query": "домофон с камерой на калитку",
+      "target_url": "https://store.softline.ru/dahua/dhi-ktp03-428276/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Домофоны Dahua Видеодомофон DH-VTH2421F(W/B)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Комплект домофона Dahua DHI-KTP03 черный",
+      "cutoff": 4
+    },
+    {
+      "query": "камера уличная вайфай чтоб дождя не боялась",
+      "target_url": "https://store.softline.ru/tp-link/tapo-c320ws-371488/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2
+        ],
+        "e5": [],
+        "bm25": [
+          3
+        ]
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Камера видеонаблюдения IP Dahua PTZ DH-SD29204DB-GNY-W Wi-Fi 2.8-12мм цв.",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "IP-камера TP-LINK Tapo C320WS",
+      "cutoff": 4
+    },
+    {
+      "query": "кресло компютерное",
+      "target_url": "https://store.softline.ru/byurokrat/ch-330m-white-376144/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Кресло Бюрократ CH-808-LOW",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Кресло Бюрократ  CH-330M",
+      "cutoff": 4
+    },
+    {
+      "query": "сканер штрих кодов в сельпо",
+      "target_url": "https://store.softline.ru/atol/57984-458140/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          4
+        ],
+        "e5": [
+          2
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Сканер штрихкодов Mindeo CS3290",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Сканер штрихкодов Атол SB2108 Plus (rev.2) 2D",
+      "cutoff": 4
+    },
+    {
+      "query": "принтер этикеток на товар",
+      "target_url": "https://store.softline.ru/gg/gg-d420-493918/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          2,
+          4
+        ],
+        "e5": [
+          2,
+          3
+        ],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Термопринтер TSC ML341P (ML341P-A001-0202 ) для печ.этик. черный",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Термопринтер G&G GG-D420 203dpi 152мм/с/USB для печ.накл. белый",
+      "cutoff": 4
+    },
+    {
+      "query": "прога шоб с другого компа на свой зайти",
+      "target_url": "https://store.softline.ru/famatech/-451872/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "ПК IRU Planio 310H6SEV MT, 2109280",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Фаматек Radmin 3 (стандартная лицензия),",
+      "cutoff": 4
+    },
+    {
+      "query": "прога чтоб файлы удаленые вернуть",
+      "target_url": "https://store.softline.ru/ams-software/-541430/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Wondershare Recoverit (академическая лицензия на 1 год), for Windows Recoverit Premium (1 PC)",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "AMS Software Феникс (лицензия на 1 год),",
+      "cutoff": 4
+    },
+    {
+      "query": "ссд м2 на мать воткнуть на терабайт",
+      "target_url": "https://store.softline.ru/netac/nt01n535n-001t-n8x-426792/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": [
+          1
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Внутренний твердотельный накопитель Netac PCIe 1TB",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Внутренний твердотельный накопитель Netac SATA III 1Tb",
+      "cutoff": 4
+    },
+    {
+      "query": "джойстик к компу",
+      "target_url": "https://store.softline.ru/a4tech/gp30-sports-red-509734/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Игровой контроллер Razer Wolverine V3 Tournament Ed. For PC/ Razer Wolverine V3 Tournament Ed. For PC Gamepad",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Геймпад A4Tech GP30 Sports черный/красный USB виброотдача обратная связь (GP30 SPORTS RED)",
+      "cutoff": 4
+    },
+    {
+      "query": "клавиатура механика",
+      "target_url": "https://store.softline.ru/oklick/2023375-538240/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          2,
+          3
+        ],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Клавиатура Оклик K713X механическая черный USB Multimedia for gamer LED",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Клавиатура Оклик K713X механическая черный USB Multimedia for gamer LED",
+      "cutoff": 4
+    },
+    {
+      "query": "сумка под ноут 15 и 6",
+      "target_url": "https://store.softline.ru/digma/r270bk-492550/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1
+        ],
+        "e5": [
+          1
+        ],
+        "bm25": [
+          2,
+          3
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Сумка Defender Tote 15.6&quot;",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Сумка для ноутбука 15.6\" Digma R-270 черный полиэстер (R270BK)",
+      "cutoff": 4
+    },
+    {
+      "query": "акумулятор для бесперибойника",
+      "target_url": "https://store.softline.ru/delta/bt-1207-532471/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": [
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Парус-электро Аккумуляторная батарея для ИБП HM-12-7 (AGM/12В/7,2Ач/клемма F2)",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Сменная батарея для ИБП Delta BattBee BT 1207",
+      "cutoff": 4
+    },
+    {
+      "query": "модем 4джи",
+      "target_url": "https://store.softline.ru/tp-link/tl-mr100-371481/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          4
+        ],
+        "e5": [
+          2,
+          4
+        ],
+        "bm25": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "3G/LTE-роутер TENDA 4G185",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "3G/LTE-роутер TP-LINK TL-MR100",
+      "cutoff": 4
+    },
+    {
+      "query": "память для ноута ддр 4 на восьмерку",
+      "target_url": "https://store.softline.ru/patriotmemory/psd48g320081s-384534/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 4,
+      "first_hybrid_result": "Оперативная память ТМИ DDR4 8Gb, ЦРМП.467526.007-01",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Оперативная память Patriot Desktop DDR4 3200МГц 8Gb, PSD48G320081S, RTL",
+      "cutoff": 4
+    },
+    {
+      "query": "провод хдмай метра три",
+      "target_url": "https://store.softline.ru/gopower/00-00027309-450379/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "e5": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bm25": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "relevant_count": 4,
+      "first_hybrid_result": "HAMA HDMI (m)/HDMI (m) 3м",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "GoPower HDMI (m) - HDMI (m) ver.2.0 3.0м",
+      "cutoff": 4
+    },
+    {
+      "query": "зарядка быстрая на сяоми",
+      "target_url": "https://store.softline.ru/digma/dgw3d0f110wh-437596/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "e5": [
+          3,
+          4
+        ],
+        "bm25": [
+          2,
+          3,
+          4
+        ]
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Зарядное устройство DIGMA DGW3D 30W 3A (PD+QC)",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Зарядное устройство DIGMA DGW3D 30W 3A (PD+QC)",
+      "cutoff": 4
+    },
+    {
+      "query": "колонки к компу чтоб басило нормально",
+      "target_url": "https://store.softline.ru/sven/sv-0120702wn-93509/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [],
+        "e5": [],
+        "bm25": []
+      },
+      "relevant_count": 5,
+      "first_hybrid_result": "Колонки Яндекс Яндекс Станция Макс Zigbee",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Колонки SVEN SPS-702 (коричневый)",
+      "cutoff": 4
+    },
+    {
+      "query": "телик на 43 дюйма недорого",
+      "target_url": "https://store.softline.ru/polarline/43pu11tc-sm-413474/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Телевизор POLARLINE 43PU11TC-SM",
+      "query_type": "slang",
+      "target_type": "offer",
+      "target_name": "Телевизор POLARLINE 43PU11TC-SM",
+      "cutoff": 4
+    },
+    {
+      "query": "офис майкрасофт 2024 без подписки",
+      "target_url": "https://store.softline.ru/microsoft/ep2-06797-473568/",
+      "mapped": true,
+      "hit_positions": {
+        "hybrid": [
+          1,
+          2
+        ],
+        "e5": [
+          1,
+          2
+        ],
+        "bm25": [
+          1,
+          2
+        ]
+      },
+      "relevant_count": 2,
+      "first_hybrid_result": "Microsoft Office для дома 2024, Электронная лицензия на 1 ПК, бессрочная",
+      "query_type": "typo",
+      "target_type": "offer",
+      "target_name": "Microsoft Office для дома 2024, Электронная лицензия на 1 ПК, бессрочная",
+      "cutoff": 4
+    }
+  ]
+}

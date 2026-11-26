@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поиск по каталогу Softline</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="search-panel" aria-labelledby="page-title">
+      <h1 id="page-title">Поиск по каталогу Softline</h1>
+      <p class="intro">Введите название, модель или условия покупки.</p>
+      <form id="search-form" role="search">
+        <label for="query" class="visually-hidden">Поисковый запрос</label>
+        <div class="search-field">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="query" name="q" type="search" placeholder="Например, память для ноутбука DDR4 на 8 ГБ"
+                 autocomplete="off" required>
+          <button id="search-submit" class="primary" type="submit">Найти</button>
+        </div>
+        <details id="search-filters" class="search-filters">
+          <summary>Фильтры</summary>
+          <div class="filter-content">
+            <div class="filter-fields">
+              <div class="filter-field">
+                <label id="category-label" for="category-filter">Категория</label>
+                <div class="filter-picker">
+                  <input id="category-filter" type="text" role="combobox" aria-autocomplete="list"
+                         aria-controls="category-options" aria-expanded="false" placeholder="Все категории"
+                         autocomplete="off" spellcheck="false">
+                  <input id="category-value" name="category_id" type="hidden">
+                  <ul id="category-options" class="filter-options" role="listbox" aria-labelledby="category-label" hidden></ul>
+                </div>
+              </div>
+              <div class="filter-field">
+                <label id="vendor-label" for="vendor-filter">Производитель</label>
+                <div class="filter-picker">
+                  <input id="vendor-filter" type="text" role="combobox" aria-autocomplete="list"
+                         aria-controls="vendor-options" aria-expanded="false" placeholder="Все производители"
+                         autocomplete="off" spellcheck="false">
+                  <input id="vendor-value" name="vendor" type="hidden">
+                  <ul id="vendor-options" class="filter-options" role="listbox" aria-labelledby="vendor-label" hidden></ul>
+                </div>
+              </div>
+              <label class="filter-field">
+                Максимальная цена, ₽
+                <input type="number" name="price_to" min="0.01" step="any" inputmode="decimal" placeholder="Без ограничения">
+              </label>
+            </div>
+            <fieldset id="software-filters" class="software-filters">
+              <legend>Для ПО</legend>
+              <div class="filter-fields">
+                <label class="filter-field">
+                  ОС
+                  <select name="platform">
+                    <option value="">Любая ОС</option>
+                    <option value="windows">Windows</option>
+                    <option value="windows 10">Windows 10</option>
+                    <option value="windows 11">Windows 11</option>
+                    <option value="macos">macOS</option>
+                    <option value="linux">Linux</option>
+                    <option value="astra linux">Astra Linux</option>
+                    <option value="android">Android</option>
+                    <option value="ios">iOS</option>
+                  </select>
+                </label>
+                <label class="filter-field">
+                  Число рабочих мест
+                  <input type="number" name="devices" min="1" step="1" inputmode="numeric" placeholder="Без ограничения">
+                </label>
+              </div>
+            </fieldset>
+            <div class="filter-actions">
+              <button id="reset-filters" class="filter-reset" type="button">Сбросить фильтры</button>
+              <p id="filter-status" class="status" role="status" hidden></p>
+            </div>
+          </div>
+        </details>
+      </form>
+      <div class="examples">
+        <span>Попробуйте</span>
+        <button type="button" data-query="ИБП APC SRT2200RMXLI-NC">ИБП APC SRT2200RMXLI-NC</button>
+        <button type="button" data-query="ноутбук Lenovo 82X7004BPS">Lenovo IdeaPad Slim 3</button>
+        <button type="button" data-query="Microsoft Office EP2-06605 на 1 ПК под Windows">Office на 1 ПК</button>
+        <button type="button" data-query="память для ноута ддр4 на восьмерку">память для ноута ддр4 на восьмерку</button>
+      </div>
+    </section>
+
+    <p id="search-status" class="status search-status" role="status" hidden></p>
+
+    <section id="query-details" class="query-details" aria-label="Разбор запроса" hidden>
+      <p id="normalized-line" class="query-line" hidden>
+        <span class="label">Запрос после обработки</span>
+        <span id="normalized-query"></span>
+      </p>
+      <div id="conditions-line" class="query-line" hidden>
+        <span class="label">Условия</span>
+        <ul id="conditions" class="conditions"></ul>
+      </div>
+      <p id="ambiguities" class="query-line status" hidden></p>
+    </section>
+
+    <div id="workspace" class="workspace" hidden>
+      <section aria-labelledby="results-title">
+        <div class="results-heading">
+          <h2 id="results-title">Результаты поиска</h2>
+          <span id="result-count" class="muted"></span>
+        </div>
+        <div id="results" class="product-list"></div>
+        <p class="catalog-note">Цены и наличие — из выгрузки каталога.</p>
+      </section>
+
+      <aside id="recommendation-panel" class="recommendation-panel" aria-labelledby="recommendation-title">
+        <h2 id="recommendation-title">Сопутствующие товары</h2>
+        <p id="recommendation-source" class="recommendation-source" hidden></p>
+        <p id="recommendation-status" class="status" role="status"></p>
+        <p id="recommendation-context" class="status" hidden></p>
+        <div id="recommendations" class="product-list"></div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

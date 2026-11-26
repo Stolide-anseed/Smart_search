@@ -1,0 +1,164 @@
+[
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "article": "82X7004BPS",
+    "model": "IdeaPad Slim 3 15IRU8",
+    "dimensions_mm": [359.3, 235, 17.9],
+    "diagonal_inches": 15.6,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/Product/IdeaPad/IdeaPad_Slim_3_15IRU8?tab=spec"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "articles": ["21SH002VGQ", "21SH0049GQ", "21SH00JPGQ", "21SH00JDFW", "21SH00JNGQ", "21SH0037GQ"],
+    "model": "ThinkBook 16 G8 IRL",
+    "dimensions_mm": [356, 253.5, 17.5],
+    "diagonal_inches": 16,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "articles": ["21SG0033GQ", "21SG003DGQ", "21SG00H9GQ", "21SG00HAGQ", "21SG0034GQ"],
+    "model": "ThinkBook 14 G8 IRL",
+    "dimensions_mm": [313.5, 224, 17.5],
+    "diagonal_inches": 14,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "articles": ["21SK0030GQ", "21SK0027GQ"],
+    "model": "ThinkBook 16 G8 IAL",
+    "dimensions_mm": [356, 253.5, 17.5],
+    "diagonal_inches": 16,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G8_IAL/ThinkBook_16_G8_IAL_Spec.pdf"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "articles": ["21KH00SMEV"],
+    "model": "ThinkBook 16 G6 IRL",
+    "dimensions_mm": [356, 253.5, 17.5],
+    "diagonal_inches": 16,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G6_IRL/ThinkBook_16_G6_IRL_Spec.pdf"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "articles": ["21SJ0010GQ", "21SJ002AGQ"],
+    "model": "ThinkBook 14 G8 IAL",
+    "dimensions_mm": [313.5, 224, 17.5],
+    "diagonal_inches": 14,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "article": "21M5S09E00",
+    "model": "ThinkPad E16 Gen 2 AMD",
+    "dimensions_mm": [356.1, 247.7, 20.2],
+    "diagonal_inches": 16,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_AMD/ThinkPad_E16_Gen_2_AMD_Spec.pdf"
+  },
+  {
+    "type": "laptop",
+    "vendor": "Lenovo",
+    "article": "21MAS04600",
+    "model": "ThinkPad E16 Gen 2 Intel",
+    "dimensions_mm": [356.1, 247.7, 20.2],
+    "diagonal_inches": 16,
+    "checked_at": "2026-11-26",
+    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_Intel/ThinkPad_E16_Gen_2_Intel_Spec.pdf"
+  },
+  {
+    "type": "laptop",
+    "vendor": "HP",
+    "articles": ["8Z4M8AV", "A38BCET#BH5"],
+    "model": "HP ProBook 440 G11",
+    "dimensions_mm": [318.6, 224.4, 17],
+    "diagonal_inches": 14,
+    "checked_at": "2026-11-26",
+    "source": "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328"
+  },
+  {
+    "type": "laptop",
+    "vendor": "ASUS",
+    "article": "90NX0801-M00EU0",
+    "model": "ExpertBook B1 B1503CVA",
+    "dimensions_mm": [359.5, 232.2, 19.9],
+    "diagonal_inches": 15.6,
+    "checked_at": "2026-11-26",
+    "source": "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/"
+  },
+  {
+    "type": "notebook_bag",
+    "vendor": "HP Inc.",
+    "article": "A08JWAA",
+    "model": "HP Everyday 16-inch Laptop Briefcase",
+    "dimensions_mm": [380, 240, 30],
+    "diagonal_inches": 16,
+    "diagonal_is_limit": true,
+    "checked_at": "2026-11-26",
+    "source": "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+  },
+  {
+    "type": "notebook_bag",
+    "vendor": "HP Inc.",
+    "article": "A08JXAA",
+    "model": "HP Everyday 16-inch Laptop Backpack",
+    "dimensions_mm": [400, 270, 30],
+    "diagonal_inches": 16,
+    "diagonal_is_limit": true,
+    "checked_at": "2026-11-26",
+    "source": "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+  },
+  {
+    "type": "office",
+    "vendor": "MobiSystems",
+    "article": "MOL",
+    "model": "MobiOffice Lifetime",
+    "platforms": ["windows", "macos"],
+    "fixed_device_count": 1,
+    "checked_at": "2026-11-26",
+    "source": "https://mobisystems.com/en-gb/mobioffice/user-guide/getting-started/choosing-the-right-mobioffice-plan"
+  },
+  {
+    "type": "office",
+    "vendor": "MobiSystems",
+    "article": "MOMU1",
+    "model": "MobiOffice Multi-User",
+    "platforms": ["windows", "macos", "android", "ios"],
+    "desktop_device_limit": 6,
+    "checked_at": "2026-11-26",
+    "source": "https://support.mobisystems.com/hc/en-us/articles/22834764655005-Activate-Your-MobiOffice-Multi-User-Subscription"
+  },
+  {
+    "type": "office",
+    "vendor": "MobiSystems",
+    "article": "MOP1",
+    "model": "MobiOffice Premium",
+    "platforms": ["windows", "macos", "android", "ios"],
+    "desktop_device_limit": 1,
+    "checked_at": "2026-11-26",
+    "source": "https://support.mobisystems.com/hc/en-us/articles/22779132177565-Activate-Your-MobiOffice-Premium-Subscription"
+  },
+  {
+    "type": "office",
+    "vendor": "MobiSystems",
+    "article": "MOT1",
+    "model": "MobiOffice Team",
+    "platforms": ["windows", "macos", "android", "ios"],
+    "desktop_device_limit": 6,
+    "checked_at": "2026-11-26",
+    "source": "https://support.mobisystems.com/hc/en-us/articles/23129166580893-How-to-Purchase-a-MobiOffice-Premium-for-Teams-Subscription-and-Assign-Seats"
+  }
+]

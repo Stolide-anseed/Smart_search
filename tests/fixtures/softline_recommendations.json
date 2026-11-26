@@ -1,0 +1,149 @@
+[
+  {
+    "anchor": "82106",
+    "scenario_id": "ups_battery",
+    "compatible": ["129441"],
+    "incompatible": ["321853"],
+    "evidence": "В XML для SRT2200RMXLI-NC указана RBC141. Артикулы батарей APCRBC141 и APCRBC117 проверены полностью."
+  },
+  {
+    "anchor": "82167",
+    "scenario_id": "ups_battery",
+    "compatible": ["321853"],
+    "incompatible": ["129441"],
+    "evidence": "В XML для SMX2200RMHV2U указана RBC117."
+  },
+  {
+    "anchor": "82183",
+    "scenario_id": "ups_battery",
+    "compatible": ["129441"],
+    "incompatible": ["321853"],
+    "evidence": "В XML для SRT2200RMXLI указана RBC141."
+  },
+  {
+    "anchor": "436655",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "Lenovo IdeaPad Slim 3 15IRU8, 359,3 × 235 × 17,9 мм. Пределы HP A08JWAA и A08JXAA составляют 380 × 240 × 30 и 400 × 270 × 30 мм.",
+    "sources": ["https://psref.lenovo.com/Product/IdeaPad/IdeaPad_Slim_3_15IRU8?tab=spec", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "501535",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498147"],
+    "incompatible": ["498146"],
+    "evidence": "Lenovo ThinkBook 16 G8 IRL имеет глубину 253,5 мм при пределе 240 мм у HP A08JWAA. Все три размера укладываются в пределы HP A08JXAA.",
+    "sources": ["https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "501525",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "Lenovo ThinkBook 14 G8 IRL, 313,5 × 224 × 17,5 мм. Обе модели HP подходят по габаритам.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "501853",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498147"],
+    "incompatible": ["498146"],
+    "evidence": "Lenovo ThinkBook 16 G8 IAL, 356 × 253,5 × 17,5 мм. Глубина превышает предел HP A08JWAA.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G8_IAL/ThinkBook_16_G8_IAL_Spec.pdf", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "489135",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "HP ProBook 440 G11, предельные размеры 318,6 × 224,4 × 17 мм, проходят по трём осям обеих моделей HP.",
+    "sources": ["https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "495888",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "ASUS ExpertBook B1 B1503CVA, 359,5 × 232,2 × 19,9 мм. Оба предельных размера HP больше по всем трём осям.",
+    "sources": ["https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "529722",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498147"],
+    "incompatible": ["498146"],
+    "evidence": "Lenovo ThinkPad E16 Gen 2 AMD, глубина 247,7 мм, толщина не более 20,2 мм. HP A08JWAA ограничена 240 мм по глубине.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_AMD/ThinkPad_E16_Gen_2_AMD_Spec.pdf", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "473582",
+    "scenario_id": "office_antivirus",
+    "compatible": ["398852", "399141"],
+    "evidence": "Офисная лицензия Windows на 1 ПК. Полные корпоративные лицензии PRO32 под Windows на 5 узлов (Advanced 398852) и 36 узлов (Standard 399141). У артикула 514104 название указывает пользователей, характеристики фида — узлы. Эталон оставляет этот артикул без оценки.",
+    "sources": ["https://static.pro32.com/docs/pro32_endpoint_security_user_manual.pdf"]
+  },
+  {
+    "anchor": "473582",
+    "context": "windows_ten",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "Выбранный офисный пакет лицензирован на 1 ПК. Запрос требует 10 устройств, дозакупка для этого SKU не подтверждена."
+  },
+  {
+    "anchor": "473582",
+    "context": "foreign_os",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "Выбранный офисный пакет ориентирован на клиентскую Windows. Для Windows Server пригодность не подтверждена."
+  },
+  {
+    "anchor": "473582",
+    "context": "conflict",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "Запрос требует Windows, фильтр требует Linux."
+  },
+  {
+    "anchor": "481907",
+    "context": "windows",
+    "scenario_id": "office_antivirus",
+    "compatible": ["398852", "399141"],
+    "evidence": "MobiOffice Lifetime допускает установку на один компьютер. Здесь Windows задана явно. PRO32 Advanced 398852 и Standard 399141 покрывают 5 и 36 узлов Windows.",
+    "sources": ["https://mobisystems.com/en-gb/mobioffice/user-guide/getting-started/choosing-the-right-mobioffice-plan", "https://static.pro32.com/docs/pro32_endpoint_security_user_manual.pdf"]
+  },
+  {
+    "anchor": "481908",
+    "context": "windows_ten",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "В подписке Multi-User шесть пользователей и по одному настольному устройству на пользователя. Запрос требует десять устройств под Windows.",
+    "sources": ["https://support.mobisystems.com/hc/en-us/articles/22834764655005-Activate-Your-MobiOffice-Multi-User-Subscription"]
+  },
+  {
+    "anchor": "455798",
+    "scenario_id": null,
+    "evidence": "WorksPad, клиентская лицензия для управления мобильным рабочим местом."
+  },
+  {
+    "anchor": "536399",
+    "scenario_id": null,
+    "evidence": "Softline Universe, пакет рабочих мест уже включает антивирус."
+  },
+  {
+    "anchor": "315175",
+    "scenario_id": null,
+    "evidence": "Виртуальный офис Softline, тариф услуги."
+  },
+  {
+    "anchor": "195981",
+    "scenario_id": null,
+    "evidence": "Microsoft 365, семейная подписка."
+  },
+  {
+    "anchor": "473585",
+    "scenario_id": null,
+    "evidence": "Microsoft Visio Professional, отдельный инструмент для диаграмм."
+  },
+  {
+    "anchor": "492158",
+    "scenario_id": null,
+    "evidence": "Планшетный ПК ASUS GZ302 по типу в названии XML."
+  }
+]

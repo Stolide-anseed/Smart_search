@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+.search-index.sqlite3
+.search-index-build-*/
+/Mindbox.yml.gz.xml
