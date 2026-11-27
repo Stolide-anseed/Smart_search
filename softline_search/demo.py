@@ -208,18 +208,20 @@ def _recommendation_v3_products(source: Offer, result) -> dict:
 
 def serve_demo(
     index: SearchIndex, catalog: Path, mode: SearchMode, port: int, *, env_path: Path | None = None,
-    agent_version: str = "v3",
+    agent_version: str = "v3.2",
 ) -> None:
     from .autonomous_agent import AutonomousRecommendationAgent
     from .llm_agent_v3 import DEFAULT_TOP_K, MAX_TOP_K, LLMRecommendationAgentV3
+    from .llm_agent_v3_2 import LLMRecommendationAgentV32
     from .llm_provider import LLMSettings
     from .recommendation import RecommendationAgent
     from .vendor_evidence import VendorEvidenceService
 
-    agents = {"v3": LLMRecommendationAgentV3, "baseline": AutonomousRecommendationAgent}
+    agents = {"v3": LLMRecommendationAgentV3, "v3.1": LLMRecommendationAgentV3,
+              "v3.2": LLMRecommendationAgentV32, "baseline": AutonomousRecommendationAgent}
     if agent_version not in agents:
-        raise ValueError("Выберите версию агента v3 или baseline.")
-    serialize = _recommendation_v3_products if agent_version == "v3" else _recommendation_products
+        raise ValueError("Выберите версию агента v3.1, v3.2 или baseline.")
+    serialize = _recommendation_v3_products if agent_version in {"v3", "v3.1", "v3.2"} else _recommendation_products
 
     if not catalog.is_file():
         raise FileNotFoundError(f"Каталог {catalog} не найден.")

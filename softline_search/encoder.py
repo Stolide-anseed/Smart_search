@@ -41,3 +41,6 @@ class E5Encoder:
 
     def encode_query(self, text: str) -> np.ndarray:
         return self._encode([f"query: {text}"])[0]
+
+    def encode_queries(self, texts: list[str]) -> np.ndarray:
+        return self._encode([f"query: {text}" for text in texts])

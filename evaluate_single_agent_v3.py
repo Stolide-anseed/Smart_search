@@ -13,17 +13,19 @@ from tempfile import TemporaryDirectory
 from softline_search.autonomous_agent import AutonomousRecommendationAgent
 from softline_search.index import SearchIndex
 from softline_search.llm_agent_v3 import LLMRecommendationAgentV3
+from softline_search.llm_agent_v3_2 import LLMRecommendationAgentV32
 from softline_search.llm_provider import LLMSettings
 from softline_search.recommendation import RecommendationAgent
 from softline_search.vendor_evidence import VendorEvidenceService
 
 
-CASES = ("530901", "534617", "370916", "423674", "97557", "366915", "82106")
-AGENTS = {"baseline": AutonomousRecommendationAgent, "v3.1": LLMRecommendationAgentV3}
+CASES = ("493495", "505902", "370916", "534617", "526951")
+AGENTS = {"v3.1": LLMRecommendationAgentV3, "v3.2": LLMRecommendationAgentV32}
 
 
-def _row(anchor, result, catalog) -> dict:
+def _row(anchor, result, catalog, repeat: int = 1) -> dict:
     return {
+        "repeat": repeat,
         "id": anchor.offer_id,
         "name": anchor.name,
         "category": catalog.categories.get(anchor.category_id, anchor.category_id),
@@ -32,11 +34,12 @@ def _row(anchor, result, catalog) -> dict:
         "execution_status": result.execution_status,
         "failure": result.fallback_reason,
         "elapsed_ms": result.elapsed_ms,
+        "usage": result.usage,
         "llm_calls": result.usage.get("llm_calls", 0),
         "tool_calls": result.usage.get("tool_calls", 0),
         "catalog_searches": result.usage.get("catalog_searches"),
         "search_retries": result.usage.get("search_retries", 0),
-        "diagnostics": (result.diagnostics or {}).get("rejections", {}),
+        "diagnostics": result.diagnostics or {},
         "searches": (result.diagnostics or {}).get("searches", []),
         "tools": result.tools,
         "items": [
@@ -71,13 +74,14 @@ def live_run(args, settings: LLMSettings) -> dict:
             for name, agent in versions.items()
         }
         available = {offer.offer_id for offer in index.offers}
-        for position, identifier in enumerate(args.offer or CASES):
+        offers_to_run = (args.offer or CASES) * args.repeat
+        for position, identifier in enumerate(offers_to_run):
             if identifier not in available:
                 raise ValueError(f"Предложение {identifier} отсутствует в поисковом индексе.")
             order = list(agents) if position % 2 == 0 else list(reversed(agents))
             for version in order:
                 result = agents[version].recommend(identifier, limit=4, debug=True)
-                row = _row(rules.get_offer(identifier), result, catalog)
+                row = _row(rules.get_offer(identifier), result, catalog, position // len(args.offer or CASES) + 1)
                 rows[version].append(row)
                 print(version, identifier, len(row["items"]), row["failure"] or row["reason_code"],
                       round(row["elapsed_ms"]), flush=True)
@@ -101,6 +105,10 @@ def summarize(rows: list[dict], judgments: dict) -> dict:
             if type(label) is bool:
                 judged += 1
                 relevant += int(label)
+    candidate_sets = {}
+    for row in rows:
+        candidate_sets.setdefault(row["id"], []).append(tuple(sorted(item["id"] for item in row["items"])))
+    stability = [max(Counter(sets).values()) / len(sets) for sets in candidate_sets.values() if len(sets) > 1]
     return {
         "cases": len(rows),
         "covered": sum(bool(row["items"]) for row in rows),
@@ -111,6 +119,14 @@ def summarize(rows: list[dict], judgments: dict) -> dict:
         "p50_ms": round(median(latencies), 1),
         "p95_ms": round(latencies[ceil(len(latencies) * .95) - 1], 1),
         "llm_calls": sum(row["llm_calls"] for row in rows),
+        "input_tokens": sum(row.get("usage", {}).get("input_tokens", 0) for row in rows),
+        "output_tokens": sum(row.get("usage", {}).get("output_tokens", 0) for row in rows),
+        "mean_distinct_categories": round(sum(len({item["category"] for item in row["items"]}) for row in rows)
+                                           / max(1, len(rows)), 2),
+        "mean_category_distinctness": round(sum(
+            len({item["category"] for item in row["items"]}) / len(row["items"]) if row["items"] else 0
+            for row in rows) / max(1, len(rows)), 3),
+        "repeat_candidate_set_stability": round(sum(stability) / len(stability), 3) if stability else None,
         "search_retries": sum(row["search_retries"] for row in rows),
         "failures": dict(Counter(row["failure"] for row in rows if row["failure"])),
         "empty_reasons": dict(Counter(row["failure"] or row["reason_code"] for row in rows if not row["items"])),
@@ -124,17 +140,20 @@ def main() -> None:
     parser.add_argument("--index", type=Path, default=Path(".search-index.sqlite3"))
     parser.add_argument("--env", type=Path, default=Path(".env"))
     parser.add_argument("--offer", action="append", help="ID тестового товара. Параметр можно повторять.")
+    parser.add_argument("--repeat", type=int, default=1, help="Число прогонов каждого товара.")
     parser.add_argument("--version", choices=tuple(AGENTS), help="Повторно измерить одну версию из отчёта.")
     parser.add_argument("--judgments", type=Path, help="JSON независимой ручной разметки пар.")
-    parser.add_argument("--output", type=Path, default=Path("outputs/softline-v3/comparison.json"))
+    parser.add_argument("--output", type=Path, default=Path("outputs/softline-v3/comparison-v32.json"))
     args = parser.parse_args()
+    if args.repeat < 1 or args.repeat > 10:
+        parser.error("--repeat должен быть от 1 до 10.")
     if args.live:
         settings = LLMSettings.from_env(args.env)
         if not settings.enabled or not settings.api_key:
             parser.error("Для --live нужен включённый агент и настроенный ключ API.")
-        previous = json.loads(args.output.read_text(encoding="utf-8")) if args.version else None
+        previous = json.loads(args.output.read_text(encoding="utf-8")) if args.version and args.output.is_file() else None
         if previous:
-            expected = args.offer or list(CASES)
+            expected = (args.offer or list(CASES)) * args.repeat
             if (previous["model"] != settings.model or previous["catalog"] != args.catalog.name
                     or previous["limits"] != {"timeout_seconds": settings.timeout_seconds,
                                                "iterations": settings.max_iterations,

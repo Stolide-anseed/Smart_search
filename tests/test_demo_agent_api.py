@@ -33,7 +33,7 @@ class DemoAgentAPITests(TestCase):
         self._check_http("baseline")
 
     def test_v3_is_served_by_default_with_relationships_and_empty_reasons(self):
-        self._check_http("v3")
+        self._check_http("v3.2")
 
     def _check_http(self, version):
         source = Offer("1", "laptop", "70824", "Ноутбук Lenovo", "Lenovo", "L1", "", "85000", "RUR", "")
@@ -57,8 +57,9 @@ class DemoAgentAPITests(TestCase):
         release_request = Event()
 
         def recommend(*args, **kwargs):
+            agent_mode = "single_agent_v3_2" if version == "v3.2" else MODE
             if kwargs["limit"] == 2:
-                if version == "v3":
+                if version.startswith("v3"):
                     return V3RecommendationResult([], "missing_api_key", Status.UNKNOWN, "not_run", MODE,
                                                   "missing_api_key", None, (), {}, 0, source)
                 return AgentRecommendationResult(
@@ -68,10 +69,10 @@ class DemoAgentAPITests(TestCase):
             request_started.set()
             if not release_request.wait(5):
                 raise RuntimeError("test request timeout")
-            if version == "v3":
+            if version.startswith("v3"):
                 item = V3Recommendation(bag, "Переноска", "Для переноски ноутбука", True, True)
                 return V3RecommendationResult([item], "partial_validation", Status.UNKNOWN,
-                                              "completed_with_results", MODE, None, None, (), {}, 0, source)
+                                              "completed_with_results", agent_mode, None, None, (), {}, 0, source)
             return AgentRecommendationResult(
                 None,
                 [_PartialRecommendation(bag, True, True, "Сумка для переноски ноутбука",
@@ -90,8 +91,9 @@ class DemoAgentAPITests(TestCase):
                 ready.set()
                 super().serve_forever(poll_interval=poll_interval)
 
-        target = ("softline_search.llm_agent_v3.LLMRecommendationAgentV3" if version == "v3"
-                  else "softline_search.autonomous_agent.AutonomousRecommendationAgent")
+        target = ("softline_search.llm_agent_v3_2.LLMRecommendationAgentV32" if version == "v3.2" else
+                  "softline_search.llm_agent_v3.LLMRecommendationAgentV3" if version == "v3.1" else
+                  "softline_search.autonomous_agent.AutonomousRecommendationAgent")
         with (
             TemporaryDirectory() as directory,
             patch("softline_search.demo.ThreadingHTTPServer", TestServer),
@@ -134,11 +136,12 @@ class DemoAgentAPITests(TestCase):
                     self.assertEqual(error.exception.code, 400)
                 release_request.set()
                 recommendation = pending.result(timeout=3)
-                self.assertEqual(recommendation["mode"], MODE if version == "v3" else "autonomous_agent")
+                expected_mode = "single_agent_v3_2" if version == "v3.2" else MODE if version.startswith("v3") else "autonomous_agent"
+                self.assertEqual(recommendation["mode"], expected_mode)
                 self.assertEqual(recommendation["source"]["id"], "1")
                 item = recommendation["products"][0]
                 self.assertEqual(item["verification_status"], "UNKNOWN")
-                if version == "v3":
+                if version.startswith("v3"):
                     self.assertNotIn("scenario_id", recommendation)
                     self.assertEqual(item["candidate_id"], "3")
                     self.assertEqual(item["relationship"], "Переноска")
@@ -148,7 +151,7 @@ class DemoAgentAPITests(TestCase):
                 self.assertNotIn("diagnostics", recommendation)
                 agent.recommend.assert_called_once_with("1", parsed, filters=(), debug=False, limit=4)
                 fallback = get("/api/recommend?offer_id=1&limit=2&debug=1")
-                if version == "v3":
+                if version.startswith("v3"):
                     self.assertEqual(fallback["reason_code"], "missing_api_key")
                     self.assertEqual(fallback["products"], [])
                 else:

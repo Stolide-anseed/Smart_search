@@ -41,7 +41,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     demo.add_argument("--mode", choices=MODES, default="hybrid", help="Способ поиска")
     demo.add_argument("--port", type=int, default=8765, help="Порт локальной страницы")
     demo.add_argument("--env", type=Path, help="Локальный файл настроек провайдера")
-    demo.add_argument("--recommendation-agent", choices=("v3", "baseline"), default="v3",
+    demo.add_argument("--recommendation-agent", choices=("v3", "v3.1", "v3.2", "baseline"), default="v3.2",
                       help="Режим агента допродаж")
 
     parse = commands.add_parser("parse-query", parents=[common], help="Показать нормализацию и условия запроса")

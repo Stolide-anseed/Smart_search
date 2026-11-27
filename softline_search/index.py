@@ -384,6 +384,19 @@ class SearchIndex:
         order = np.argsort(-scores, kind="stable")
         return [(int(row), float(scores[row])) for row in order]
 
+    def _semantic_rank_batch(self, queries: list[str]) -> list[list[tuple[int, float]]]:
+        vectors = self._normalized_vectors()
+        with self._encoder_lock:
+            if self._encoder is None:
+                self._encoder = E5Encoder(self._device)
+            embeddings = self._encoder.encode_queries(queries)
+        scores = vectors @ embeddings.T
+        result = []
+        for column in range(len(queries)):
+            order = np.argsort(-scores[:, column], kind="stable")
+            result.append([(int(row), float(scores[row, column])) for row in order])
+        return result
+
     def family_key(self, offer: Offer) -> FamilyKey:
         if self._catalog_family_keys is None:
             with self._prepare_lock:
@@ -432,6 +445,20 @@ class SearchIndex:
             semantic = [hit for hit in semantic if hit[0] in scope]
             lexical = [hit for hit in lexical if hit[0] in scope]
         return self._ranked_hits(semantic, lexical, "hybrid", min(limit, _MAX_AGENT_RESULTS), self.family_key)
+
+    def search_candidates_batch(
+        self, queries: list[str], *, limit: int = 8,
+    ) -> list[list[SearchHit]]:
+        normalized = [" ".join(query.split()) for query in queries]
+        if not normalized or any(not query for query in normalized) or limit < 1:
+            raise ValueError("Укажите непустой список запросов и положительное число результатов.")
+        semantic_rankings = self._semantic_rank_batch(normalized)
+        results = []
+        for query, semantic in zip(normalized, semantic_rankings):
+            lexical = self._lexical_rank(query)
+            results.append(self._ranked_hits(semantic, lexical, "hybrid",
+                                             min(limit, _MAX_AGENT_RESULTS), self.family_key))
+        return results
 
     def _rankings(
         self, query: str, mode: SearchMode

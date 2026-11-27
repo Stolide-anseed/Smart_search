@@ -12,6 +12,7 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 from softline_search.demo import _recommendation_v3_products
 from softline_search.index import SearchHit, _catalog_families
 from softline_search.llm_agent_v3 import LLMRecommendationAgentV3
+from softline_search.llm_agent_v3_2 import LLMRecommendationAgentV32
 from softline_search.llm_provider import LLMSettings, ProviderCall, ProviderFailure, ProviderResponse
 from softline_search.query_catalog import QueryCatalog
 from softline_search.recommendation import RecommendationAgent
@@ -98,6 +99,56 @@ class V3AgentTests(TestCase):
                                         provider=provider)
         self.addCleanup(agent.close)
         return agent
+
+    def test_v32_plans_batches_retrieval_and_ranks_diverse_categories_in_two_calls(self):
+        plan = ProviderResponse(text=json.dumps({"directions": [
+            {"product_type": "Картриджи", "query": "картридж", "alternative_query": "тонер",
+             "relationship": "Расходник для печати"},
+            {"product_type": "Бумага", "query": "бумага", "alternative_query": "бумага A4",
+             "relationship": "Материалы для документов"},
+        ]}, ensure_ascii=False) + "\nextra trailing text")
+        ranked = selection(("toner", "Расходник для печати", "Помогает продолжать печать."),
+                           ("paper", "Материалы для документов", "Нужна для печати документов."))
+        self.index.search_candidates_batch = Mock(return_value=[
+            [SearchHit(self.rules.get_offer("toner"), 1.0)],
+            [SearchHit(self.rules.get_offer("paper"), 1.0)],
+        ])
+        agent = self.agent(plan, ranked)
+        v32 = LLMRecommendationAgentV32(self.index, self.path, self.rules, agent.settings,
+                                         provider=agent.provider)
+        self.addCleanup(v32.close)
+        result = v32.recommend("printer", debug=True)
+        self.assertEqual([item.candidate_id for item in result.items], ["toner", "paper"],
+                         (result.reason_code, result.fallback_reason, result.diagnostics, result.tools))
+        self.assertEqual(result.mode, "single_agent_v3_2")
+        self.assertEqual(result.usage["llm_calls"], 2)
+        self.assertEqual(self.index.search_candidates_batch.call_count, 1)
+        self.assertEqual(result.diagnostics["category_diversity"], 2)
+        self.assertIn("plan_directions", [event["tool"] for event in result.tools])
+        self.assertIn("batch_retrieval", [event["tool"] for event in result.tools])
+        self.assertIn("diversity_filter", [event["tool"] for event in result.tools])
+
+    def test_v32_repairs_one_invalid_ranking_response_with_a_third_llm_call(self):
+        plan = ProviderResponse(text=json.dumps({"directions": [
+            {"product_type": "Картриджи", "query": "картридж", "alternative_query": "тонер",
+             "relationship": "Расходник для печати"},
+            {"product_type": "Бумага", "query": "бумага", "alternative_query": "бумага A4",
+             "relationship": "Материалы для документов"},
+        ]}, ensure_ascii=False))
+        self.index.search_candidates_batch = Mock(return_value=[
+            [SearchHit(self.rules.get_offer("toner"), 1.0)],
+            [SearchHit(self.rules.get_offer("paper"), 1.0)],
+        ])
+        agent = self.agent(plan, ProviderResponse(text="invalid"), selection(
+            ("toner", "Расходник для печати", "Продолжает печать."),
+        ))
+        v32 = LLMRecommendationAgentV32(self.index, self.path, self.rules, agent.settings,
+                                         provider=agent.provider)
+        self.addCleanup(v32.close)
+        result = v32.recommend("printer", debug=True)
+        self.assertEqual([item.candidate_id for item in result.items], ["toner"])
+        self.assertEqual(result.usage["llm_calls"], 3)
+        self.assertIn("ranking_repair", [event["tool"] for event in result.tools])
 
     def test_open_relationships_for_five_product_categories(self):
         cases = (

@@ -1,0 +1,4136 @@
+{
+  "run_at": "2026-11-27T22:39:32+00:00",
+  "model": "gpt-6-luna",
+  "limits": {
+    "timeout_seconds": 10.0,
+    "iterations": 5,
+    "tool_calls": 12
+  },
+  "catalog": "Mindbox.yml.gz.xml",
+  "rows": {
+    "v3.1": [
+      {
+        "repeat": 1,
+        "id": "493495",
+        "name": "Apple Mac Mini 2024 (M4) MU9E3HN/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 9328.638,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 7709,
+          "cached_input_tokens": 0,
+          "output_tokens": 536,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 7,
+          "valid_tool_calls": 7,
+          "successful_tool_calls": 7,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 8999.466,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 0,
+          "catalog_hits": 25
+        },
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": 5,
+        "search_retries": 0,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 1
+        },
+        "searches": [
+          {
+            "query": "монитор USB-C",
+            "category_id": "80843",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "клавиатура беспроводная",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "мышь беспроводная",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "внешний SSD USB-C",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "USB-C хаб HDMI USB для компьютера",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 4
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.542,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.152,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "ok",
+            "elapsed_ms": 0.775,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 65.382,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 43.819,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 42.019,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 49.564,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 120.359,
+            "count": 4
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 5
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.54,
+            "count": 4
+          }
+        ],
+        "items": [
+          {
+            "id": "504969",
+            "name": "Монитор AOC U27B3CF 27.0-inch черный",
+            "article": "U27B3CF",
+            "category": "Мониторы",
+            "relationship": "экран для работы с Mac mini",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "475997",
+            "name": "Клавиатура A4Tech Fstyler FBK23 AS черный USB беспроводная BT/Radio (FBK23 AS)",
+            "article": "FBK23 AS",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "устройство ввода для мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "521127",
+            "name": "Мышь/ Logitech M196 Bluetooth Mouse Graphite",
+            "article": "910-007459",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "устройство управления для мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "426778",
+            "name": "Внешний HDD Netac Z7S 480GB",
+            "article": "NT01Z7S-480G-32BK",
+            "category": "Внешние HDD",
+            "relationship": "расширение хранения и перенос файлов для мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "505902",
+        "name": "Apple Mac Mini 2024 (M4) MU9D3LL/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 9228.808,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 14346,
+          "cached_input_tokens": 6616,
+          "output_tokens": 612,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 9,
+          "valid_tool_calls": 9,
+          "successful_tool_calls": 9,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 8717.189,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 6,
+          "search_retries": 0,
+          "catalog_hits": 30
+        },
+        "llm_calls": 5,
+        "tool_calls": 9,
+        "catalog_searches": 6,
+        "search_retries": 0,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 3
+        },
+        "searches": [
+          {
+            "query": "монитор компьютерный",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "клавиатура беспроводная",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "мышь компьютерная",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "USB-C хаб док-станция",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "внешний SSD",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "веб-камера USB",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 2
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.314,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 156.03,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 155.76,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 49.254,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 45.297,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 44.383,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 56.231,
+            "count": 2
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.351,
+            "count": 8
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.309,
+            "count": 8
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.599,
+            "count": 7
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.365,
+            "count": 4
+          }
+        ],
+        "items": [
+          {
+            "id": "488365",
+            "name": "Монитор ACER EK271Gbi 27.0-inch черный",
+            "article": "UM.HE1CD.G01",
+            "category": "Мониторы",
+            "relationship": "дополняет мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "475997",
+            "name": "Клавиатура A4Tech Fstyler FBK23 AS черный USB беспроводная BT/Radio (FBK23 AS)",
+            "article": "FBK23 AS",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "периферия для управления компьютером",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "509103",
+            "name": "Мышь Logitech M170 910-004642",
+            "article": "910-004642",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "периферия для управления компьютером",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "501640",
+            "name": "Мультифункциональный хаб Vention USB-C 6 в 1, шт.",
+            "article": "TGNHB",
+            "category": "Док-станции для ноутбуков",
+            "relationship": "расширение портов мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 7126.621,
+        "usage": {
+          "llm_calls": 4,
+          "input_tokens": 6240,
+          "cached_input_tokens": 2180,
+          "output_tokens": 475,
+          "web_searches": 0,
+          "iterations": 4,
+          "tool_calls": 8,
+          "valid_tool_calls": 8,
+          "successful_tool_calls": 7,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 4,
+          "provider_elapsed_ms": 6398.133999999999,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 1,
+          "catalog_hits": 20
+        },
+        "llm_calls": 4,
+        "tool_calls": 8,
+        "catalog_searches": 5,
+        "search_retries": 1,
+        "diagnostics": {
+          "substitute_product": 8
+        },
+        "searches": [
+          {
+            "query": "SSD накопитель для компьютера",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 4
+          },
+          {
+            "query": "кулер для процессора",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 4
+          },
+          {
+            "query": "материнская плата DDR4",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 4
+          },
+          {
+            "query": "модуль оперативной памяти DDR4 16GB",
+            "category_id": "76963",
+            "retrieved": 4,
+            "eligible": 0
+          },
+          {
+            "query": "память для настольного компьютера DDR4",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 0
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.515,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.136,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 166.223,
+            "count": 4
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 184.619,
+            "count": 4
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 160.485,
+            "count": 4
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 107.191,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 213.535,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.181,
+            "count": 4
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.1,
+            "count": 4
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.078,
+            "count": 4
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.384,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "542176",
+            "name": "Внутренний твердотельный накопитель Apacer PANTHER AS350X",
+            "article": "AP512GAS350XR-1",
+            "category": "Внутренние твердотельные накопители (SSD)",
+            "relationship": "Расширение и ускорение хранения данных для десктопа",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "493007",
+            "name": "Материнская плата Gigabyte AM4 AMD B550 B550M DS3H R2",
+            "article": "B550M DS3H R2",
+            "category": "Материнские платы",
+            "relationship": "Интеграция оперативной памяти в систему",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 8777.874,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 10438,
+          "cached_input_tokens": 0,
+          "output_tokens": 520,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 8,
+          "valid_tool_calls": 8,
+          "successful_tool_calls": 8,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 8120.914,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 7,
+          "search_retries": 2,
+          "catalog_hits": 56
+        },
+        "llm_calls": 5,
+        "tool_calls": 8,
+        "catalog_searches": 7,
+        "search_retries": 2,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 21,
+          "same_offer": 1
+        },
+        "searches": [
+          {
+            "query": "кассовый аппарат POS-система",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "принтер чеков термопринтер",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "сканер штрих-кода",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "кассовая лента термолента",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "бумага для чекового принтера",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "органайзер для купюр монет кассира",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "лоток для денег кассовый",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 2
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.387,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.19,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.378,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 114.194,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 119.985,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 49.221,
+            "count": 8
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "ok",
+            "elapsed_ms": 110.087,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 155.808,
+            "count": 8
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "ok",
+            "elapsed_ms": 111.133,
+            "count": 2
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 213.641,
+            "count": 2
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.239,
+            "count": 7
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.235,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "366915",
+            "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+            "article": "1007",
+            "category": "Принтеры",
+            "relationship": "оборудование для оформления и выдачи чеков рядом с денежным ящиком",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "404987",
+            "name": "Сканер штрихкодов Mindeo CS3290",
+            "article": "CS3290HD-2D+",
+            "category": "Сканеры штрихкодов",
+            "relationship": "ускорение обслуживания и расчета покупок кассиром",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "526951",
+        "name": "Детектор банкнот DoCash Golf 12954 автоматический рубли",
+        "category": "Детекторы банкнот",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 7611.684,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 5626,
+          "cached_input_tokens": 1042,
+          "output_tokens": 381,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 4,
+          "valid_tool_calls": 4,
+          "successful_tool_calls": 3,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 6989.255000000001,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 1,
+          "catalog_hits": 40
+        },
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": 5,
+        "search_retries": 1,
+        "diagnostics": {
+          "same_offer": 1,
+          "query_target_not_found_in_catalog": 24
+        },
+        "searches": [
+          {
+            "query": "ультрафиолетовая лампа для проверки банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "лампа детектор подлинности банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "кассовый денежный ящик",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 3
+          },
+          {
+            "query": "кассовый аппарат принтер чеков",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 4
+          },
+          {
+            "query": "счетчик банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.451,
+            "count": 1
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 110.585,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 277.916,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 113.73,
+            "count": 3
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 110.093,
+            "count": 4
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 117.856,
+            "count": 8
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 3
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.342,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "534618",
+            "name": "Ящик для денег Deli ET501 9x20x16 красный",
+            "article": "ET501",
+            "category": "Денежные ящики",
+            "relationship": "рабочее место кассира для обработки наличных",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "366915",
+            "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+            "article": "1007",
+            "category": "Принтеры",
+            "relationship": "система интеграции учета наличных при продажах",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "389538",
+            "name": "Счетчик банкнот DORS CT1040UM",
+            "article": "SYS-040492",
+            "category": "Счетчики банкнот, монет",
+            "relationship": "ускорение пересчета и обработки наличной выручки",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "493495",
+        "name": "Apple Mac Mini 2024 (M4) MU9E3HN/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 6738.575,
+        "usage": {
+          "llm_calls": 3,
+          "input_tokens": 7861,
+          "cached_input_tokens": 3495,
+          "output_tokens": 479,
+          "web_searches": 0,
+          "iterations": 3,
+          "tool_calls": 6,
+          "valid_tool_calls": 6,
+          "successful_tool_calls": 6,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 3,
+          "provider_elapsed_ms": 6084.9529999999995,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 0,
+          "catalog_hits": 40
+        },
+        "llm_calls": 3,
+        "tool_calls": 6,
+        "catalog_searches": 5,
+        "search_retries": 0,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 6
+        },
+        "searches": [
+          {
+            "query": "монитор для компьютера",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "клавиатура компьютерная",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "компьютерная мышь",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "веб-камера для компьютера",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 2
+          },
+          {
+            "query": "внешний SSD накопитель USB-C",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.487,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 194.491,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 113.781,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 111.466,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 162.389,
+            "count": 2
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 67.944,
+            "count": 8
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.203,
+            "count": 8
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 5
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.456,
+            "count": 4
+          }
+        ],
+        "items": [
+          {
+            "id": "488365",
+            "name": "Монитор ACER EK271Gbi 27.0-inch черный",
+            "article": "UM.HE1CD.G01",
+            "category": "Мониторы",
+            "relationship": "дополнение",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "528567",
+            "name": "Клавиатура Оклик K257W черный USB беспроводная Multimedia (подставка для запястий) (2070286)",
+            "article": "2070286",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "дополнение",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "509103",
+            "name": "Мышь Logitech M170 910-004642",
+            "article": "910-004642",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "дополнение",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "515923",
+            "name": "Веб-камера A4 PK-910H, с микрофоном, 4608x3456, черный",
+            "article": "PK-910H",
+            "category": "Вебкамеры",
+            "relationship": "дополнение",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "505902",
+        "name": "Apple Mac Mini 2024 (M4) MU9D3LL/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 8950.483,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 16203,
+          "cached_input_tokens": 7044,
+          "output_tokens": 542,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 7,
+          "valid_tool_calls": 7,
+          "successful_tool_calls": 7,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 8264.911,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 0,
+          "catalog_hits": 40
+        },
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": 5,
+        "search_retries": 0,
+        "diagnostics": {},
+        "searches": [
+          {
+            "query": "монитор компьютерный",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "клавиатура компьютерная",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "мышь компьютерная",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "внешний SSD накопитель",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "USB-C хаб для компьютера",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.493,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 113.711,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 126.132,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 115.398,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 107.15,
+            "count": 8
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.335,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 218.393,
+            "count": 8
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.199,
+            "count": 8
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.28,
+            "count": 4
+          }
+        ],
+        "items": [
+          {
+            "id": "488365",
+            "name": "Монитор ACER EK271Gbi 27.0-inch черный",
+            "article": "UM.HE1CD.G01",
+            "category": "Мониторы",
+            "relationship": "Дополнение к мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "528567",
+            "name": "Клавиатура Оклик K257W черный USB беспроводная Multimedia (подставка для запястий) (2070286)",
+            "article": "2070286",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Периферия для мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "509103",
+            "name": "Мышь Logitech M170 910-004642",
+            "article": "910-004642",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Периферия для мини-ПК",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "492154",
+            "name": "Внутренний твердотельный накопитель Samsung Portable SSD T9 1 ТБ",
+            "article": "MU-PG1T0B/WW",
+            "category": "Внутренние твердотельные накопители (SSD)",
+            "relationship": "Расширение хранения данных",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "single_agent_v3_1",
+        "reason_code": "agent_timeout",
+        "execution_status": "provider_timeout",
+        "failure": "agent_timeout",
+        "elapsed_ms": 10010.645,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 8527,
+          "cached_input_tokens": 4932,
+          "output_tokens": 407,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 7,
+          "valid_tool_calls": 7,
+          "successful_tool_calls": 6,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 4,
+          "provider_elapsed_ms": 6815.333,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 8,
+          "search_retries": 2,
+          "catalog_hits": 40
+        },
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": 8,
+        "search_retries": 2,
+        "diagnostics": {
+          "substitute_product": 9,
+          "same_offer": 1,
+          "query_target_not_found_in_catalog": 5
+        },
+        "searches": [
+          {
+            "query": "модуль памяти DDR4 16 ГБ для настольного ПК",
+            "category_id": "76963",
+            "retrieved": 5,
+            "eligible": 0
+          },
+          {
+            "query": "оперативная память DIMM DDR4 desktop",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 0
+          },
+          {
+            "query": "SSD накопитель для компьютера",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "материнская плата для настольного ПК DDR4",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "кулер для процессора настольного ПК",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "корпус для настольного компьютера",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          },
+          {
+            "query": "паста термопроводящая для процессора",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 0
+          },
+          {
+            "query": "термопаста компьютерная для обслуживания ПК",
+            "category_id": "",
+            "retrieved": 5,
+            "eligible": 5
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.427,
+            "count": 1
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 57.287,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 325.36,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 112.011,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 104.724,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 111.519,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 130.322,
+            "count": 5
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.25,
+            "count": 8
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "ok",
+            "elapsed_ms": 148.547,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 288.93,
+            "count": 5
+          },
+          {
+            "tool": "agent_execution",
+            "status": "error",
+            "elapsed_ms": 10010.595,
+            "count": 0,
+            "error_code": "agent_timeout"
+          }
+        ],
+        "items": []
+      },
+      {
+        "repeat": 2,
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 6710.853,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 5749,
+          "cached_input_tokens": 1343,
+          "output_tokens": 295,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 4,
+          "valid_tool_calls": 4,
+          "successful_tool_calls": 3,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 6173.713000000001,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 5,
+          "search_retries": 2,
+          "catalog_hits": 27
+        },
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": 5,
+        "search_retries": 2,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 17,
+          "same_offer": 2
+        },
+        "searches": [
+          {
+            "query": "счетчик банкнот",
+            "category_id": "",
+            "retrieved": 6,
+            "eligible": 6
+          },
+          {
+            "query": "кассовая лента чековая термолента",
+            "category_id": "",
+            "retrieved": 6,
+            "eligible": 0
+          },
+          {
+            "query": "рулон термобумаги для кассы",
+            "category_id": "",
+            "retrieved": 6,
+            "eligible": 2
+          },
+          {
+            "query": "денежный лоток кассовый",
+            "category_id": "91754",
+            "retrieved": 3,
+            "eligible": 0
+          },
+          {
+            "query": "кассовый денежный ящик",
+            "category_id": "",
+            "retrieved": 6,
+            "eligible": 0
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.531,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.14,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 212.237,
+            "count": 6
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "ok",
+            "elapsed_ms": 127.608,
+            "count": 2
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 185.462,
+            "count": 2
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 65.547,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 136.573,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.215,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "386499",
+            "name": "Счетчик банкнот Mertech D-110 ANTISTOKS",
+            "article": "M-ER5514",
+            "category": "Детекторы банкнот",
+            "relationship": "для пересчета и обработки наличности рядом с денежным ящиком",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "389538",
+            "name": "Счетчик банкнот DORS CT1040UM",
+            "article": "SYS-040492",
+            "category": "Счетчики банкнот, монет",
+            "relationship": "для пересчета и обработки наличности рядом с денежным ящиком",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "526951",
+        "name": "Детектор банкнот DoCash Golf 12954 автоматический рубли",
+        "category": "Детекторы банкнот",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 8914.862,
+        "usage": {
+          "llm_calls": 5,
+          "input_tokens": 7242,
+          "cached_input_tokens": 1944,
+          "output_tokens": 445,
+          "web_searches": 0,
+          "iterations": 5,
+          "tool_calls": 7,
+          "valid_tool_calls": 7,
+          "successful_tool_calls": 4,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 5,
+          "provider_elapsed_ms": 8241.697,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 8,
+          "search_retries": 3,
+          "catalog_hits": 64
+        },
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": 8,
+        "search_retries": 3,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 48,
+          "same_offer": 5
+        },
+        "searches": [
+          {
+            "query": "ультрафиолетовый детектор банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "детектор валют проверка банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "кассовая лента термобумага",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "чековая лента для кассы",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "счетчик банкнот",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "кассовый ящик денежный",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 3
+          },
+          {
+            "query": "кассовый сейф для наличных",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "мини сейф для денег",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.804,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.151,
+            "count": 1
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 58.959,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 118.462,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 135.904,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 188.456,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 63.379,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 47.366,
+            "count": 3
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 137.756,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 251.619,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.163,
+            "count": 6
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.22,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "386499",
+            "name": "Счетчик банкнот Mertech D-110 ANTISTOKS",
+            "article": "M-ER5514",
+            "category": "Детекторы банкнот",
+            "relationship": "оборудование для обработки наличных в дополнение к детектору",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "534617",
+            "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+            "article": "ET500",
+            "category": "Денежные ящики",
+            "relationship": "организация хранения наличности рядом с детектором банкнот",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      }
+    ],
+    "v3.2": [
+      {
+        "repeat": 1,
+        "id": "493495",
+        "name": "Apple Mac Mini 2024 (M4) MU9E3HN/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 7567.4,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1989,
+          "cached_input_tokens": 0,
+          "output_tokens": 405,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 7180.817,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 0,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 0,
+        "diagnostics": {
+          "rejections": {},
+          "eligible_candidates": 24,
+          "selected": 4,
+          "searches": [
+            {
+              "query": "Монитор 4K USB-C",
+              "product_type": "Монитор",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Беспроводная клавиатура Bluetooth",
+              "product_type": "Клавиатура",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Беспроводная мышь Bluetooth",
+              "product_type": "Мышь",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Внешний SSD USB-C 1 ТБ",
+              "product_type": "Внешний SSD",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Монитор",
+              "query": "Монитор 4K USB-C",
+              "alternative_query": "Монитор 27 дюймов USB-C",
+              "relationship": "Для подключения к Mac mini и комфортной работы с изображением."
+            },
+            {
+              "product_type": "Клавиатура",
+              "query": "Беспроводная клавиатура Bluetooth",
+              "alternative_query": "Компактная клавиатура Bluetooth для компьютера",
+              "relationship": "Для ввода текста и управления компьютером."
+            },
+            {
+              "product_type": "Мышь",
+              "query": "Беспроводная мышь Bluetooth",
+              "alternative_query": "Компьютерная мышь USB-C",
+              "relationship": "Для удобного управления интерфейсом."
+            },
+            {
+              "product_type": "Внешний SSD",
+              "query": "Внешний SSD USB-C 1 ТБ",
+              "alternative_query": "Портативный SSD USB-C 2 ТБ",
+              "relationship": "Для расширения хранилища и переноса файлов."
+            }
+          ],
+          "ranking_order": [
+            "425157",
+            "512201",
+            "351840",
+            "425615"
+          ],
+          "category_diversity": 3,
+          "candidate_count": 24,
+          "diversity_dropped": 1,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "Монитор 4K USB-C",
+            "product_type": "Монитор",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Беспроводная клавиатура Bluetooth",
+            "product_type": "Клавиатура",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Беспроводная мышь Bluetooth",
+            "product_type": "Мышь",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Внешний SSD USB-C 1 ТБ",
+            "product_type": "Внешний SSD",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 378.234,
+            "count": 24
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.004,
+            "count": 4
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.551,
+            "count": 4
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "425157",
+            "name": "Монитор AOC Q27P3CV 27.0-inch",
+            "article": "Q27P3CV",
+            "category": "Мониторы",
+            "relationship": "Для подключения к Mac mini и комфортной работы с изображением.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "512201",
+            "name": "Клавиатура + мышь A4Tech Fstyler FB2800C Air2 White клав:белый/серый мышь:белый/серый USB беспроводная Bluetooth/Радио",
+            "article": "2076752",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Для ввода текста и управления компьютером.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "351840",
+            "name": "Внешний HDD Samsung T7 1TB",
+            "article": "MU-PC1T0H/WW",
+            "category": "Внешние HDD",
+            "relationship": "Для расширения хранилища и переноса файлов.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "505902",
+        "name": "Apple Mac Mini 2024 (M4) MU9D3LL/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 4834.595,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1825,
+          "cached_input_tokens": 0,
+          "output_tokens": 375,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 4441.065,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 0,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 0,
+        "diagnostics": {
+          "rejections": {},
+          "eligible_candidates": 22,
+          "selected": 4,
+          "searches": [
+            {
+              "query": "монитор 4K с USB-C",
+              "product_type": "Монитор",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "беспроводная клавиатура Bluetooth для Mac",
+              "product_type": "Клавиатура",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "беспроводная мышь Bluetooth",
+              "product_type": "Мышь",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "внешний SSD USB-C 1 ТБ",
+              "product_type": "Внешний SSD",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Монитор",
+              "query": "монитор 4K с USB-C",
+              "alternative_query": "монитор 27 дюймов с USB-C",
+              "relationship": "Для подключения к Mac mini и работы с изображением"
+            },
+            {
+              "product_type": "Клавиатура",
+              "query": "беспроводная клавиатура Bluetooth для Mac",
+              "alternative_query": "компактная клавиатура Bluetooth с раскладкой RU/EN",
+              "relationship": "Для управления компьютером"
+            },
+            {
+              "product_type": "Мышь",
+              "query": "беспроводная мышь Bluetooth",
+              "alternative_query": "эргономичная мышь для компьютера с USB-приёмником",
+              "relationship": "Для управления компьютером"
+            },
+            {
+              "product_type": "Внешний SSD",
+              "query": "внешний SSD USB-C 1 ТБ",
+              "alternative_query": "портативный SSD USB-C 2 ТБ",
+              "relationship": "Для расширения хранилища Mac mini"
+            }
+          ],
+          "ranking_order": [
+            "504969",
+            "512201",
+            "351840",
+            "531688"
+          ],
+          "category_diversity": 4,
+          "candidate_count": 22,
+          "diversity_dropped": 0,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "монитор 4K с USB-C",
+            "product_type": "Монитор",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "беспроводная клавиатура Bluetooth для Mac",
+            "product_type": "Клавиатура",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "беспроводная мышь Bluetooth",
+            "product_type": "Мышь",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "внешний SSD USB-C 1 ТБ",
+            "product_type": "Внешний SSD",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 387.159,
+            "count": 24
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.267,
+            "count": 4
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          }
+        ],
+        "items": [
+          {
+            "id": "504969",
+            "name": "Монитор AOC U27B3CF 27.0-inch черный",
+            "article": "U27B3CF",
+            "category": "Мониторы",
+            "relationship": "Для подключения к Mac mini и работы с изображением",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "512201",
+            "name": "Клавиатура + мышь A4Tech Fstyler FB2800C Air2 White клав:белый/серый мышь:белый/серый USB беспроводная Bluetooth/Радио",
+            "article": "2076752",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Для управления компьютером",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "351840",
+            "name": "Внешний HDD Samsung T7 1TB",
+            "article": "MU-PC1T0H/WW",
+            "category": "Внешние HDD",
+            "relationship": "Для расширения хранилища Mac mini",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "531688",
+            "name": "Док-станция/ Док-станция USB-C, 4xUSB 3.0, 1xUSB-C/PD 3.0, 1x1000Base-T, 1xHDMI, 1xVGA, слот SD/TF/microSD, 1x3,5мм",
+            "article": "OU3390SNPD/B1",
+            "category": "Док-станции для ноутбуков",
+            "relationship": "Для подключения к Mac mini и работы с изображением",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 9300.824,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1845,
+          "cached_input_tokens": 0,
+          "output_tokens": 854,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 8967.021,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 0,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 0,
+        "diagnostics": {
+          "rejections": {
+            "conflicting_memory_type": 4
+          },
+          "eligible_candidates": 20,
+          "selected": 4,
+          "searches": [
+            {
+              "query": "процессор для настольного компьютера",
+              "product_type": "Процессор",
+              "retrieved": 6,
+              "eligible": 2,
+              "retry": false
+            },
+            {
+              "query": "материнская плата с поддержкой DDR4",
+              "product_type": "Материнская плата",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "SSD для настольного компьютера",
+              "product_type": "SSD-накопитель",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "кулер для процессора настольного ПК",
+              "product_type": "Кулер для процессора",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Процессор",
+              "query": "процессор для настольного компьютера",
+              "alternative_query": "CPU для десктопа",
+              "relationship": "Обновление и сборка компьютера; совместимость определяется сокетом материнской платы."
+            },
+            {
+              "product_type": "Материнская плата",
+              "query": "материнская плата с поддержкой DDR4",
+              "alternative_query": "материнская плата DDR4 для десктопа",
+              "relationship": "Для установки оперативной памяти; проверьте совместимость с процессором и форм-фактором корпуса."
+            },
+            {
+              "product_type": "SSD-накопитель",
+              "query": "SSD для настольного компьютера",
+              "alternative_query": "внутренний SSD SATA или M.2 для ПК",
+              "relationship": "Расширение и ускорение хранения данных."
+            },
+            {
+              "product_type": "Кулер для процессора",
+              "query": "кулер для процессора настольного ПК",
+              "alternative_query": "кулер для CPU с совместимым сокетом",
+              "relationship": "Охлаждение процессора при сборке или модернизации компьютера."
+            }
+          ],
+          "ranking_order": [
+            "542156",
+            "501930",
+            "430236",
+            "526176"
+          ],
+          "category_diversity": 3,
+          "candidate_count": 20,
+          "diversity_dropped": 1,
+          "ranking_parse_issues": 1
+        },
+        "searches": [
+          {
+            "query": "процессор для настольного компьютера",
+            "product_type": "Процессор",
+            "retrieved": 6,
+            "eligible": 2,
+            "retry": false
+          },
+          {
+            "query": "материнская плата с поддержкой DDR4",
+            "product_type": "Материнская плата",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "SSD для настольного компьютера",
+            "product_type": "SSD-накопитель",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "кулер для процессора настольного ПК",
+            "product_type": "Кулер для процессора",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 327.319,
+            "count": 24
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.329,
+            "count": 4
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "542156",
+            "name": "ASUS PRIME H610M-K D4, LGA1700, H610, 2*DDR4, 4*SATA, 1*M.2, 2*USB 3.2, 4*USB 2.0, 1*PCIx16, 1*PCIx1, HDMI+D-Sub, mATX;",
+            "article": "PRIME H610M-K D4",
+            "category": "Материнские платы",
+            "relationship": "Дополнение к товару",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "501930",
+            "name": "Внутренний твердотельный накопитель Foxline X5ST 256GB",
+            "article": "FL25625PCYS982X5ST",
+            "category": "Внутренние твердотельные накопители (SSD)",
+            "relationship": "Расширение и ускорение хранения данных.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "430236",
+            "name": "Процессор Intel Core i5-12400F OEM",
+            "article": "CM8071504650609",
+            "category": "Процессоры",
+            "relationship": "Дополнение к товару",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 1,
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "single_agent_v3_2",
+        "reason_code": "model_selected_none",
+        "execution_status": "completed_empty",
+        "failure": null,
+        "elapsed_ms": 5350.685,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1345,
+          "cached_input_tokens": 0,
+          "output_tokens": 177,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 4796.796,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 1,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 1,
+        "diagnostics": {
+          "rejections": {
+            "query_target_not_found_in_catalog": 13
+          },
+          "eligible_candidates": 11,
+          "selected": 0,
+          "searches": [
+            {
+              "query": "кассовый аппарат для малого бизнеса",
+              "product_type": "кассовые аппараты",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "термопринтер чеков для кассового места",
+              "product_type": "термопринтеры чеков",
+              "retrieved": 6,
+              "eligible": 5,
+              "retry": false
+            },
+            {
+              "query": "терминал для приема банковских карт",
+              "product_type": "терминалы оплаты",
+              "retrieved": 6,
+              "eligible": 4,
+              "retry": false
+            },
+            {
+              "query": "онлайн-касса для розничной торговли",
+              "product_type": "кассовые аппараты",
+              "retrieved": 6,
+              "eligible": 2,
+              "retry": true
+            }
+          ]
+        },
+        "searches": [
+          {
+            "query": "кассовый аппарат для малого бизнеса",
+            "product_type": "кассовые аппараты",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "термопринтер чеков для кассового места",
+            "product_type": "термопринтеры чеков",
+            "retrieved": 6,
+            "eligible": 5,
+            "retry": false
+          },
+          {
+            "query": "терминал для приема банковских карт",
+            "product_type": "терминалы оплаты",
+            "retrieved": 6,
+            "eligible": 4,
+            "retry": false
+          },
+          {
+            "query": "онлайн-касса для розничной торговли",
+            "product_type": "кассовые аппараты",
+            "retrieved": 6,
+            "eligible": 2,
+            "retry": true
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 3
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 3
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 384.369,
+            "count": 18
+          },
+          {
+            "tool": "batch_retry_retrieval",
+            "status": "ok",
+            "elapsed_ms": 162.575,
+            "count": 6
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 0
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "empty",
+            "elapsed_ms": 0.0,
+            "count": 0
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "empty",
+            "elapsed_ms": 0.022,
+            "count": 0
+          }
+        ],
+        "items": []
+      },
+      {
+        "repeat": 1,
+        "id": "526951",
+        "name": "Детектор банкнот DoCash Golf 12954 автоматический рубли",
+        "category": "Детекторы банкнот",
+        "mode": "single_agent_v3_2",
+        "reason_code": "provider_bad_request",
+        "execution_status": "provider_error",
+        "failure": "provider_bad_request",
+        "elapsed_ms": 3665.435,
+        "usage": {
+          "llm_calls": 1,
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "web_searches": 0,
+          "iterations": 1,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 0,
+          "provider_elapsed_ms": 3663.477,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 0,
+          "search_retries": 0,
+          "catalog_hits": 0
+        },
+        "llm_calls": 1,
+        "tool_calls": 0,
+        "catalog_searches": 0,
+        "search_retries": 0,
+        "diagnostics": {
+          "plan": [],
+          "failed_phase": null,
+          "invalid_response_excerpt": null,
+          "rejections": {},
+          "searches": []
+        },
+        "searches": [],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "agent_execution",
+            "status": "error",
+            "elapsed_ms": 3665.42,
+            "count": 0,
+            "error_code": "provider_bad_request"
+          }
+        ],
+        "items": []
+      },
+      {
+        "repeat": 2,
+        "id": "493495",
+        "name": "Apple Mac Mini 2024 (M4) MU9E3HN/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 4130.044,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1925,
+          "cached_input_tokens": 0,
+          "output_tokens": 359,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 3839.252,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 0,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 0,
+        "diagnostics": {
+          "rejections": {},
+          "eligible_candidates": 24,
+          "selected": 4,
+          "searches": [
+            {
+              "query": "монитор 27 дюймов 4K USB-C",
+              "product_type": "Монитор",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "клавиатура беспроводная USB-C",
+              "product_type": "Клавиатура",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "мышь беспроводная Bluetooth",
+              "product_type": "Мышь",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "внешний SSD USB-C 1 ТБ",
+              "product_type": "Внешний SSD",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Монитор",
+              "query": "монитор 27 дюймов 4K USB-C",
+              "alternative_query": "монитор 27 дюймов 4K Thunderbolt",
+              "relationship": "Для подключения к Mac mini и работы с изображением."
+            },
+            {
+              "product_type": "Клавиатура",
+              "query": "клавиатура беспроводная USB-C",
+              "alternative_query": "клавиатура Bluetooth для Mac",
+              "relationship": "Для ввода текста и управления компьютером."
+            },
+            {
+              "product_type": "Мышь",
+              "query": "мышь беспроводная Bluetooth",
+              "alternative_query": "мышь USB-C беспроводная",
+              "relationship": "Для удобного управления компьютером."
+            },
+            {
+              "product_type": "Внешний SSD",
+              "query": "внешний SSD USB-C 1 ТБ",
+              "alternative_query": "внешний SSD Thunderbolt 1 ТБ",
+              "relationship": "Для расширения хранилища и переноса файлов."
+            }
+          ],
+          "ranking_order": [
+            "504969",
+            "459614",
+            "529109",
+            "426786"
+          ],
+          "category_diversity": 3,
+          "candidate_count": 24,
+          "diversity_dropped": 1,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "монитор 27 дюймов 4K USB-C",
+            "product_type": "Монитор",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "клавиатура беспроводная USB-C",
+            "product_type": "Клавиатура",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "мышь беспроводная Bluetooth",
+            "product_type": "Мышь",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "внешний SSD USB-C 1 ТБ",
+            "product_type": "Внешний SSD",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 285.117,
+            "count": 24
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 4
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.645,
+            "count": 4
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "504969",
+            "name": "Монитор AOC U27B3CF 27.0-inch черный",
+            "article": "U27B3CF",
+            "category": "Мониторы",
+            "relationship": "Для подключения к Mac mini и работы с изображением.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "459614",
+            "name": "Клавиатура A4Tech Fstyler FBK27C AS черный USB беспроводная BT/Radio slim Multimedia (FBK27C AS)",
+            "article": "FBK27C AS",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Для ввода текста и управления компьютером.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "426786",
+            "name": "Внешний HDD Netac ZX10 1TB",
+            "article": "NT01ZX10-001T-32BK",
+            "category": "Внешние HDD",
+            "relationship": "Для расширения хранилища и переноса файлов.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "505902",
+        "name": "Apple Mac Mini 2024 (M4) MU9D3LL/A",
+        "category": "МиниПК",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 4147.686,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1804,
+          "cached_input_tokens": 0,
+          "output_tokens": 363,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 3684.312,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 0,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 0,
+        "diagnostics": {
+          "rejections": {
+            "query_target_not_found_in_catalog": 1,
+            "same_offer": 1
+          },
+          "eligible_candidates": 22,
+          "selected": 4,
+          "searches": [
+            {
+              "query": "Монитор для Mac mini Apple",
+              "product_type": "Монитор",
+              "retrieved": 6,
+              "eligible": 4,
+              "retry": false
+            },
+            {
+              "query": "Беспроводная клавиатура для Mac",
+              "product_type": "Клавиатура",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Беспроводная мышь для Mac",
+              "product_type": "Мышь",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Внешний SSD USB-C для Mac mini",
+              "product_type": "Внешний SSD",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Монитор",
+              "query": "Монитор для Mac mini Apple",
+              "alternative_query": "Монитор USB-C для компьютера",
+              "relationship": "Подключение для вывода изображения и работы с компьютером"
+            },
+            {
+              "product_type": "Клавиатура",
+              "query": "Беспроводная клавиатура для Mac",
+              "alternative_query": "Компактная Bluetooth-клавиатура",
+              "relationship": "Устройство ввода для управления компьютером"
+            },
+            {
+              "product_type": "Мышь",
+              "query": "Беспроводная мышь для Mac",
+              "alternative_query": "Bluetooth-мышь для компьютера",
+              "relationship": "Устройство ввода для управления компьютером"
+            },
+            {
+              "product_type": "Внешний SSD",
+              "query": "Внешний SSD USB-C для Mac mini",
+              "alternative_query": "Внешний накопитель SSD USB-C",
+              "relationship": "Дополнительное хранилище для файлов и резервных копий"
+            }
+          ],
+          "ranking_order": [
+            "498404",
+            "459614",
+            "521127",
+            "426778"
+          ],
+          "category_diversity": 3,
+          "candidate_count": 22,
+          "diversity_dropped": 1,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "Монитор для Mac mini Apple",
+            "product_type": "Монитор",
+            "retrieved": 6,
+            "eligible": 4,
+            "retry": false
+          },
+          {
+            "query": "Беспроводная клавиатура для Mac",
+            "product_type": "Клавиатура",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Беспроводная мышь для Mac",
+            "product_type": "Мышь",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Внешний SSD USB-C для Mac mini",
+            "product_type": "Внешний SSD",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 458.677,
+            "count": 24
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 4
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.354,
+            "count": 4
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "498404",
+            "name": "Монитор MSI MP272L 27.0-inch черный",
+            "article": "9S6-3PD6CT-008",
+            "category": "Мониторы",
+            "relationship": "Подключение для вывода изображения и работы с компьютером",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "459614",
+            "name": "Клавиатура A4Tech Fstyler FBK27C AS черный USB беспроводная BT/Radio slim Multimedia (FBK27C AS)",
+            "article": "FBK27C AS",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Устройство ввода для управления компьютером",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "426778",
+            "name": "Внешний HDD Netac Z7S 480GB",
+            "article": "NT01Z7S-480G-32BK",
+            "category": "Внешние HDD",
+            "relationship": "Дополнительное хранилище для файлов и резервных копий",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 4487.991,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 854,
+          "cached_input_tokens": 0,
+          "output_tokens": 302,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 3710.759,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 4,
+          "search_retries": 1,
+          "catalog_hits": 24
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 4,
+        "search_retries": 1,
+        "diagnostics": {
+          "rejections": {
+            "substitute_product": 19,
+            "same_offer": 1
+          },
+          "eligible_candidates": 4,
+          "selected": 1,
+          "searches": [
+            {
+              "query": "материнская плата для десктопа с поддержкой DDR4 и частоты 3200 МГц",
+              "product_type": "Материнская плата",
+              "retrieved": 6,
+              "eligible": 1,
+              "retry": false
+            },
+            {
+              "query": "процессор для настольного ПК с поддержкой памяти DDR4 3200",
+              "product_type": "Процессор",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "радиатор охлаждения для модуля оперативной памяти DDR4",
+              "product_type": "Кулер для оперативной памяти",
+              "retrieved": 6,
+              "eligible": 3,
+              "retry": false
+            },
+            {
+              "query": "процессор для десктопа DDR4 3200",
+              "product_type": "Процессор",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": true
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Материнская плата",
+              "query": "материнская плата для десктопа с поддержкой DDR4 и частоты 3200 МГц",
+              "alternative_query": "материнская плата DDR4 3200 для настольного ПК",
+              "relationship": "Обеспечивает совместимость и подключение оперативной памяти к компьютеру."
+            },
+            {
+              "product_type": "Процессор",
+              "query": "процессор для настольного ПК с поддержкой памяти DDR4 3200",
+              "alternative_query": "процессор для десктопа DDR4 3200",
+              "relationship": "Комплектующий для сборки или модернизации настольного компьютера."
+            },
+            {
+              "product_type": "Кулер для оперативной памяти",
+              "query": "радиатор охлаждения для модуля оперативной памяти DDR4",
+              "alternative_query": "охладитель для памяти DDR4 DIMM",
+              "relationship": "Дополнительное охлаждение модуля памяти при повышенной нагрузке."
+            }
+          ],
+          "ranking_order": [
+            "542156"
+          ],
+          "category_diversity": 1,
+          "candidate_count": 4,
+          "diversity_dropped": 0,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "материнская плата для десктопа с поддержкой DDR4 и частоты 3200 МГц",
+            "product_type": "Материнская плата",
+            "retrieved": 6,
+            "eligible": 1,
+            "retry": false
+          },
+          {
+            "query": "процессор для настольного ПК с поддержкой памяти DDR4 3200",
+            "product_type": "Процессор",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "радиатор охлаждения для модуля оперативной памяти DDR4",
+            "product_type": "Кулер для оперативной памяти",
+            "retrieved": 6,
+            "eligible": 3,
+            "retry": false
+          },
+          {
+            "query": "процессор для десктопа DDR4 3200",
+            "product_type": "Процессор",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": true
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 3
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 3
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 575.795,
+            "count": 18
+          },
+          {
+            "tool": "batch_retry_retrieval",
+            "status": "ok",
+            "elapsed_ms": 197.09,
+            "count": 6
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 1
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.202,
+            "count": 1
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          }
+        ],
+        "items": [
+          {
+            "id": "542156",
+            "name": "ASUS PRIME H610M-K D4, LGA1700, H610, 2*DDR4, 4*SATA, 1*M.2, 2*USB 3.2, 4*USB 2.0, 1*PCIx16, 1*PCIx1, HDMI+D-Sub, mATX;",
+            "article": "PRIME H610M-K D4",
+            "category": "Материнские платы",
+            "relationship": "Дополнение к товару",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 4531.858,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1499,
+          "cached_input_tokens": 0,
+          "output_tokens": 326,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 3787.918,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 6,
+          "search_retries": 2,
+          "catalog_hits": 36
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 6,
+        "search_retries": 2,
+        "diagnostics": {
+          "rejections": {
+            "query_target_not_found_in_catalog": 18,
+            "same_offer": 1
+          },
+          "eligible_candidates": 17,
+          "selected": 2,
+          "searches": [
+            {
+              "query": "Кассовый аппарат для магазина",
+              "product_type": "Кассовый аппарат",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "POS-терминал для розничной торговли",
+              "product_type": "POS-терминал",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Детектор подлинности банкнот автоматический",
+              "product_type": "Детектор банкнот",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "Органайзер для купюр и монет в кассу",
+              "product_type": "Органайзер для купюр и монет",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "Онлайн-касса для розничной торговли",
+              "product_type": "Кассовый аппарат",
+              "retrieved": 6,
+              "eligible": 3,
+              "retry": true
+            },
+            {
+              "query": "Лоток для сортировки наличных денег",
+              "product_type": "Органайзер для купюр и монет",
+              "retrieved": 6,
+              "eligible": 2,
+              "retry": true
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "Кассовый аппарат",
+              "query": "Кассовый аппарат для магазина",
+              "alternative_query": "Онлайн-касса для розничной торговли",
+              "relationship": "Для работы с денежным ящиком на кассе"
+            },
+            {
+              "product_type": "POS-терминал",
+              "query": "POS-терминал для розничной торговли",
+              "alternative_query": "Сенсорный POS-моноблок для кассы",
+              "relationship": "Для организации рабочего места кассира и управления денежным ящиком"
+            },
+            {
+              "product_type": "Детектор банкнот",
+              "query": "Детектор подлинности банкнот автоматический",
+              "alternative_query": "Ультрафиолетовый детектор банкнот",
+              "relationship": "Для проверки наличных перед размещением в денежном ящике"
+            },
+            {
+              "product_type": "Органайзер для купюр и монет",
+              "query": "Органайзер для купюр и монет в кассу",
+              "alternative_query": "Лоток для сортировки наличных денег",
+              "relationship": "Для удобной сортировки наличных в денежном ящике"
+            }
+          ],
+          "ranking_order": [
+            "526972",
+            "526951"
+          ],
+          "category_diversity": 1,
+          "candidate_count": 17,
+          "diversity_dropped": 1,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "Кассовый аппарат для магазина",
+            "product_type": "Кассовый аппарат",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "POS-терминал для розничной торговли",
+            "product_type": "POS-терминал",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Детектор подлинности банкнот автоматический",
+            "product_type": "Детектор банкнот",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "Органайзер для купюр и монет в кассу",
+            "product_type": "Органайзер для купюр и монет",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "Онлайн-касса для розничной торговли",
+            "product_type": "Кассовый аппарат",
+            "retrieved": 6,
+            "eligible": 3,
+            "retry": true
+          },
+          {
+            "query": "Лоток для сортировки наличных денег",
+            "product_type": "Органайзер для купюр и монет",
+            "retrieved": 6,
+            "eligible": 2,
+            "retry": true
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 447.549,
+            "count": 24
+          },
+          {
+            "tool": "batch_retry_retrieval",
+            "status": "ok",
+            "elapsed_ms": 288.746,
+            "count": 12
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 2
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.185,
+            "count": 2
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          }
+        ],
+        "items": [
+          {
+            "id": "526972",
+            "name": "Детектор банкнот Dors 200 FRZ-053199 автоматический рубли",
+            "article": "FRZ-053199",
+            "category": "Детекторы банкнот",
+            "relationship": "Для проверки наличных перед размещением в денежном ящике",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "repeat": 2,
+        "id": "526951",
+        "name": "Детектор банкнот DoCash Golf 12954 автоматический рубли",
+        "category": "Детекторы банкнот",
+        "mode": "single_agent_v3_2",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 5002.018,
+        "usage": {
+          "llm_calls": 2,
+          "input_tokens": 1023,
+          "cached_input_tokens": 0,
+          "output_tokens": 384,
+          "web_searches": 0,
+          "iterations": 2,
+          "tool_calls": 0,
+          "valid_tool_calls": 0,
+          "successful_tool_calls": 0,
+          "cache_hits": 0,
+          "cache_lookups": 0,
+          "result_cache_hits": 0,
+          "result_cache_lookups": 0,
+          "web_search_attempts": 0,
+          "external_lookups": 0,
+          "verified_facts": 0,
+          "llm_calls_with_usage": 2,
+          "provider_elapsed_ms": 4362.655,
+          "vendor_lookup_elapsed_ms": 0,
+          "web_search_elapsed_ms": 0,
+          "local_elapsed_ms": 0,
+          "validation_elapsed_ms": 0,
+          "ranking_elapsed_ms": 0,
+          "document_download_elapsed_ms": 0,
+          "extraction_elapsed_ms": 0,
+          "catalog_searches": 6,
+          "search_retries": 2,
+          "catalog_hits": 36
+        },
+        "llm_calls": 2,
+        "tool_calls": 0,
+        "catalog_searches": 6,
+        "search_retries": 2,
+        "diagnostics": {
+          "rejections": {
+            "query_target_not_found_in_catalog": 25,
+            "same_offer": 3
+          },
+          "eligible_candidates": 8,
+          "selected": 2,
+          "searches": [
+            {
+              "query": "счётчик банкнот с проверкой подлинности рублей",
+              "product_type": "счётчик банкнот",
+              "retrieved": 6,
+              "eligible": 6,
+              "retry": false
+            },
+            {
+              "query": "денежный ящик для кассы с отделениями для банкнот и монет",
+              "product_type": "кассовый денежный ящик",
+              "retrieved": 6,
+              "eligible": 2,
+              "retry": false
+            },
+            {
+              "query": "лампа для проверки подлинности банкнот ультрафиолетовая",
+              "product_type": "ультрафиолетовая лампа для проверки банкнот",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "расходные материалы для обслуживания автоматического детектора банкнот",
+              "product_type": "расходные материалы для детектора банкнот",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": false
+            },
+            {
+              "query": "ультрафиолетовый детектор банкнот",
+              "product_type": "ультрафиолетовая лампа для проверки банкнот",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": true
+            },
+            {
+              "query": "средства для чистки датчиков детектора банкнот",
+              "product_type": "расходные материалы для детектора банкнот",
+              "retrieved": 6,
+              "eligible": 0,
+              "retry": true
+            }
+          ],
+          "plan": [
+            {
+              "product_type": "счётчик банкнот",
+              "query": "счётчик банкнот с проверкой подлинности рублей",
+              "alternative_query": "счётчик купюр с детекцией подделок",
+              "relationship": "Ускоряет пересчёт и проверку наличности при кассовой работе."
+            },
+            {
+              "product_type": "кассовый денежный ящик",
+              "query": "денежный ящик для кассы с отделениями для банкнот и монет",
+              "alternative_query": "кассовый ящик для наличных денег",
+              "relationship": "Помогает организовать хранение наличности рядом с местом проверки."
+            },
+            {
+              "product_type": "ультрафиолетовая лампа для проверки банкнот",
+              "query": "лампа для проверки подлинности банкнот ультрафиолетовая",
+              "alternative_query": "ультрафиолетовый детектор банкнот",
+              "relationship": "Дополнительный способ визуальной проверки защитных признаков банкнот."
+            },
+            {
+              "product_type": "расходные материалы для детектора банкнот",
+              "query": "расходные материалы для обслуживания автоматического детектора банкнот",
+              "alternative_query": "средства для чистки датчиков детектора банкнот",
+              "relationship": "Поддерживают чистоту датчиков и надёжную работу устройства."
+            }
+          ],
+          "ranking_order": [
+            "348951",
+            "534616"
+          ],
+          "category_diversity": 2,
+          "candidate_count": 8,
+          "diversity_dropped": 0,
+          "ranking_parse_issues": 0
+        },
+        "searches": [
+          {
+            "query": "счётчик банкнот с проверкой подлинности рублей",
+            "product_type": "счётчик банкнот",
+            "retrieved": 6,
+            "eligible": 6,
+            "retry": false
+          },
+          {
+            "query": "денежный ящик для кассы с отделениями для банкнот и монет",
+            "product_type": "кассовый денежный ящик",
+            "retrieved": 6,
+            "eligible": 2,
+            "retry": false
+          },
+          {
+            "query": "лампа для проверки подлинности банкнот ультрафиолетовая",
+            "product_type": "ультрафиолетовая лампа для проверки банкнот",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "расходные материалы для обслуживания автоматического детектора банкнот",
+            "product_type": "расходные материалы для детектора банкнот",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": false
+          },
+          {
+            "query": "ультрафиолетовый детектор банкнот",
+            "product_type": "ультрафиолетовая лампа для проверки банкнот",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": true
+          },
+          {
+            "query": "средства для чистки датчиков детектора банкнот",
+            "product_type": "расходные материалы для детектора банкнот",
+            "retrieved": 6,
+            "eligible": 0,
+            "retry": true
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "planning_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "planning_complete",
+            "status": "ok",
+            "elapsed_ms": 0.004,
+            "count": 4
+          },
+          {
+            "tool": "plan_directions",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 4
+          },
+          {
+            "tool": "batch_retrieval",
+            "status": "ok",
+            "elapsed_ms": 440.065,
+            "count": 24
+          },
+          {
+            "tool": "batch_retry_retrieval",
+            "status": "ok",
+            "elapsed_ms": 193.39,
+            "count": 12
+          },
+          {
+            "tool": "ranking_start",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 1
+          },
+          {
+            "tool": "ranking_complete",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 2
+          },
+          {
+            "tool": "diversity_ranking",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.174,
+            "count": 2
+          },
+          {
+            "tool": "diversity_filter",
+            "status": "ok",
+            "elapsed_ms": 0.0,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "348951",
+            "name": "Счетчик банкнот DORS CT1040U (плохая упаковка)",
+            "article": "SYS-039183",
+            "category": "Счетчики банкнот, монет",
+            "relationship": "Ускоряет пересчёт и проверку наличности при кассовой работе.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "534616",
+            "name": "Ящик для денег Deli ET503 9x20x16 синий",
+            "article": "ET503",
+            "category": "Денежные ящики",
+            "relationship": "Помогает организовать хранение наличности рядом с местом проверки.",
+            "reason": "Товар найден в каталоге как дополнение для указанной задачи.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_run_at": "2026-11-27T22:15:48+00:00",
+  "judgments": {},
+  "summary": {
+    "v3.1": {
+      "cases": 10,
+      "covered": 9,
+      "items": 27,
+      "judged": 0,
+      "relevant": 0,
+      "relevance_precision": null,
+      "p50_ms": 8846.4,
+      "p95_ms": 10010.6,
+      "llm_calls": 47,
+      "input_tokens": 89941,
+      "output_tokens": 4692,
+      "mean_distinct_categories": 2.3,
+      "mean_category_distinctness": 0.8,
+      "repeat_candidate_set_stability": 0.5,
+      "search_retries": 11,
+      "failures": {
+        "agent_timeout": 1
+      },
+      "empty_reasons": {
+        "agent_timeout": 1
+      }
+    },
+    "v3.2": {
+      "cases": 10,
+      "covered": 8,
+      "items": 20,
+      "judged": 0,
+      "relevant": 0,
+      "relevance_precision": null,
+      "p50_ms": 4683.2,
+      "p95_ms": 9300.8,
+      "llm_calls": 19,
+      "input_tokens": 14109,
+      "output_tokens": 3545,
+      "mean_distinct_categories": 2.0,
+      "mean_category_distinctness": 0.8,
+      "repeat_candidate_set_stability": 0.5,
+      "search_retries": 6,
+      "failures": {
+        "provider_bad_request": 1
+      },
+      "empty_reasons": {
+        "model_selected_none": 1,
+        "provider_bad_request": 1
+      }
+    }
+  }
+}
