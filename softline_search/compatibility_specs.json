@@ -93,11 +93,43 @@
     "type": "laptop",
     "vendor": "ASUS",
     "article": "90NX0801-M00EU0",
-    "model": "ExpertBook B1 B1503CVA",
+    "model": "B1503CVA",
+    "chassis_model": "B1503CVA",
+    "identity_source": "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+    "identity_evidence": "XML SKU 90NX0801-M00EU0 specifies B1503CVA (Core 5 150U). ASUS lists this CPU in the exact B1503CVA column.",
     "dimensions_mm": [359.5, 232.2, 19.9],
     "diagonal_inches": 15.6,
-    "checked_at": "2026-11-26",
+    "evidence_text": "B1503CVA, Dimensions (W x D x H): 35.95 x 23.22 x 1.99 ~ 1.99 cm",
+    "checked_at": "2026-11-27",
     "source": "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/"
+  },
+  {
+    "type": "laptop",
+    "vendor": "ASUS",
+    "article": "90NB14W1-M01Z50",
+    "model": "UX3405CA-ST1336",
+    "chassis_model": "UX3405CA",
+    "identity_source": "https://tula.technopark.ru/noutbuk-asus-zenbook-14-ux3405ca-st1336-826427/description/",
+    "identity_evidence": "XML and the SKU card identify 90NB14W1-M01Z50 as UX3405CA-ST1336. The vendor table names its UX3405CA chassis and lists UX3405MA separately.",
+    "dimensions_mm": [312.4, 220.1, 14.9],
+    "diagonal_inches": 14,
+    "evidence_text": "UX3405CA, Dimensions (W x D x H): 31.24 x 22.01 x 1.49 ~ 1.49 cm",
+    "checked_at": "2026-11-27",
+    "source": "https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-ux3405/techspec/"
+  },
+  {
+    "type": "laptop",
+    "vendor": "ASUS",
+    "article": "90NB10N3-M02KZ0",
+    "model": "X1605VA-MB2106",
+    "chassis_model": "X1605VA",
+    "identity_source": "https://ekaterinburg.technopark.ru/noutbuk-asus-vivobook-16-x1605va-mb2106-90nb10n3-m02kz0-803307/description/",
+    "identity_evidence": "The SKU card links 90NB10N3-M02KZ0 to X1605VA-MB2106 and a depth of 249.5 mm. Both official X1605VA columns agree on width and depth. The tallest documented chassis configuration sets the safe thickness.",
+    "dimensions_mm": [358.7, 249.5, 20.35],
+    "diagonal_inches": 16,
+    "evidence_text": "X1605VA: 幅358.7mm×奥行き249.5mm×高さ19.9～20.35mm",
+    "checked_at": "2026-11-27",
+    "source": "https://www.asus.com/jp/laptops/for-home/vivobook/vivobook-16-oled-x1605/techspec/"
   },
   {
     "type": "notebook_bag",
@@ -160,5 +192,23 @@
     "desktop_device_limit": 6,
     "checked_at": "2026-11-26",
     "source": "https://support.mobisystems.com/hc/en-us/articles/23129166580893-How-to-Purchase-a-MobiOffice-Premium-for-Teams-Subscription-and-Assign-Seats"
+  },
+  {
+    "type": "antivirus_business",
+    "vendor": "PRO32",
+    "articles": [
+      "PRO32-PUS-EKEY-2Y-3-NS-RU-AKS",
+      "PRO32-PUS-EKEY-3Y-1-NS-RU-AKS",
+      "PRO32-PUS-EKEY-3Y-3-NS-RU-AKS",
+      "PRO32-PUS-EKEY-5Y-1-NS-RU-AKS"
+    ],
+    "model": "PRO32 Office Security Base",
+    "workstation_protection": true,
+    "platforms": ["windows", "windows 10", "windows 11"],
+    "minimum_purchase_required": true,
+    "identity_source": "https://store.softline.ru/pro32/pro32-office-security-base/",
+    "evidence_text": "The vendor documents workstation protection and Windows 10/11. Its sales page offers bundles from five devices, leaving the smaller Softline SKUs' minimum order and unit price unverified.",
+    "checked_at": "2026-11-27",
+    "source": "https://pro32.com/ru/business/pro32-antivirus/office-security-base/"
   }
 ]

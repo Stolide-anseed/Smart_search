@@ -1,0 +1,3975 @@
+{
+  "catalog_cases": 118,
+  "before": {
+    "by_scenario": {
+      "ups_battery/default": {
+        "tested": 25,
+        "covered": 3,
+        "coverage": 0.12,
+        "available_covered": 3,
+        "available_coverage": 0.12,
+        "mean_recommendations": 0.12,
+        "p50_ms": 0.0144999999065476,
+        "p95_ms": 0.12759999981426517,
+        "max_ms": 0.1658000001043547,
+        "empty_reason_counts": {
+          "battery_not_in_catalog": 9,
+          "missing_battery_reference": 13
+        },
+        "candidate_reason_counts": {}
+      },
+      "laptop_bag/default": {
+        "tested": 43,
+        "covered": 24,
+        "coverage": 0.5581395348837209,
+        "available_covered": 24,
+        "available_coverage": 0.5581395348837209,
+        "mean_recommendations": 0.8372093023255814,
+        "p50_ms": 0.15989999997145787,
+        "p95_ms": 0.41550000014467514,
+        "max_ms": 0.5465000001549924,
+        "empty_reason_counts": {
+          "missing_laptop_dimensions": 19
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/default": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.3333333333333333,
+        "p50_ms": 0.04579999995257822,
+        "p95_ms": 6.601999999929831,
+        "max_ms": 6.601999999929831,
+        "empty_reason_counts": {
+          "conflicting_facts": 1,
+          "unknown_license_capacity": 3,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows": {
+        "tested": 6,
+        "covered": 2,
+        "coverage": 0.3333333333333333,
+        "available_covered": 2,
+        "available_coverage": 0.3333333333333333,
+        "mean_recommendations": 0.6666666666666666,
+        "p50_ms": 0.06419999999707215,
+        "p95_ms": 5.7993999998871,
+        "max_ms": 5.7993999998871,
+        "empty_reason_counts": {
+          "unknown_license_capacity": 4
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/one_device": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.3333333333333333,
+        "p50_ms": 3.698700000086319,
+        "p95_ms": 5.961099999922226,
+        "max_ms": 5.961099999922226,
+        "empty_reason_counts": {
+          "conflicting_facts": 4,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows_one": {
+        "tested": 6,
+        "covered": 6,
+        "coverage": 1.0,
+        "available_covered": 6,
+        "available_coverage": 1.0,
+        "mean_recommendations": 2,
+        "p50_ms": 5.609400000139431,
+        "p95_ms": 6.257100000084392,
+        "max_ms": 6.257100000084392,
+        "empty_reason_counts": {},
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows_ten": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.3333333333333333,
+        "p50_ms": 0.1754999998411222,
+        "p95_ms": 5.138400000078036,
+        "max_ms": 5.138400000078036,
+        "empty_reason_counts": {
+          "conflicting_context": 5
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/foreign_os": {
+        "tested": 6,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.08389999993596575,
+        "p95_ms": 0.3193999998529762,
+        "max_ms": 0.3193999998529762,
+        "empty_reason_counts": {
+          "conflicting_context": 5,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/conflict": {
+        "tested": 6,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.06769999981770525,
+        "p95_ms": 0.09510000018053688,
+        "max_ms": 0.09510000018053688,
+        "empty_reason_counts": {
+          "conflicting_context": 6
+        },
+        "candidate_reason_counts": {}
+      },
+      "None/default": {
+        "tested": 8,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.013000000080864993,
+        "p95_ms": 0.021400000150606502,
+        "max_ms": 0.021400000150606502,
+        "empty_reason_counts": {
+          "unsupported_scenario": 8
+        },
+        "candidate_reason_counts": {}
+      }
+    },
+    "overall": {
+      "tested": 118,
+      "covered": 38,
+      "coverage": 0.3220338983050847,
+      "available_covered": 38,
+      "available_coverage": 0.3220338983050847,
+      "mean_recommendations": 0.5169491525423728,
+      "p50_ms": 0.1440000000911823,
+      "p95_ms": 5.630999999993946,
+      "max_ms": 6.601999999929831,
+      "empty_reason_counts": {
+        "battery_not_in_catalog": 9,
+        "missing_battery_reference": 13,
+        "missing_laptop_dimensions": 19,
+        "conflicting_context": 16,
+        "conflicting_facts": 5,
+        "unknown_license_capacity": 7,
+        "missing_platform": 3,
+        "unsupported_scenario": 8
+      },
+      "candidate_reason_counts": {}
+    },
+    "quality": {
+      "tested": 36,
+      "scenario_matches": 36,
+      "scenario_accuracy": 1.0,
+      "true_positives": 27,
+      "false_positives": 0,
+      "unjudged": 0,
+      "precision": 1.0,
+      "known_reference_pairs": 34,
+      "reference_pair_recall": 0.7941176470588235,
+      "cases": [
+        {
+          "anchor": "82106",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "129441"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "82167",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "321853"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "82183",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "129441"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "436655",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501535",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501525",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501853",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "489135",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "495888",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "529722",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852",
+            "399141"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "foreign_os",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "conflict",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481907",
+          "context": "windows",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852",
+            "399141"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481908",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "455798",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "536399",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "315175",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "195981",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473585",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "492158",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "460304",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498146",
+            "498147"
+          ]
+        },
+        {
+          "anchor": "475627",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498146",
+            "498147"
+          ]
+        },
+        {
+          "anchor": "82161",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "533072",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501702",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "529712",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481909",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481910",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "195982",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "536400",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "530901",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498146",
+            "498147"
+          ]
+        },
+        {
+          "anchor": "496397",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498147"
+          ]
+        },
+        {
+          "anchor": "538620",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "windows_one",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852",
+            "399141"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "by_scenario": {
+      "ups_battery/default": {
+        "tested": 25,
+        "covered": 3,
+        "coverage": 0.12,
+        "available_covered": 3,
+        "available_coverage": 0.12,
+        "mean_recommendations": 0.12,
+        "p50_ms": 0.0168999977177009,
+        "p95_ms": 0.12940000306116417,
+        "max_ms": 0.16869999672053382,
+        "empty_reason_counts": {
+          "battery_not_in_catalog": 9,
+          "missing_battery_reference": 13
+        },
+        "candidate_reason_counts": {}
+      },
+      "laptop_bag/default": {
+        "tested": 43,
+        "covered": 26,
+        "coverage": 0.6046511627906976,
+        "available_covered": 26,
+        "available_coverage": 0.6046511627906976,
+        "mean_recommendations": 0.9069767441860465,
+        "p50_ms": 0.1201999984914437,
+        "p95_ms": 0.21279999782564119,
+        "max_ms": 0.5223999978625216,
+        "empty_reason_counts": {
+          "missing_laptop_dimensions": 17
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/default": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.16666666666666666,
+        "p50_ms": 0.040599996282253414,
+        "p95_ms": 5.817699995532166,
+        "max_ms": 5.817699995532166,
+        "empty_reason_counts": {
+          "conflicting_facts": 1,
+          "unknown_license_capacity": 3,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows": {
+        "tested": 6,
+        "covered": 2,
+        "coverage": 0.3333333333333333,
+        "available_covered": 2,
+        "available_coverage": 0.3333333333333333,
+        "mean_recommendations": 0.3333333333333333,
+        "p50_ms": 0.04810000245925039,
+        "p95_ms": 4.2468000028748065,
+        "max_ms": 4.2468000028748065,
+        "empty_reason_counts": {
+          "unknown_license_capacity": 4
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/one_device": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.16666666666666666,
+        "p50_ms": 2.4455000020680018,
+        "p95_ms": 3.4778000044752844,
+        "max_ms": 3.4778000044752844,
+        "empty_reason_counts": {
+          "conflicting_facts": 4,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows_one": {
+        "tested": 6,
+        "covered": 6,
+        "coverage": 1.0,
+        "available_covered": 6,
+        "available_coverage": 1.0,
+        "mean_recommendations": 1,
+        "p50_ms": 5.128999997396022,
+        "p95_ms": 6.869900003948715,
+        "max_ms": 6.869900003948715,
+        "empty_reason_counts": {},
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/windows_ten": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.16666666666666666,
+        "p50_ms": 0.15029999485705048,
+        "p95_ms": 2.9910000012023374,
+        "max_ms": 2.9910000012023374,
+        "empty_reason_counts": {
+          "conflicting_context": 5
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/foreign_os": {
+        "tested": 6,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.07670000195503235,
+        "p95_ms": 0.12480000441428274,
+        "max_ms": 0.12480000441428274,
+        "empty_reason_counts": {
+          "conflicting_context": 5,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus/conflict": {
+        "tested": 6,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.06330000178422779,
+        "p95_ms": 0.10940000356640667,
+        "max_ms": 0.10940000356640667,
+        "empty_reason_counts": {
+          "conflicting_context": 6
+        },
+        "candidate_reason_counts": {}
+      },
+      "None/default": {
+        "tested": 8,
+        "covered": 0,
+        "coverage": 0.0,
+        "available_covered": 0,
+        "available_coverage": 0.0,
+        "mean_recommendations": 0,
+        "p50_ms": 0.010200004908256233,
+        "p95_ms": 0.015100005839485675,
+        "max_ms": 0.015100005839485675,
+        "empty_reason_counts": {
+          "unsupported_scenario": 8
+        },
+        "candidate_reason_counts": {}
+      }
+    },
+    "overall": {
+      "tested": 118,
+      "covered": 40,
+      "coverage": 0.3389830508474576,
+      "available_covered": 40,
+      "available_coverage": 0.3389830508474576,
+      "mean_recommendations": 0.4491525423728814,
+      "p50_ms": 0.10080000356538221,
+      "p95_ms": 4.2468000028748065,
+      "max_ms": 6.869900003948715,
+      "empty_reason_counts": {
+        "battery_not_in_catalog": 9,
+        "missing_battery_reference": 13,
+        "missing_laptop_dimensions": 17,
+        "conflicting_context": 16,
+        "conflicting_facts": 5,
+        "unknown_license_capacity": 7,
+        "missing_platform": 3,
+        "unsupported_scenario": 8
+      },
+      "candidate_reason_counts": {}
+    },
+    "quality": {
+      "tested": 36,
+      "scenario_matches": 36,
+      "scenario_accuracy": 1.0,
+      "true_positives": 27,
+      "false_positives": 0,
+      "unjudged": 0,
+      "precision": 1.0,
+      "known_reference_pairs": 34,
+      "reference_pair_recall": 0.7941176470588235,
+      "cases": [
+        {
+          "anchor": "82106",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "129441"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "82167",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "321853"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "82183",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "129441"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "436655",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501535",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501525",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501853",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "489135",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "495888",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "529722",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "399141"
+          ]
+        },
+        {
+          "anchor": "473582",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "foreign_os",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "conflict",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481907",
+          "context": "windows",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "399141"
+          ]
+        },
+        {
+          "anchor": "481908",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "455798",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "536399",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "315175",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "195981",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473585",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "492158",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "460304",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498146",
+            "498147"
+          ]
+        },
+        {
+          "anchor": "475627",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "498146",
+            "498147"
+          ]
+        },
+        {
+          "anchor": "82161",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "533072",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "501702",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "529712",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481909",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "481910",
+          "context": "windows_ten",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "195982",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "536400",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "530901",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "496397",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "538620",
+          "context": "default",
+          "scenario_correct": true,
+          "confirmed": [
+            "498146",
+            "498147"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": []
+        },
+        {
+          "anchor": "473582",
+          "context": "windows_one",
+          "scenario_correct": true,
+          "confirmed": [
+            "398852"
+          ],
+          "incompatible": [],
+          "unjudged": [],
+          "missed_reference_pairs": [
+            "399141"
+          ]
+        }
+      ]
+    }
+  },
+  "anchor_default": {
+    "before": {
+      "laptop_bag": {
+        "tested": 43,
+        "covered": 24,
+        "coverage": 0.5581395348837209,
+        "available_covered": 24,
+        "available_coverage": 0.5581395348837209,
+        "mean_recommendations": 0.8372093023255814,
+        "p50_ms": 0.15989999997145787,
+        "p95_ms": 0.41550000014467514,
+        "max_ms": 0.5465000001549924,
+        "empty_reason_counts": {
+          "missing_laptop_dimensions": 19
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.3333333333333333,
+        "p50_ms": 0.04579999995257822,
+        "p95_ms": 6.601999999929831,
+        "max_ms": 6.601999999929831,
+        "empty_reason_counts": {
+          "conflicting_facts": 1,
+          "unknown_license_capacity": 3,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "ups_battery": {
+        "tested": 25,
+        "covered": 3,
+        "coverage": 0.12,
+        "available_covered": 3,
+        "available_coverage": 0.12,
+        "mean_recommendations": 0.12,
+        "p50_ms": 0.0144999999065476,
+        "p95_ms": 0.12759999981426517,
+        "max_ms": 0.1658000001043547,
+        "empty_reason_counts": {
+          "battery_not_in_catalog": 9,
+          "missing_battery_reference": 13
+        },
+        "candidate_reason_counts": {}
+      }
+    },
+    "after": {
+      "laptop_bag": {
+        "tested": 43,
+        "covered": 26,
+        "coverage": 0.6046511627906976,
+        "available_covered": 26,
+        "available_coverage": 0.6046511627906976,
+        "mean_recommendations": 0.9069767441860465,
+        "p50_ms": 0.1201999984914437,
+        "p95_ms": 0.21279999782564119,
+        "max_ms": 0.5223999978625216,
+        "empty_reason_counts": {
+          "missing_laptop_dimensions": 17
+        },
+        "candidate_reason_counts": {}
+      },
+      "office_antivirus": {
+        "tested": 6,
+        "covered": 1,
+        "coverage": 0.16666666666666666,
+        "available_covered": 1,
+        "available_coverage": 0.16666666666666666,
+        "mean_recommendations": 0.16666666666666666,
+        "p50_ms": 0.040599996282253414,
+        "p95_ms": 5.817699995532166,
+        "max_ms": 5.817699995532166,
+        "empty_reason_counts": {
+          "conflicting_facts": 1,
+          "unknown_license_capacity": 3,
+          "missing_platform": 1
+        },
+        "candidate_reason_counts": {}
+      },
+      "ups_battery": {
+        "tested": 25,
+        "covered": 3,
+        "coverage": 0.12,
+        "available_covered": 3,
+        "available_coverage": 0.12,
+        "mean_recommendations": 0.12,
+        "p50_ms": 0.0168999977177009,
+        "p95_ms": 0.12940000306116417,
+        "max_ms": 0.16869999672053382,
+        "empty_reason_counts": {
+          "battery_not_in_catalog": 9,
+          "missing_battery_reference": 13
+        },
+        "candidate_reason_counts": {}
+      }
+    }
+  },
+  "after_rows": [
+    {
+      "anchor": "82106",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.16869999672053382,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "129441",
+          "article": "APCRBC141",
+          "available": true,
+          "has_price": true,
+          "reason": "Для ИБП указана сменная батарея RBC141. Ей соответствует артикул APCRBC141.",
+          "sources": [
+            "XML param"
+          ],
+          "total_price": "37950"
+        }
+      ]
+    },
+    {
+      "anchor": "82161",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.12940000306116417,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "82165",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.027499998395796865,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "82167",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.04629999602911994,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "321853",
+          "article": "APCRBC117",
+          "available": true,
+          "has_price": true,
+          "reason": "Для ИБП указана сменная батарея RBC117. Ей соответствует артикул APCRBC117.",
+          "sources": [
+            "XML param"
+          ],
+          "total_price": "55204"
+        }
+      ]
+    },
+    {
+      "anchor": "82183",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.03130000550299883,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "129441",
+          "article": "APCRBC141",
+          "available": true,
+          "has_price": true,
+          "reason": "Для ИБП указана сменная батарея RBC141. Ей соответствует артикул APCRBC141.",
+          "sources": [
+            "XML param"
+          ],
+          "total_price": "37950"
+        }
+      ]
+    },
+    {
+      "anchor": "82185",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.021700005163438618,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "82186",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.018900005670730025,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "82187",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.017499995010439306,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "107242",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.0168999977177009,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "320181",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.016699996194802225,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "320182",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.013900003978051245,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "320184",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.016000005416572094,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "320223",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.015000005078036338,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "321834",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.01200000406242907,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "321837",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.013600001693703234,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "440720",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.01359999441774562,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "484504",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.01889999839477241,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "486895",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.01670000347075984,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "531525",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.016099998902063817,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "531526",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.01359999441774562,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "533089",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.019700004486367106,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "536079",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.014899997040629387,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "538243",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.014900004316587001,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "538492",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.04230000195093453,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "539554",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "UNKNOWN",
+      "reason_code": "missing_battery_reference",
+      "latency_ms": 0.01920000067912042,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "436655",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.5223999978625216,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,3 × 235 × 17,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/IdeaPad/IdeaPad_Slim_3_15IRU8?tab=spec",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,3 × 235 × 17,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/IdeaPad/IdeaPad_Slim_3_15IRU8?tab=spec",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "460304",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.21279999782564119,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "475627",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.11139999696752056,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "476180",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.11819999781437218,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G6_IRL/ThinkBook_16_G6_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "489135",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.11800000356743112,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "491771",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.09889999637380242,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "495888",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.16029999824240804,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "496397",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.16379999578930438,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 358,7 × 249,5 × 20,35 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/jp/laptops/for-home/vivobook/vivobook-16-oled-x1605/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "496935",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.15420000272570178,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "496936",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.13939999917056412,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "498152",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.10570000449661165,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "498943",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.0931999966269359,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "501525",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.12259999493835494,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501526",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.13300000136950985,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501527",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.14870000450173393,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501535",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.1201999984914437,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501536",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.09789999603526667,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501537",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.19850000535370782,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501538",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.12579999747686088,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501702",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.1157000006060116,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501743",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.11000000085914508,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501745",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.11660000018309802,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501747",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.09919999865815043,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "501826",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.18599999748403206,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_14_G8_IRL/ThinkBook_14_G8_IRL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "501853",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.2691000045160763,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G8_IAL/ThinkBook_16_G8_IAL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "503322",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.18730000010691583,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G8_IAL/ThinkBook_16_G8_IAL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "504202",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.1905999961309135,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "504258",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.16650000179652125,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "504261",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.14540000120177865,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "509909",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.12229999992996454,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "529712",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.14109999756328762,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "529720",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.12449999485397711,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 313,5 × 224 × 17,5 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "529722",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.10930000280495733,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356,1 × 247,7 × 20,2 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_AMD/ThinkPad_E16_Gen_2_AMD_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "530901",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.1157000006060116,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 312,4 × 220,1 × 14,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-ux3405/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 312,4 × 220,1 × 14,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-ux3405/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "530949",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.10469999688211828,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "531179",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.10080000356538221,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkBook/ThinkBook_16_G8_IAL/ThinkBook_16_G8_IAL_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "532884",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.09870000212686136,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "533072",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.10520000068936497,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 356,1 × 247,7 × 20,2 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_Intel/ThinkPad_E16_Gen_2_Intel_Spec.pdf",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        }
+      ]
+    },
+    {
+      "anchor": "538620",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.12749999586958438,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ],
+          "total_price": "1356"
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ],
+          "total_price": "3434"
+        }
+      ]
+    },
+    {
+      "anchor": "539400",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.10949999705189839,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "539692",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.11970000196015462,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "541348",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.09979999595088884,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "541868",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.09900000441120937,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "473582",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 5.817699995532166,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 3.3497999975224957,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 3.333200002089143,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 5.128999997396022,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.15029999485705048,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "473582",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.08740000339457765,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "473582",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.08799999341135845,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481907",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "conflicting_facts",
+      "latency_ms": 2.15829999797279,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481907",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 4.2468000028748065,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "481907",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "conflicting_facts",
+      "latency_ms": 2.503100004105363,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481907",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 6.869900003948715,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "481907",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.3913000036845915,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481907",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.12480000441428274,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481907",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.10940000356640667,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.06489999941550195,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.08309999975608662,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "conflicting_facts",
+      "latency_ms": 3.4778000044752844,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 6.616700004087761,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "481908",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.1353999978164211,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.06990000110818073,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481908",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.05860000237589702,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.039200000173877925,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.0467000063508749,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "conflicting_facts",
+      "latency_ms": 2.2354999964591116,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 3.3161000028485432,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "481909",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.08620000153314322,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.06269999721553177,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481909",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.05570000212173909,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.040599996282253414,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.04130000161239877,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "conflicting_facts",
+      "latency_ms": 2.4455000020680018,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 5.340899995644577,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "481910",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.22119999630376697,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.07670000195503235,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "481910",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.06330000178422779,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "520468",
+      "context": "default",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "missing_platform",
+      "latency_ms": 0.03380000271135941,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "520468",
+      "context": "windows",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "unknown_license_capacity",
+      "latency_ms": 0.04810000245925039,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "520468",
+      "context": "one_device",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "missing_platform",
+      "latency_ms": 0.030399998649954796,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "520468",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 3.5073000035481527,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "15750"
+        }
+      ]
+    },
+    {
+      "anchor": "520468",
+      "context": "windows_ten",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 2.9910000012023374,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398857",
+          "article": "PRO32-PSA-CLS-1Y-10-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 10 ПК, требуется 10. Условие продажи по каталогу — юридическое лицо.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ],
+          "total_price": "31500"
+        }
+      ]
+    },
+    {
+      "anchor": "520468",
+      "context": "foreign_os",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "UNKNOWN",
+      "reason_code": "missing_platform",
+      "latency_ms": 0.09999999747378752,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "520468",
+      "context": "conflict",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "REJECTED",
+      "reason_code": "conflicting_context",
+      "latency_ms": 0.06669999856967479,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "455798",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.015100005839485675,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "536399",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.011799995263572782,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "315175",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.009900002623908222,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "195981",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.011000003723893315,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "473585",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.014900004316587001,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "492158",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.010200004908256233,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "195982",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.009800001862458885,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "536400",
+      "context": "default",
+      "expected_scenario": null,
+      "scenario_id": null,
+      "status": "REJECTED",
+      "reason_code": "unsupported_scenario",
+      "latency_ms": 0.008900002285372466,
+      "mode": null,
+      "fallback_reason": null,
+      "execution_status": null,
+      "outcome_code": null,
+      "origins": [],
+      "usage": {},
+      "tools": [],
+      "items": []
+    }
+  ]
+}

@@ -49,6 +49,9 @@ _OFFICE_OTHER = re.compile(r"\b(?:mdm|виртуальн\w+\s+офис|add[- ]?i
 _PROTECTED_SUITE = re.compile(r"(?:офис|office)\s*[+]\s*антивирус|\b(?:включает|в составе)\s+(?:\w+\s+){0,3}антивирус")
 _FULL = {"полная версия", "новая продажа", "full", "base", "новая лицензия"}
 _BUSINESS = {"юрлицо", "юридическое лицо", "юридические лица", "для юридических лиц", "для организаций"}
+_BUSINESS_BUYER = re.compile(r"\b(?:юрлиц\w*|юридическ\w+\s+лиц\w*|b2b|для организации)\b")
+_PRIVATE_BUYER = re.compile(r"\b(?:b2c|частн\w+\s+покупател\w*)\b")
+_PRO32_ENDPOINT = re.compile(r"\bpro32 endpoint security (standard|advanced)\b")
 _OPERATORS = {"eq": eq, "ne": ne, "ge": ge, "gt": gt, "le": le, "lt": lt}
 
 
@@ -58,12 +61,12 @@ class Capacity:
     package: int | None
     lower: int
     upper: int
-    minimum_purchase: int
+    minimum_purchase: int | None
     per_unit: bool
     extra_units: bool
 
     def allocation(self, devices: int) -> tuple[int, int] | None:
-        if self.unit not in {"device", "node"}:
+        if self.unit not in {"device", "node"} or self.minimum_purchase is None:
             return None
         if self.per_unit:
             quantity = max(devices, self.lower, self.minimum_purchase)
@@ -88,6 +91,7 @@ class LicenseFacts:
     customer_types: tuple[str, ...]
     purpose: tuple[str, ...]
     term_months: int | None
+    edition_level: int | None = None
 
     @property
     def devices(self) -> int | None:
@@ -99,6 +103,11 @@ class LicenseFacts:
 class EndpointContext:
     platforms: tuple[tuple[str, ...], ...]
     devices: int
+    buyer: str = ""
+    term_conditions: tuple[Condition, ...] = ()
+
+    def supports_term(self, months: int) -> bool:
+        return all(_OPERATORS[condition.operator](months, condition.value) for condition in self.term_conditions)
 
 
 def _platform_text(value: str) -> str:
@@ -223,12 +232,18 @@ def _capacity(fields: Fields, specs: list[dict]) -> Fact[Capacity]:
     minimum_words = fields.values("минимальная покупка", "минимальный объем покупки", "минимальный объем заказа")
     minima = {int(match[1]) for value in minimum_words if (match := re.match(r"(?:(?:от|минимум)\s+)?([1-9]\d*)", value))}
     minima.update(int(match[1]) for match in _MINIMUM.finditer(fields.title))
+    official_minima = {int(spec["minimum_purchase"]) for spec in specs if spec.get("minimum_purchase")}
+    if official_minima:
+        minima = official_minima
     if len(minima) > 1:
         return Fact(sources=(*fact.sources, "XML минимальная покупка"), conflict=True)
-    minimum_purchase = next(iter(minima), 1)
     price_terms = fields.values("единица цены", "условия покупки", "цена указана")
     per_unit = any(value in {"за устройство", "за узел", "за 1 устройство", "за 1 узел"} or _PER_UNIT.search(value)
                    for value in (*price_terms, fields.title))
+    needs_proof = per_unit or any(spec.get("minimum_purchase_required") is True for spec in specs)
+    minimum_purchase = next(iter(minima), None if needs_proof else 1)
+    if per_unit and minimum_purchase is not None and minimum_purchase > upper:
+        return Fact(sources=(*fact.sources, "XML минимальная покупка"), conflict=True)
     extra = any(value in {"да", "разрешено"} for value in fields.values("возможность дозакупки", "дополнительные единицы"))
     capacity = Capacity(unit, lower if lower == upper and not per_unit else None, lower, upper, minimum_purchase,
                         per_unit, extra)
@@ -251,11 +266,14 @@ def office_scope(fields: Fields, known_taxonomy: bool) -> tuple[bool, str]:
     return False, "not_office_suite"
 
 
-def is_new_endpoint_license(fields: Fields) -> Validation:
+def is_new_endpoint_license(fields: Fields, specs: tuple[dict, ...] | list[dict] = ()) -> Validation:
     purposes = fields.values("назначение", "тип защиты", "тип программного обеспечения")
     purpose = " ".join(purposes)
     role = " ".join((fields.title, fields.model, purpose))
-    if not _WORKSTATIONS.search(role) or (_SERVER_PURPOSE.search(role) and not _WORKSTATION_PURPOSE.search(role)):
+    workstation_sources = tuple(spec["source"] for spec in specs if spec.get("workstation_protection") is True)
+    if not (_WORKSTATIONS.search(role) or workstation_sources) or (
+        _SERVER_PURPOSE.search(role) and not _WORKSTATION_PURPOSE.search(role)
+    ):
         return Validation(Status.REJECTED, "not_workstation_protection")
     customers = fields.values("пользователь", "тип клиента")
     organizations = fields.values("тип организации")
@@ -268,12 +286,15 @@ def is_new_endpoint_license(fields: Fields) -> Validation:
         return Validation(Status.REJECTED, "incompatible_license_type")
     if not kinds:
         return Validation(Status.UNKNOWN, "incompatible_license_type", missing=("license_type",))
-    return Validation(Status.CONFIRMED, "eligible_license")
+    return Validation(Status.CONFIRMED, "eligible_license", sources=workstation_sources)
 
 
 def read_license_facts(fields: Fields, specs: list[dict], *, office: bool = False) -> LicenseFacts:
-    term = resolve([(int(match[1]), source) for value, source in fields.evidence("срок действия", "срок лицензии")
-                    if (match := re.fullmatch(r"([1-9]\d*)\s*(?:мес\.?|месяц\w*)", value))])
+    term = resolve([
+        (int(match[1]) * (12 if match[2] in {"год", "года", "лет"} else 1), source)
+        for value, source in fields.evidence("срок действия", "срок лицензии")
+        if (match := re.fullmatch(r"([1-9]\d*)\s*(мес\.?|месяц\w*|год|года|лет)", value))
+    ])
     platforms, unsupported = _platform_fact(fields, specs)
     complete = (any("platforms" in spec for spec in specs)
                 or not _MULTIPLATFORM.search(fields.title)
@@ -281,10 +302,11 @@ def read_license_facts(fields: Fields, specs: list[dict], *, office: bool = Fals
     return LicenseFacts(
         platforms, unsupported, complete, _capacity(fields, specs),
         resolve([], spec_values(specs, "desktop_device_limit", int)),
-        Validation(Status.CONFIRMED, "office_package") if office else is_new_endpoint_license(fields),
+        Validation(Status.CONFIRMED, "office_package") if office else is_new_endpoint_license(fields, specs),
         tuple(dict.fromkeys(fields.values("тип лицензии", "тип покупки"))),
         tuple(dict.fromkeys(fields.values("тип клиента", "пользователь", "тип организации"))),
         tuple(dict.fromkeys(fields.values("назначение", "тип защиты"))), term.value,
+        {"standard": 1, "advanced": 2}[edition[1]] if (edition := _PRO32_ENDPOINT.search(fields.title)) else None,
     )
 
 
@@ -385,8 +407,6 @@ def _requested_devices(conditions: tuple[Condition, ...], known: LicenseFacts):
 
 def endpoint_requirements(known: LicenseFacts, query: ParsedQuery | None, filters: tuple[Condition, ...]):
     text = query.normalized if query else ""
-    if _CONSUMER_ONLY.search(text):
-        return Validation(Status.REJECTED, "restricted_customer")
     if _OTHER_PURCHASE.search(text):
         return Validation(Status.REJECTED, "incompatible_license_type")
     unresolved = tuple(name for name, fact in (("platform", known.platforms), ("devices", known.capacity))
@@ -395,6 +415,12 @@ def endpoint_requirements(known: LicenseFacts, query: ParsedQuery | None, filter
         return Validation(Status.UNKNOWN, "conflicting_facts",
                           sources=(*known.platforms.sources, *known.capacity.sources))
     required = tuple(condition for condition in (query.conditions if query else ()) if condition.required) + filters
+    buyers = {normalized(cond.value) for cond in required
+              if cond.field == "customer_type" and cond.operator == "eq" and isinstance(cond.value, str)}
+    private = bool(buyers & {"b2c", "физлицо"} or _CONSUMER_ONLY.search(text) or _PRIVATE_BUYER.search(text))
+    business = bool(buyers & {"b2b", *_BUSINESS} or _BUSINESS_BUYER.search(text))
+    if private:
+        return Validation(Status.REJECTED, "conflicting_context" if business else "restricted_customer")
     if (not any(cond.field == "devices" for cond in required)
             and any(cond.field == "users" for cond in required)):
         return Validation(Status.UNKNOWN, "unknown_license_capacity", missing=("devices",))
@@ -412,7 +438,9 @@ def endpoint_requirements(known: LicenseFacts, query: ParsedQuery | None, filter
         return Validation(Status.REJECTED, "conflicting_context",
                           facts={"desktop_limit": desktop_limit, "required_devices": devices},
                           sources=known.desktop_limit.sources)
-    return EndpointContext(platforms, devices)
+    return EndpointContext(platforms, devices, "business" if business else "",
+                           tuple(cond for cond in required if cond.field == "term_months"
+                                 and isinstance(cond.value, Decimal) and cond.value.is_finite()))
 
 
 def endpoint_preference_count(facts: LicenseFacts, preferences: tuple[Condition, ...]) -> int:
@@ -426,4 +454,7 @@ def endpoint_preference_count(facts: LicenseFacts, preferences: tuple[Condition,
         elif condition.field == "devices" and facts.devices is not None and isinstance(condition.value, Decimal):
             if condition.value.is_finite():
                 score += _OPERATORS[condition.operator](facts.devices, condition.value)
+        elif condition.field == "term_months" and facts.term_months is not None and isinstance(condition.value, Decimal):
+            if condition.value.is_finite():
+                score += _OPERATORS[condition.operator](facts.term_months, condition.value)
     return score

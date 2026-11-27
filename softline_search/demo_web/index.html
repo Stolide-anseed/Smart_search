@@ -17,9 +17,12 @@
         <label for="query" class="visually-hidden">Поисковый запрос</label>
         <div class="search-field">
           <span class="search-icon" aria-hidden="true"></span>
-          <input id="query" name="q" type="search" placeholder="Например, память для ноутбука DDR4 на 8 ГБ"
-                 autocomplete="off" required>
+          <input id="query" name="q" type="search" role="combobox" aria-autocomplete="list"
+                 aria-expanded="false" aria-controls="search-suggestions"
+                 placeholder="Например, память для ноутбука DDR4 на 8 ГБ" autocomplete="off" required>
           <button id="search-submit" class="primary" type="submit">Найти</button>
+          <ul id="search-suggestions" class="filter-options search-suggestions" role="listbox"
+              aria-label="Поисковые подсказки" hidden></ul>
         </div>
         <details id="search-filters" class="search-filters">
           <summary>Фильтры</summary>
@@ -110,14 +113,25 @@
           <span id="result-count" class="muted"></span>
         </div>
         <div id="results" class="product-list"></div>
+        <section id="search-analogues" class="search-analogues" aria-labelledby="analogues-title" hidden>
+          <div class="results-heading">
+            <h2 id="analogues-title">Аналоги с другим артикулом</h2>
+          </div>
+          <div id="analogue-results" class="product-list"></div>
+        </section>
         <p class="catalog-note">Цены и наличие — из выгрузки каталога.</p>
       </section>
 
       <aside id="recommendation-panel" class="recommendation-panel" aria-labelledby="recommendation-title">
         <h2 id="recommendation-title">Сопутствующие товары</h2>
         <p id="recommendation-source" class="recommendation-source" hidden></p>
+        <p id="recommendation-mode" class="product-meta" hidden></p>
         <p id="recommendation-status" class="status" role="status"></p>
         <p id="recommendation-context" class="status" hidden></p>
+        <details id="agent-trace" class="agent-trace" hidden>
+          <summary>Как агент подобрал товары</summary>
+          <ol id="agent-tools"></ol>
+        </details>
         <div id="recommendations" class="product-list"></div>
       </aside>
     </div>

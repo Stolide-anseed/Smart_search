@@ -151,6 +151,12 @@ def main() -> None:
                     if result.reserve:
                         print("\nРезервные предложения с неподтверждёнными условиями")
                         _print_hits(result.reserve, result.unconfirmed, start=len(result.hits) + 1)
+                    if result.analogues:
+                        print("\nАналоги с другим артикулом")
+                        for number, item in enumerate(result.analogues, start=1):
+                            price = item.offer.price
+                            _print_offer(item.offer, number, has_price=bool(price) and price not in {"0", "0.0", "0.00"})
+                            print(f"    {item.reason}")
             elif args.command == "demo":
                 from .demo import serve_demo
 

@@ -1,0 +1,22 @@
+{
+  "gpt-6-luna": {
+    "currency": "RUB",
+    "source": "https://proxyapi.ru/models/openai",
+    "web_search_source": "https://proxyapi.ru/docs/web-search",
+    "verified_on": "2026-11-27",
+    "input_per_million": 30,
+    "cached_input_per_million": 3,
+    "output_per_million": 150,
+    "web_search_per_call": 1
+  },
+  "gpt-5.4-mini": {
+    "currency": "RUB",
+    "source": "https://proxyapi.ru/models/openai",
+    "web_search_source": "https://proxyapi.ru/docs/web-search",
+    "verified_on": "2026-11-27",
+    "input_per_million": 230,
+    "cached_input_per_million": 23,
+    "output_per_million": 1370,
+    "web_search_per_call": 1
+  }
+}

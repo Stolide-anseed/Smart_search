@@ -1,0 +1,40 @@
+[
+  {
+    "anchor": "530901",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "UX3405CA-ST1336, 312.4 × 220.1 × 14.9 mm. Both HP limits exceed these dimensions.",
+    "sources": ["https://www.asus.com/us/laptops/for-home/zenbook/asus-zenbook-14-ux3405/techspec/"]
+  },
+  {
+    "anchor": "496397",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498147"],
+    "incompatible": ["498146"],
+    "evidence": "X1605VA-MB2106, 358.7 × 249.5 × 20.35 mm. Backpack allows 270 mm depth. Briefcase allows 240 mm.",
+    "sources": [
+      "https://www.asus.com/jp/laptops/for-home/vivobook/vivobook-16-oled-x1605/techspec/",
+      "https://ekaterinburg.technopark.ru/noutbuk-asus-vivobook-16-x1605va-mb2106-90nb10n3-m02kz0-803307/description/",
+      "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041",
+      "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+    ]
+  },
+  {
+    "anchor": "538620",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "B1503CVA, 359.5 × 232.2 × 19.9 mm. Both HP limits exceed these dimensions.",
+    "sources": ["https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/"]
+  },
+  {
+    "anchor": "473582",
+    "context": "windows_one",
+    "scenario_id": "office_antivirus",
+    "compatible": ["398852", "399141"],
+    "evidence": "Both packages support Windows, but 398852 is the cheaper one-year purchase with fewer spare seats and a superset of 399141's features. The purchase unit and minimum for 518959 are unresolved.",
+    "sources": [
+      "https://pro32.com/ru/business/actions/prokachay-uroven-zashchity/",
+      "https://pro32.com/ru/business/pro32-antivirus/office-security-base/"
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "run_at": "2026-11-27T08:42:06+03:00",
+  "cache": ".vendor-facts.sqlite3",
+  "passes": {
+    "first": {
+      "elapsed_ms": 3649.660699999913,
+      "lookups": [
+        {
+          "offer_id": "460304",
+          "attribute": "dimensions_mm",
+          "status": "verified",
+          "cache_hit": false,
+          "fact": {
+            "manufacturer": "LENOVO",
+            "product_model": "IdeaPad 3 15IAU7",
+            "article": "82RK013NRK",
+            "attribute": "dimensions_mm",
+            "value": [
+              "359.2",
+              "236.5",
+              "19.9"
+            ],
+            "unit": "mm",
+            "source_url": "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "retrieved_at": "2026-11-27T05:42:05.431866+00:00",
+            "kind": "laptop",
+            "verification_status": "CONFIRMED",
+            "identity_source_url": "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair"
+          }
+        },
+        {
+          "offer_id": "475627",
+          "attribute": "dimensions_mm",
+          "status": "verified",
+          "cache_hit": false,
+          "fact": {
+            "manufacturer": "LENOVO",
+            "product_model": "V15 G4 IRU",
+            "article": "83A100BVRU",
+            "attribute": "dimensions_mm",
+            "value": [
+              "359.2",
+              "235.8",
+              "19.9"
+            ],
+            "unit": "mm",
+            "source_url": "https://psref.lenovo.com/syspool/Sys/PDF/Lenovo/Lenovo_V15_G4_IRU/Lenovo_V15_G4_IRU_Spec.PDF",
+            "retrieved_at": "2026-11-27T05:42:06.458402+00:00",
+            "kind": "laptop",
+            "verification_status": "CONFIRMED",
+            "identity_source_url": ""
+          }
+        }
+      ]
+    },
+    "repeat": {
+      "elapsed_ms": 2.447200000005978,
+      "lookups": [
+        {
+          "offer_id": "460304",
+          "attribute": "dimensions_mm",
+          "status": "verified",
+          "cache_hit": true,
+          "fact": {
+            "manufacturer": "LENOVO",
+            "product_model": "IdeaPad 3 15IAU7",
+            "article": "82RK013NRK",
+            "attribute": "dimensions_mm",
+            "value": [
+              "359.2",
+              "236.5",
+              "19.9"
+            ],
+            "unit": "mm",
+            "source_url": "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "retrieved_at": "2026-11-27T05:42:05.431866+00:00",
+            "kind": "laptop",
+            "verification_status": "CONFIRMED",
+            "identity_source_url": "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair"
+          }
+        },
+        {
+          "offer_id": "475627",
+          "attribute": "dimensions_mm",
+          "status": "verified",
+          "cache_hit": true,
+          "fact": {
+            "manufacturer": "LENOVO",
+            "product_model": "V15 G4 IRU",
+            "article": "83A100BVRU",
+            "attribute": "dimensions_mm",
+            "value": [
+              "359.2",
+              "235.8",
+              "19.9"
+            ],
+            "unit": "mm",
+            "source_url": "https://psref.lenovo.com/syspool/Sys/PDF/Lenovo/Lenovo_V15_G4_IRU/Lenovo_V15_G4_IRU_Spec.PDF",
+            "retrieved_at": "2026-11-27T05:42:06.458402+00:00",
+            "kind": "laptop",
+            "verification_status": "CONFIRMED",
+            "identity_source_url": ""
+          }
+        }
+      ]
+    }
+  }
+}

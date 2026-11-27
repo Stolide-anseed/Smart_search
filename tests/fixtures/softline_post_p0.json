@@ -1,0 +1,70 @@
+[
+  {
+    "anchor": "460304",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "Lenovo IdeaPad 3 15IAU7, артикул 82RK013NRK. Габариты корпуса 359,2 × 236,5 × 19,9 мм. Для обеих моделей HP достаточно ширины, глубины и толщины.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "475627",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "Lenovo V15 G4 IRU, артикул 83A100BVRU. Паспортные габариты укладываются в пределы обоих аксессуаров HP.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/Lenovo/Lenovo_V15_G4_IRU/Lenovo_V15_G4_IRU_Spec.PDF", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "82161",
+    "scenario_id": "ups_battery",
+    "expect_empty": true,
+    "evidence": "Точный артикул RBC18 указан в XML для SC450RMI1U. Доступных в снимке предложений с этим артикулом нет."
+  },
+  {
+    "anchor": "533072",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498147"],
+    "incompatible": ["498146"],
+    "evidence": "ThinkPad E16 Gen 2 Intel. Глубина 247,7 мм превышает предел HP A08JWAA в 240 мм. HP A08JXAA подходит по всем трём габаритам.",
+    "sources": ["https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_E16_Gen_2_Intel/ThinkPad_E16_Gen_2_Intel_Spec.pdf", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "501702",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "HP ProBook 440 G11 A38BCET#BH5. Максимальная толщина 17 мм, ширина 318,6 мм, глубина 224,4 мм. Оба аксессуара допускают эти размеры.",
+    "sources": ["https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "529712",
+    "scenario_id": "laptop_bag",
+    "compatible": ["498146", "498147"],
+    "evidence": "ThinkBook 14 G8 IAL. Габариты 313,5 × 224 × 17,5 мм укладываются в оба предела HP.",
+    "sources": ["https://psref.lenovo.com/product/ThinkBook/ThinkBook_14_G8_IAL", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041", "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"]
+  },
+  {
+    "anchor": "481909",
+    "context": "windows_ten",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "MobiOffice Premium покрывает один настольный компьютер. Контекст требует десять компьютеров Windows.",
+    "sources": ["https://support.mobisystems.com/hc/en-us/articles/22779132177565-Activate-Your-MobiOffice-Premium-Subscription"]
+  },
+  {
+    "anchor": "481910",
+    "context": "windows_ten",
+    "scenario_id": "office_antivirus",
+    "expect_empty": true,
+    "evidence": "Конкретный SKU MobiOffice Team содержит шесть пользовательских мест. По одному настольному компьютеру на место.",
+    "sources": ["https://support.mobisystems.com/hc/en-us/articles/23129166580893-How-to-Purchase-a-MobiOffice-Premium-for-Teams-Subscription-and-Assign-Seats"]
+  },
+  {
+    "anchor": "195982",
+    "scenario_id": null,
+    "evidence": "Microsoft 365 Персональный на одного пользователя. В XML указана персональная редакция."
+  },
+  {
+    "anchor": "536400",
+    "scenario_id": null,
+    "evidence": "В составе Softline Universe на 20 рабочих мест уже указана антивирусная защита."
+  }
+]

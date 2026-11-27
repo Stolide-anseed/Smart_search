@@ -1,0 +1,286 @@
+{
+  "provider": "scripted_mock",
+  "calls_to_proxyapi": 0,
+  "runs": [
+    {
+      "offer_id": "501535",
+      "server_mode": "llm_agent",
+      "scenario_ids": [
+        "laptop_bag"
+      ],
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 0,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "web_searches": 0,
+        "iterations": 3,
+        "tool_calls": 4,
+        "valid_tool_calls": 4,
+        "successful_tool_calls": 4,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 0,
+        "provider_elapsed_ms": 0.097,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "trace": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.304,
+          "count": 1
+        },
+        {
+          "tool": "get_verified_specs",
+          "status": "ok",
+          "elapsed_ms": 0.081,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.117,
+          "count": 8
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.427,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.289,
+          "count": 1
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.011,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.183,
+          "count": 1
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "498147",
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        }
+      ]
+    },
+    {
+      "offer_id": "501535",
+      "server_mode": "cached_result",
+      "scenario_ids": [
+        "laptop_bag"
+      ],
+      "usage": {
+        "llm_calls": 0,
+        "input_tokens": 0,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "web_searches": 0,
+        "iterations": 0,
+        "tool_calls": 0,
+        "valid_tool_calls": 0,
+        "successful_tool_calls": 0,
+        "cache_hits": 1,
+        "cache_lookups": 1,
+        "result_cache_hits": 1,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 0,
+        "provider_elapsed_ms": 0,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "trace": [
+        {
+          "tool": "recommendation_cache",
+          "status": "cached",
+          "elapsed_ms": 0.63,
+          "count": 1
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "498147",
+          "reason": "Габариты ноутбука 356 × 253,5 × 17,5 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/Product/ThinkBook/ThinkBook_16_G8_IRL",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        }
+      ]
+    },
+    {
+      "offer_id": "460304",
+      "server_mode": "llm_agent",
+      "scenario_ids": [
+        "laptop_bag"
+      ],
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 0,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "web_searches": 0,
+        "iterations": 3,
+        "tool_calls": 4,
+        "valid_tool_calls": 4,
+        "successful_tool_calls": 4,
+        "cache_hits": 1,
+        "cache_lookups": 2,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 0,
+        "provider_elapsed_ms": 0.059,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "trace": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 1.743,
+          "count": 1
+        },
+        {
+          "tool": "get_verified_specs",
+          "status": "ok",
+          "elapsed_ms": 0.048,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.073,
+          "count": 8
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.293,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.234,
+          "count": 1
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.002,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.194,
+          "count": 2
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "498147",
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        },
+        {
+          "id": "498146",
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ]
+        }
+      ]
+    },
+    {
+      "offer_id": "460304",
+      "server_mode": "cached_result",
+      "scenario_ids": [
+        "laptop_bag"
+      ],
+      "usage": {
+        "llm_calls": 0,
+        "input_tokens": 0,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "web_searches": 0,
+        "iterations": 0,
+        "tool_calls": 0,
+        "valid_tool_calls": 0,
+        "successful_tool_calls": 0,
+        "cache_hits": 2,
+        "cache_lookups": 2,
+        "result_cache_hits": 1,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 0,
+        "provider_elapsed_ms": 0,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "trace": [
+        {
+          "tool": "recommendation_cache",
+          "status": "cached",
+          "elapsed_ms": 1.513,
+          "count": 2
+        }
+      ],
+      "recommendations": [
+        {
+          "id": "498147",
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        },
+        {
+          "id": "498146",
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ]
+        }
+      ]
+    }
+  ]
+}

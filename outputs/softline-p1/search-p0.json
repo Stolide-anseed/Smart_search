@@ -1,0 +1,1606 @@
+{
+  "run_at": "2026-11-27T08:32:56+03:00",
+  "n_queries": 130,
+  "four_product_count": 92,
+  "constraint_satisfied": 249,
+  "constraint_checked": 249,
+  "p50_ms": 131.99079999998276,
+  "p95_ms": 476.4939000000368,
+  "rows": [
+    {
+      "query": "фаервол Ideco Novum",
+      "offers": [
+        "541690"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 109.58370000003015
+    },
+    {
+      "query": "вайтборд VK WorkSpace",
+      "offers": [
+        "538580",
+        "539889",
+        "538576",
+        "538573"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 55.23769999990691
+    },
+    {
+      "query": "Workpsad",
+      "offers": [
+        "540622"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 533.5330999999996
+    },
+    {
+      "query": "Kaspersky Saef Kids",
+      "offers": [
+        "5313"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 125.88940000000548
+    },
+    {
+      "query": "удаленный рабчий стол с GPT",
+      "offers": [
+        "540020"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 505.0846999999976
+    },
+    {
+      "query": "антивирь для дома",
+      "offers": [
+        "534166",
+        "518947",
+        "518949",
+        "332469"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 697.5168999999823
+    },
+    {
+      "query": "корпоративный антивирь",
+      "offers": [
+        "513505",
+        "496050",
+        "532989",
+        "533820"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 124.82490000002144
+    },
+    {
+      "query": "софт для бэкапов",
+      "offers": [
+        "527416",
+        "53964",
+        "372848",
+        "527421"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 218.99280000002364
+    },
+    {
+      "query": "графредактор для компа",
+      "offers": [
+        "273970",
+        "540964",
+        "356213",
+        "526641"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 107.9031000000441
+    },
+    {
+      "query": "софт для монтажа видосов",
+      "offers": [
+        "541428",
+        "541838",
+        "441233",
+        "200715"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 108.98240000005899
+    },
+    {
+      "query": "почтовик для компа",
+      "offers": [
+        "127896",
+        "477664",
+        "216902",
+        "359891"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 102.98080000006848
+    },
+    {
+      "query": "софт для айпи-телефонии",
+      "offers": [
+        "472686",
+        "509107",
+        "495581"
+      ],
+      "reserve": [],
+      "checked_results": 3,
+      "satisfied_results": 3,
+      "latency_ms": 169.03030000003127
+    },
+    {
+      "query": "файломенеджер",
+      "offers": [
+        "520463",
+        "540777",
+        "413822",
+        "413606"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 45.05730000005315
+    },
+    {
+      "query": "софт для восстановления снесённых файлов",
+      "offers": [
+        "441048",
+        "526083",
+        "535418",
+        "372878"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 109.06920000002174
+    },
+    {
+      "query": "софт для администрирования баз",
+      "offers": [
+        "40485",
+        "40593",
+        "40473",
+        "433588"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 107.3605999999927
+    },
+    {
+      "query": "ocr для сканов",
+      "offers": [
+        "519432",
+        "526521",
+        "526503",
+        "539204"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 94.13399999993999
+    },
+    {
+      "query": "софт для рендера 3д-графики",
+      "offers": [
+        "171250",
+        "541817",
+        "171249",
+        "171251"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 104.01600000000144
+    },
+    {
+      "query": "софт для запила сайтов",
+      "offers": [
+        "45782",
+        "274881",
+        "274874",
+        "274876"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 172.87999999996373
+    },
+    {
+      "query": "гис для работы с геоданными",
+      "offers": [
+        "400653",
+        "535687",
+        "497601",
+        "540039"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 124.25810000002002
+    },
+    {
+      "query": "рэковый сервак",
+      "offers": [
+        "528225",
+        "528223",
+        "542026",
+        "542030"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 94.44089999999505
+    },
+    {
+      "query": "ноут",
+      "offers": [
+        "532884",
+        "504258",
+        "504261",
+        "530949"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 92.38110000001143
+    },
+    {
+      "query": "клава и мышь комплектом",
+      "offers": [
+        "436739",
+        "515761",
+        "423894",
+        "362738"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 208.8040999999521
+    },
+    {
+      "query": "моник для компа",
+      "offers": [
+        "488365",
+        "539990",
+        "423446",
+        "486312"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 196.49230000004536
+    },
+    {
+      "query": "видюха",
+      "offers": [
+        "494533",
+        "501667",
+        "494535",
+        "509315"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 95.92130000010002
+    },
+    {
+      "query": "внутренняя ссдшка",
+      "offers": [
+        "432488",
+        "298248",
+        "539550",
+        "492154"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 96.98170000001483
+    },
+    {
+      "query": "оперативка для компа",
+      "offers": [
+        "541825",
+        "501357",
+        "503847",
+        "539959"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 151.3578999999936
+    },
+    {
+      "query": "проц для пк",
+      "offers": [
+        "479477",
+        "506682",
+        "473917",
+        "459104"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 178.63180000006196
+    },
+    {
+      "query": "мать для системника",
+      "offers": [
+        "501461",
+        "533476",
+        "502432",
+        "539256"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 132.18319999998585
+    },
+    {
+      "query": "бп для системника",
+      "offers": [
+        "520404",
+        "487504",
+        "532498",
+        "519661"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 187.68409999995583
+    },
+    {
+      "query": "бесперебойник",
+      "offers": [
+        "509749",
+        "531572",
+        "493767",
+        "345890"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 135.416599999985
+    },
+    {
+      "query": "аккум для бесперебойника",
+      "offers": [
+        "527214",
+        "526764",
+        "495121",
+        "481915"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 214.27079999989473
+    },
+    {
+      "query": "свитч для локалки",
+      "offers": [
+        "445882",
+        "445884",
+        "390359",
+        "445883"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 211.2452999999732
+    },
+    {
+      "query": "сетевуха для компа",
+      "offers": [
+        "425533",
+        "425009",
+        "340420",
+        "520227"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 146.27759999996215
+    },
+    {
+      "query": "вайфайный свисток usb",
+      "offers": [
+        "426174",
+        "424280",
+        "485871",
+        "518762"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 79.17669999994814
+    },
+    {
+      "query": "вебка для видеозвонков",
+      "offers": [
+        "515923",
+        "371947",
+        "363864",
+        "473612"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 196.42110000006596
+    },
+    {
+      "query": "хард для системника",
+      "offers": [
+        "446375",
+        "352779",
+        "474527",
+        "461317"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 210.70190000000366
+    },
+    {
+      "query": "тсд для склада",
+      "offers": [
+        "502289",
+        "502283",
+        "497677",
+        "476854"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 137.28600000001734
+    },
+    {
+      "query": "nas для офиса",
+      "offers": [
+        "122391",
+        "529503",
+        "495139",
+        "85860"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 145.01000000007025
+    },
+    {
+      "query": "винрар для распаковки архивов",
+      "offers": [
+        "149018",
+        "540777",
+        "375692",
+        "526093"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 118.59709999998813
+    },
+    {
+      "query": "финридер 15 стандарт для сканов",
+      "offers": [
+        "324027",
+        "324029",
+        "56907",
+        "340130"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 125.58349999994789
+    },
+    {
+      "query": "радмин 3 для удалёнки",
+      "offers": [
+        "451868",
+        "477791",
+        "518158",
+        "539736"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 117.38639999998668
+    },
+    {
+      "query": "летучая мышь почта",
+      "offers": [
+        "541211",
+        "541216",
+        "428545",
+        "481969"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 50.518399999987196
+    },
+    {
+      "query": "корел дро 2026 для вектора",
+      "offers": [
+        "526920",
+        "542077",
+        "515180",
+        "526942"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 97.91630000006535
+    },
+    {
+      "query": "антивирь доктор веб секьюрити спейс",
+      "offers": [
+        "541458",
+        "522349",
+        "533820",
+        "356798"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 136.79789999991954
+    },
+    {
+      "query": "нанокад бим электро 26 для электрики",
+      "offers": [
+        "534255",
+        "534373",
+        "537924",
+        "534281"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 102.45599999996102
+    },
+    {
+      "query": "битрикс24 коробка",
+      "offers": [
+        "532872",
+        "383046",
+        "370466",
+        "533472"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 55.58480000001964
+    },
+    {
+      "query": "ось альт сервер 11",
+      "offers": [
+        "542028",
+        "542032",
+        "542031",
+        "542026"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 104.86459999992803
+    },
+    {
+      "query": "постгрес про стандарт субд",
+      "offers": [
+        "532513",
+        "532504",
+        "519697",
+        "532872"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 42.94429999993099
+    },
+    {
+      "query": "пдф командер бизнес для правки пдфок",
+      "offers": [
+        "530942",
+        "521000",
+        "541424",
+        "455668"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 105.31700000001365
+    },
+    {
+      "query": "фотомастер для правки фоток",
+      "offers": [
+        "371421",
+        "541905",
+        "541903",
+        "541838"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 97.68350000001647
+    },
+    {
+      "query": "контур толк для созвонов",
+      "offers": [
+        "526226",
+        "462605",
+        "519386",
+        "532972"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 107.58740000005673
+    },
+    {
+      "query": "бессрочка Mobile SMARTS Склад 15 Маркировка Расширенный",
+      "offers": [
+        "541267",
+        "541270",
+        "527917",
+        "270027"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 539.6832000000131
+    },
+    {
+      "query": "бесперебойник SC450RMI1U",
+      "offers": [
+        "82161"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 436.61869999993996
+    },
+    {
+      "query": "программы для видеонаблюдния",
+      "offers": [
+        "176956",
+        "539079",
+        "474167",
+        "408494"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 165.02059999993435
+    },
+    {
+      "query": "текстовые ковнертеры",
+      "offers": [
+        "63915",
+        "63916",
+        "282306"
+      ],
+      "reserve": [],
+      "checked_results": 3,
+      "satisfied_results": 3,
+      "latency_ms": 98.13090000000102
+    },
+    {
+      "query": "программы для восстановления даных",
+      "offers": [
+        "525853",
+        "541430",
+        "374572"
+      ],
+      "reserve": [],
+      "checked_results": 3,
+      "satisfied_results": 3,
+      "latency_ms": 192.93570000002092
+    },
+    {
+      "query": "архивтаоры",
+      "offers": [
+        "530936",
+        "448596",
+        "405885",
+        "299782"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 72.90450000004967
+    },
+    {
+      "query": "межсетвые экраны",
+      "offers": [
+        "503865",
+        "417526",
+        "530541",
+        "446969"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 73.31079999994472
+    },
+    {
+      "query": "роутеры с подержкой LTE",
+      "offers": [
+        "424281",
+        "371481",
+        "462209",
+        "535738"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 139.4103999999743
+    },
+    {
+      "query": "беспровдные маршрутизаторы Wi-Fi",
+      "offers": [
+        "370348",
+        "233393",
+        "519318",
+        "370352"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 119.71640000001571
+    },
+    {
+      "query": "док-станции для ноубтуков",
+      "offers": [
+        "410846",
+        "486320",
+        "531689",
+        "351726"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 181.08509999990474
+    },
+    {
+      "query": "лазерные принтеры и мфв",
+      "offers": [
+        "530498",
+        "526650",
+        "513994",
+        "456791"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 122.8156999999328
+    },
+    {
+      "query": "системы охлжадения для компьютера",
+      "offers": [
+        "534381",
+        "493172",
+        "534398",
+        "457899"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 137.51220000006015
+    },
+    {
+      "query": "сканеры штирхкодов",
+      "offers": [
+        "320795",
+        "501407",
+        "518895",
+        "497799"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 134.14670000008755
+    },
+    {
+      "query": "проводные телефоын",
+      "offers": [
+        "477606",
+        "539315",
+        "476972",
+        "106747"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 119.17940000000726
+    },
+    {
+      "query": "ctntdst abkmnhs b cnf,bkbpfnjhs",
+      "offers": [
+        "82489",
+        "532972",
+        "532970",
+        "534815"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 192.35780000008162
+    },
+    {
+      "query": "ihtlths",
+      "offers": [
+        "338619",
+        "399988",
+        "340873",
+        "337410"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 144.55470000007153
+    },
+    {
+      "query": "ctntdst dbltjrfvths",
+      "offers": [
+        "406054",
+        "535363",
+        "537694",
+        "492743"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 134.54439999998158
+    },
+    {
+      "query": "CyberLink PwoerDVD 24",
+      "offers": [
+        "541974"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 451.3759000000164
+    },
+    {
+      "query": "Pinnacle Studoi 26",
+      "offers": [
+        "526933",
+        "537908",
+        "515032",
+        "514280"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 67.05639999995583
+    },
+    {
+      "query": "Wondershare PDFelemnt",
+      "offers": [
+        "526048"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 102.41659999996955
+    },
+    {
+      "query": "Icecram PDF Editor PRO",
+      "offers": [
+        "446519"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 406.91100000003644
+    },
+    {
+      "query": "Master PDF Edotor",
+      "offers": [
+        "455670"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 397.2762999999304
+    },
+    {
+      "query": "CyberLink PowerDirecor 2027",
+      "offers": [
+        "541952",
+        "541903"
+      ],
+      "reserve": [],
+      "checked_results": 2,
+      "satisfied_results": 2,
+      "latency_ms": 413.25910000000476
+    },
+    {
+      "query": "фотошоу proo",
+      "offers": [
+        "541434"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 442.74319999999534
+    },
+    {
+      "query": "видеомнотаж",
+      "offers": [
+        "541428"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 440.4021999999941
+    },
+    {
+      "query": "Wondershare EdarwMax",
+      "offers": [
+        "542071"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 125.26090000005752
+    },
+    {
+      "query": "тфмшсфе зкуьшгь",
+      "offers": [
+        "499207"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 126.76149999992958
+    },
+    {
+      "query": "PRO32 Total Securuty",
+      "offers": [
+        "518949"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 173.75909999998385
+    },
+    {
+      "query": "Kaspersky Standart",
+      "offers": [
+        "4925",
+        "372895",
+        "4844",
+        "416862"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 134.75630000004912
+    },
+    {
+      "query": "Rnega Standard",
+      "offers": [
+        "539713"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 140.8197000000655
+    },
+    {
+      "query": "nanoCAD BIM Отоплние 26",
+      "offers": [
+        "531142"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 478.8341000000855
+    },
+    {
+      "query": "КОМПАС-Электрки Express v25",
+      "offers": [
+        "535198"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 476.4939000000368
+    },
+    {
+      "query": "Лира-САПИФР 2026",
+      "offers": [
+        "532924"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 449.43190000003597
+    },
+    {
+      "query": "GstarCD 2027 LT",
+      "offers": [
+        "532973",
+        "493738",
+        "538220",
+        "486440"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 93.04379999991852
+    },
+    {
+      "query": "Аспро.Agiel",
+      "offers": [
+        "376962"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 477.0304999999553
+    },
+    {
+      "query": "Hnady Backup",
+      "offers": [
+        "503209",
+        "53964",
+        "525856",
+        "518040"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 85.02549999991516
+    },
+    {
+      "query": "Wondershare EdrawMimd",
+      "offers": [
+        "542094"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 143.72339999999895
+    },
+    {
+      "query": "Weeekk",
+      "offers": [
+        "420944"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 446.6955999999982
+    },
+    {
+      "query": "SCAD Ofifce",
+      "offers": [
+        "525178"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 384.96680000002925
+    },
+    {
+      "query": "Corel PaintShp Pro 2023",
+      "offers": [
+        "491583"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 380.2007000000458
+    },
+    {
+      "query": "VentaFax MiniOfice",
+      "offers": [
+        "410948",
+        "19260",
+        "410933",
+        "410910"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 53.84330000003956
+    },
+    {
+      "query": "Postgres Pro Enterpirse",
+      "offers": [
+        "519697",
+        "66756",
+        "66776",
+        "519678"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 45.28170000003229
+    },
+    {
+      "query": "AOC Q24V4AE",
+      "offers": [
+        "345026"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 98.30190000002403
+    },
+    {
+      "query": "Kingston SA400S73/240G",
+      "offers": [
+        "79883"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 99.01009999998678
+    },
+    {
+      "query": "TP-Link TL-WR84N",
+      "offers": [
+        "85121"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 89.70420000002832
+    },
+    {
+      "query": "Pinnacle Studio 26 Ultimte",
+      "offers": [
+        "526934",
+        "514273",
+        "520477",
+        "515032"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 52.4679999999762
+    },
+    {
+      "query": "Zebra DS2208-SR7U2100AWZ",
+      "offers": [
+        "320907"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 100.68439999997736
+    },
+    {
+      "query": "Synology RS1221PR+",
+      "offers": [
+        "449259"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 94.676800000002
+    },
+    {
+      "query": "Kaspresky Standard KL1041RDCFS",
+      "offers": [
+        "416858"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 104.65780000004088
+    },
+    {
+      "query": "касперский этот антивирь на год",
+      "offers": [
+        "4207",
+        "5062",
+        "3941",
+        "130064"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 154.86990000010792
+    },
+    {
+      "query": "винда 11 лицуха",
+      "offers": [
+        "380385",
+        "518964",
+        "380389",
+        "532973"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 104.1662999999744
+    },
+    {
+      "query": "надо комп малому для учебы",
+      "offers": [
+        "459534",
+        "540504",
+        "506974",
+        "535374"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 145.57449999995242
+    },
+    {
+      "query": "мышка без провада недарагая",
+      "offers": [
+        "487591",
+        "515885",
+        "515766",
+        "328305"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 113.6597999999367
+    },
+    {
+      "query": "ворд ексель купить раз и навсигда",
+      "offers": [
+        "540663",
+        "542069",
+        "531640",
+        "542109"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 107.59990000008202
+    },
+    {
+      "query": "флешка на 128 г",
+      "offers": [
+        "488903",
+        "471450"
+      ],
+      "reserve": [
+        "508878",
+        "471001"
+      ],
+      "checked_results": 2,
+      "satisfied_results": 2,
+      "latency_ms": 149.93249999997715
+    },
+    {
+      "query": "телефон самсунг",
+      "offers": [
+        "495581"
+      ],
+      "reserve": [],
+      "checked_results": 1,
+      "satisfied_results": 1,
+      "latency_ms": 88.58610000004319
+    },
+    {
+      "query": "жоский диск на терабайт",
+      "offers": [
+        "542175",
+        "539568",
+        "539922",
+        "351840"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 191.1972999999989
+    },
+    {
+      "query": "жёсткий диск на терабайт",
+      "offers": [
+        "542175",
+        "539568",
+        "351840",
+        "461770"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 164.7218000000521
+    },
+    {
+      "query": "оперативка ддр4 16 гиг",
+      "offers": [
+        "375177",
+        "427839",
+        "370916",
+        "539571"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 115.36339999997836
+    },
+    {
+      "query": "блок питаня на 700 ват",
+      "offers": [
+        "364197",
+        "507969",
+        "374780",
+        "486157"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 145.73110000003453
+    },
+    {
+      "query": "домофон с камерой на калитку",
+      "offers": [
+        "541104",
+        "428283",
+        "428287",
+        "267387"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 138.92299999997704
+    },
+    {
+      "query": "камера уличная вайфай чтоб дождя не боялась",
+      "offers": [
+        "471635",
+        "493885",
+        "533100",
+        "535363"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 51.04520000008961
+    },
+    {
+      "query": "кресло компютерное",
+      "offers": [
+        "376237",
+        "376239",
+        "376139",
+        "376048"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 98.23610000000826
+    },
+    {
+      "query": "сканер штрих кодов в сельпо",
+      "offers": [
+        "404987",
+        "529647",
+        "452659",
+        "443654"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 56.76410000000942
+    },
+    {
+      "query": "принтер этикеток на товар",
+      "offers": [
+        "506884",
+        "366877",
+        "419545",
+        "533148"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 80.16209999993862
+    },
+    {
+      "query": "прога шоб с другого компа на свой зайти",
+      "offers": [
+        "506974",
+        "535375",
+        "540504",
+        "535374"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 133.9859999999362
+    },
+    {
+      "query": "прога чтоб файлы удаленые вернуть",
+      "offers": [
+        "526083",
+        "441037",
+        "413614",
+        "528829"
+      ],
+      "reserve": [],
+      "checked_results": 0,
+      "satisfied_results": 0,
+      "latency_ms": 46.921599999905084
+    },
+    {
+      "query": "ссд м2 на мать воткнуть на терабайт",
+      "offers": [
+        "471446",
+        "429943",
+        "541620",
+        "491242"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 162.5839000000724
+    },
+    {
+      "query": "джойстик к компу",
+      "offers": [
+        "504022",
+        "504021",
+        "541882",
+        "410171"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 131.79839999997967
+    },
+    {
+      "query": "клавиатура механика",
+      "offers": [
+        "538240",
+        "481128",
+        "493670",
+        "534187"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 109.80899999992744
+    },
+    {
+      "query": "сумка под ноут 15 и 6",
+      "offers": [
+        "453158",
+        "494636",
+        "438957",
+        "492537"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 124.78659999999309
+    },
+    {
+      "query": "акумулятор для бесперибойника",
+      "offers": [
+        "527214",
+        "526764",
+        "495121",
+        "481915"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 173.05480000004536
+    },
+    {
+      "query": "модем 4джи",
+      "offers": [
+        "490422",
+        "535738",
+        "84937",
+        "424281"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 138.35229999995136
+    },
+    {
+      "query": "память для ноута ддр 4 на восьмерку",
+      "offers": [
+        "481913",
+        "539570"
+      ],
+      "reserve": [
+        "520659",
+        "539368"
+      ],
+      "checked_results": 2,
+      "satisfied_results": 2,
+      "latency_ms": 210.6979999999794
+    },
+    {
+      "query": "провод хдмай метра три",
+      "offers": [
+        "366741",
+        "450379",
+        "421210",
+        "80463"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 160.20019999996293
+    },
+    {
+      "query": "зарядка быстрая на сяоми",
+      "offers": [
+        "437596",
+        "463052",
+        "476689",
+        "501647"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 180.9941000000208
+    },
+    {
+      "query": "колонки к компу чтоб басило нормально",
+      "offers": [
+        "541889",
+        "467564",
+        "481295",
+        "443946"
+      ],
+      "reserve": [],
+      "checked_results": 4,
+      "satisfied_results": 4,
+      "latency_ms": 166.15139999998974
+    },
+    {
+      "query": "телик на 43 дюйма недорого",
+      "offers": [
+        "413474",
+        "535415"
+      ],
+      "reserve": [
+        "535413"
+      ],
+      "checked_results": 2,
+      "satisfied_results": 2,
+      "latency_ms": 178.2329000000118
+    },
+    {
+      "query": "офис майкрасофт 2024 без подписки",
+      "offers": [
+        "473568",
+        "473582"
+      ],
+      "reserve": [],
+      "checked_results": 2,
+      "satisfied_results": 2,
+      "latency_ms": 128.6810000000287
+    }
+  ]
+}

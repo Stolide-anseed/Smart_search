@@ -12,17 +12,27 @@ const searchStatus = byId("search-status");
 const workspace = byId("workspace");
 const queryDetails = byId("query-details");
 const recommendationPanel = byId("recommendation-panel");
+const recommendationTitle = byId("recommendation-title");
 const recommendationSource = byId("recommendation-source");
+const recommendationMode = byId("recommendation-mode");
 const recommendationStatus = byId("recommendation-status");
 const recommendationContext = byId("recommendation-context");
 const recommendations = byId("recommendations");
+const agentTrace = byId("agent-trace");
+const agentTools = byId("agent-tools");
+const suggestionList = byId("search-suggestions");
 const formatNumber = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 6 });
 const pluralRules = new Intl.PluralRules("ru-RU");
 
 let searchRequest;
 let recommendationRequest;
+let suggestionTimer;
+let suggestionRequest;
+let selectedSuggestion = -1;
 let filterOptionsRequested = false;
+let directionGroupCounter = 0;
 const softwareCategoryIds = new Set(["software"]);
+const productCountLabels = { one: "товар", few: "товара", many: "товаров" };
 
 function element(tag, className, text = "") {
   const node = document.createElement(tag);
@@ -212,16 +222,84 @@ function catalogLink(source) {
     return null;
   }
   if (url.protocol !== "https:" && url.protocol !== "http:") return null;
-  const link = element("a", "offer-link", "Открыть в каталоге ↗");
+  return externalLink(url, "Открыть в каталоге ↗");
+}
+
+function externalLink(url, text) {
+  const link = element("a", "offer-link", text);
   link.href = url.href;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   return link;
 }
 
-function productCard(product) {
+function documentationLinks(sources) {
+  const list = element("ul", "spec-sources");
+  for (const source of new Set(sources ?? [])) {
+    let url;
+    try {
+      url = new URL(source);
+    } catch {
+      continue;
+    }
+    if (url.protocol !== "https:" || url.username || url.password) continue;
+    const item = element("li", "");
+    item.append(externalLink(url, "Документация · " + url.hostname));
+    list.append(item);
+  }
+  return list;
+}
+
+function directionLabel(product) {
+  return typeof product?.direction_label === "string" ? product.direction_label.trim() : "";
+}
+
+function directionGroups(products, directions = []) {
+  const items = Array.isArray(products) ? products : [];
+  const labels = items.map(directionLabel);
+  if (items.length < 2 || labels.some((label) => !label)) return [];
+
+  const groups = new Map();
+  for (const [index, product] of items.entries()) {
+    const label = labels[index];
+    let group = groups.get(label);
+    if (!group) {
+      group = { label, products: [] };
+      groups.set(label, group);
+    }
+    group.products.push(product);
+  }
+  if (groups.size < 2) return [];
+
+  const ordered = [];
+  const seen = new Set();
+  for (const direction of Array.isArray(directions) ? directions : []) {
+    const label = typeof direction?.label === "string" ? direction.label.trim() : "";
+    if (!label || seen.has(label) || !groups.has(label)) continue;
+    ordered.push(groups.get(label));
+    seen.add(label);
+  }
+  for (const group of groups.values()) {
+    if (!seen.has(group.label)) ordered.push(group);
+  }
+  return ordered;
+}
+
+function productCountLabel(count) {
+  return count + " " + productCountLabels[pluralRules.select(count)];
+}
+
+function productCard(product, searchSnapshot = null, { showDirection = false, titleTag = "h3" } = {}) {
   const card = element("article", "product-card");
-  card.append(element("h3", "product-title", product.name));
+  const badge = showDirection ? directionLabel(product) : "";
+  if (badge) {
+    const header = element("div", "product-header");
+    header.append(element(titleTag, "product-title", product.name));
+    header.append(element("span", "direction-badge", badge));
+    card.append(header);
+  } else {
+    card.append(element(titleTag, "product-title", product.name));
+  }
   if (product.article) {
     card.append(element("p", "product-meta", `Артикул ${product.article}`));
   }
@@ -247,23 +325,55 @@ function productCard(product) {
   } else if (product.available === true) {
     card.append(element("p", "product-meta", "В наличии по данным фида"));
   }
+  if (product.alternative) {
+    card.append(element("p", "status", product.alternative));
+  }
   if (product.reason) {
     card.append(element("p", "status compatibility", product.reason));
   }
+  const sources = documentationLinks(product.sources);
+  if (sources.childElementCount) card.append(sources);
 
   const actions = element("div", "product-actions");
   const link = catalogLink(product.url);
   if (link) actions.append(link);
-  if (product.can_recommend) {
-    const button = element("button", "recommend-button", "Подходит к этому товару");
+  for (const [enabled, action, label] of [
+    [product.can_recommend, "recommend", "Подходит к этому товару"],
+    [product.can_compare, "similar", "Похожие товары"],
+  ]) {
+    if (!enabled || !searchSnapshot) continue;
+    const button = element("button", "recommend-button", label);
     button.type = "button";
     button.setAttribute("aria-controls", "recommendation-panel");
     button.setAttribute("aria-pressed", "false");
-    button.addEventListener("click", () => loadRecommendations(product, button));
+    button.addEventListener("click", () => loadProductOptions(product, button, action, searchSnapshot));
     actions.append(button);
   }
   if (actions.childElementCount) card.append(actions);
   return card;
+}
+
+function renderRecommendations(products, directions) {
+  const items = Array.isArray(products) ? products : [];
+  const groups = directionGroups(items, directions);
+  if (!groups.length) {
+    recommendations.replaceChildren(...items.map((item) => productCard(item, null, { showDirection: true })));
+    return;
+  }
+
+  recommendations.replaceChildren(...groups.map((group) => {
+    const headingId = "direction-group-" + (++directionGroupCounter);
+    const section = element("section", "direction-group");
+    section.setAttribute("aria-labelledby", headingId);
+    const heading = element("div", "direction-heading");
+    const title = element("h3", "direction-title", group.label);
+    title.id = headingId;
+    heading.append(title, element("span", "direction-count", productCountLabel(group.products.length)));
+    const list = element("div", "product-list");
+    list.append(...group.products.map((item) => productCard(item, null, { showDirection: true, titleTag: "h4" })));
+    section.append(heading, list);
+    return section;
+  }));
 }
 
 function renderQueryDetails(data, query) {
@@ -276,7 +386,7 @@ function renderQueryDetails(data, query) {
   queryDetails.hidden = !changed && !data.conditions.length && !data.ambiguities.length;
 }
 
-function renderResults(data) {
+function renderResults(data, searchSnapshot) {
   const count = data.products.length;
   if (!count) {
     showStatus(searchStatus, "Подходящих товаров по этому запросу нет.");
@@ -284,13 +394,22 @@ function renderResults(data) {
   }
 
   const familyLabels = { one: "семейство", few: "семейства", many: "семейств" };
-  byId("result-count").textContent = `${count} ${familyLabels[pluralRules.select(count)]}`;
-  results.replaceChildren(...data.products.map(productCard));
-  recommendationPanel.hidden = !data.products.some((product) => product.can_recommend);
+  const confirmed = data.confirmed_count ?? count;
+  const reserve = count - confirmed;
+  const analogues = data.analogues ?? [];
+  byId("result-count").textContent = confirmed + " " + familyLabels[pluralRules.select(confirmed)]
+    + (reserve ? " · резерв " + reserve : "");
+  results.replaceChildren(...data.products.map((product) => productCard(product, searchSnapshot)));
+  byId("analogue-results").replaceChildren(...analogues.map((product) => productCard(product)));
+  byId("search-analogues").hidden = analogues.length === 0;
+  recommendationPanel.hidden = true;
+  recommendationTitle.textContent = "Сопутствующие товары";
   recommendationSource.hidden = true;
   recommendations.replaceChildren();
-  showStatus(recommendationStatus, "Нажмите «Подходит к этому товару» на карточке.");
+  showStatus(recommendationStatus, "");
   showStatus(recommendationContext, "");
+  showStatus(recommendationMode, "");
+  renderAgentTrace([]);
   workspace.hidden = false;
   showStatus(searchStatus, "");
 }
@@ -313,10 +432,11 @@ async function loadSearch(value) {
 
   searchRequest?.abort();
   recommendationRequest?.abort();
+  closeSuggestions();
   const request = new AbortController();
   searchRequest = request;
   input.value = query;
-  const searchParams = currentSearchParams(query);
+  const searchParams = Object.freeze(currentSearchParams(query));
   form.setAttribute("aria-busy", "true");
   submit.textContent = "Ищем…";
   workspace.hidden = true;
@@ -325,9 +445,9 @@ async function loadSearch(value) {
 
   try {
     const data = await getJson("/api/search", searchParams, request.signal);
-    if (request.signal.aborted) return;
+    if (request.signal.aborted || searchRequest !== request) return;
     renderQueryDetails(data, query);
-    renderResults(data);
+    renderResults(data, searchParams);
   } catch (error) {
     if (!request.signal.aborted) showStatus(searchStatus, `Ошибка поиска. ${error.message}`, true);
   } finally {
@@ -339,39 +459,199 @@ async function loadSearch(value) {
   }
 }
 
-async function loadRecommendations(product, button) {
+const toolLabels = {
+  get_product_details: "Характеристики товара",
+  get_catalog_categories: "Категории каталога",
+  search_catalog: "Поиск по каталогу",
+  get_category_products: "Поиск в категории",
+  get_verified_specs: "Проверка сохранённых характеристик",
+  search_vendor_specs: "Поиск документации производителя",
+  check_compatibility: "Проверка совместимости",
+  get_cross_sell_directions: "Направления сопутствующих товаров",
+  get_compatibility_requirements: "Требования совместимости",
+  check_compatibility_batch: "Пакетная проверка совместимости",
+  compare_products: "Сравнение предложений",
+  prepare_context: "Подготовка данных товара",
+  agent_selection: "Предложения агента для проверки",
+  validate_final: "Проверка итоговой выдачи",
+  web_search: "Поиск официального источника",
+  rule_based_recommendation: "Подбор по правилам",
+  recommendation_cache: "Чтение кеша результата",
+  shared_agent_run: "Использование результата параллельного запроса",
+  agent_execution: "Выполнение агентного подбора",
+};
+
+const outcomeLabels = {
+  no_compatible_products: "В каталоге нет подтверждённого совместимого предложения по этим условиям.",
+  missing_product_facts: "Для проверки совместимости не хватает характеристик товара.",
+  search_no_results: "Поиск не нашёл документацию с нужной характеристикой.",
+  source_unavailable: "Документ производителя не удалось загрузить.",
+  document_extraction_failed: "Из документа не удалось извлечь подтверждённую характеристику.",
+  identity_mismatch: "Документ не удалось связать с выбранной моделью или артикулом.",
+  conflicting_facts: "Источники дают противоречивые характеристики.",
+  provider_timeout: "Истекло время онлайн-подбора.",
+  provider_error: "Онлайн-подбор прервался.",
+  iteration_limit: "Достигнут лимит шагов агента.",
+};
+
+function renderAgentTrace(events) {
+  agentTrace.hidden = !events.length;
+  agentTrace.open = false;
+  agentTools.replaceChildren(...events.map((event) => {
+    const name = event.name ?? event.tool;
+    const entry = element("li", "");
+    entry.append(element("strong", "", toolLabels[name] ?? name ?? "Подбор"));
+    const status = ({
+      ok: "Выполнено", error: "Ошибка", skipped: "Пропущено", cached: "Из кеша",
+      confirmed: "Подтверждено", unknown: "Недостаточно данных",
+      rejected: "Отклонено", timeout: "Истекло время", empty: "Результатов нет",
+    })[event.status] ?? event.status;
+    const elapsed = Number.isFinite(event.elapsed_ms) ? formatNumber.format(Math.round(event.elapsed_ms)) + " мс" : "";
+    const count = event.count > 0 ? "Результатов " + formatNumber.format(event.count) : "";
+    const detail = ({
+      source_unavailable: "Источник недоступен", vendor_source_unavailable: "Источник недоступен",
+      no_verifiable_fact: "Подтверждения в документации нет", missing_verified_spec: "Характеристика пока неизвестна",
+      provider_timeout: "Время ожидания истекло", web_search_limit: "Достигнут лимит внешнего поиска",
+    })[event.error_code] ?? outcomeLabels[event.error_code];
+    const description = [status, count, detail, elapsed].filter(Boolean).join(" · ");
+    if (description) entry.append(element("p", "product-meta", description));
+    if (event.compatibility) {
+      const { checked, confirmed, rejected, unknown, errors } = event.compatibility;
+      entry.append(element("p", "product-meta", [
+        "Проверено " + checked, "подтверждено " + confirmed, "отклонено " + rejected,
+        "недостаточно данных " + unknown, "ошибок " + errors,
+      ].join(" · ")));
+    }
+    return entry;
+  }));
+}
+
+async function loadProductOptions(product, button, action, searchSnapshot) {
+  if (searchRequest || !results.contains(button)) return;
   recommendationRequest?.abort();
   const request = new AbortController();
   recommendationRequest = request;
   for (const choice of results.querySelectorAll(".recommend-button")) {
     choice.setAttribute("aria-pressed", String(choice === button));
   }
+  const similar = action === "similar";
+  recommendationPanel.hidden = false;
+  recommendationTitle.textContent = similar ? "Похожие товары" : "Сопутствующие товары";
   recommendationSource.textContent = product.name;
   recommendationSource.hidden = false;
   recommendations.replaceChildren();
-  showStatus(recommendationStatus, "Проверяем совместимость по каталогу…");
+  showStatus(recommendationStatus, similar ? "Ищем альтернативы в каталоге…" : "Подбираем совместимые товары…");
   showStatus(recommendationContext, "");
+  showStatus(recommendationMode, "");
+  renderAgentTrace([]);
   if (matchMedia("(max-width: 49rem)").matches) {
     recommendationPanel.scrollIntoView({ block: "start" });
   }
 
   try {
-    const data = await getJson("/api/recommend", {
-      ...currentSearchParams(input.value.trim()), offer_id: product.id,
+    const data = await getJson("/api/" + action, {
+      ...searchSnapshot, offer_id: product.id,
     }, request.signal);
-    if (request.signal.aborted) return;
-    recommendations.replaceChildren(...data.products.map((item) => productCard(item)));
-    showStatus(recommendationStatus, data.products.length ? "" : "Не найдено");
+    if (request.signal.aborted || recommendationRequest !== request) return;
+    const products = Array.isArray(data.products) ? data.products : [];
+    if (similar) {
+      recommendations.replaceChildren(...products.map((item) => productCard(item)));
+    } else {
+      renderRecommendations(products, data.directions ?? []);
+    }
+    showStatus(recommendationStatus, products.length ? "" : "Не найдено");
+    if (similar) return;
+    const mode = ({
+      local: "Локальный подбор",
+      llm_agent: "Агентный поиск характеристик и проверка",
+      rule_based_fallback: "Подтверждённый результат после остановки агента",
+      cached_result: "Подбор из кеша",
+    })[data.mode];
+    if (mode) showStatus(recommendationMode, mode + " · " + formatNumber.format(Math.round(data.elapsed_ms)) + " мс");
+    renderAgentTrace(data.tools ?? []);
     const missing = (data.missing_context ?? []).map((field) => ({
       platform: "ОС", devices: "число рабочих мест",
     })[field]).filter(Boolean);
     if (missing.length) showStatus(recommendationContext, "Для проверки укажите " + missing.join(" и ") + ".");
+    else {
+      const note = outcomeLabels[data.outcome_code] ?? outcomeLabels[data.execution_status];
+      const source = data.origins?.includes("external_lookup") ? "Выполнены обращения к внешним источникам." : "";
+      showStatus(recommendationContext, [note, source].filter(Boolean).join(" "));
+    }
   } catch (error) {
     if (!request.signal.aborted) showStatus(recommendationStatus, `Ошибка подбора. ${error.message}`, true);
   } finally {
     if (recommendationRequest === request) recommendationRequest = null;
   }
 }
+
+function closeSuggestions() {
+  clearTimeout(suggestionTimer);
+  suggestionRequest?.abort();
+  selectedSuggestion = -1;
+  suggestionList.hidden = true;
+  suggestionList.replaceChildren();
+  input.setAttribute("aria-expanded", "false");
+  input.removeAttribute("aria-activedescendant");
+}
+
+function chooseSuggestion(item) {
+  input.value = item.textContent;
+  form.requestSubmit();
+}
+
+input.addEventListener("input", () => {
+  closeSuggestions();
+  const query = input.value.trim();
+  if (query.length < 2) return;
+  suggestionTimer = setTimeout(async () => {
+    const request = new AbortController();
+    suggestionRequest = request;
+    try {
+      const data = await getJson("/api/suggest", { q: query }, request.signal);
+      if (request.signal.aborted || input.value.trim() !== query || !data.suggestions.length) return;
+      suggestionList.replaceChildren(...data.suggestions.map((label, index) => {
+        const item = element("li", "", label);
+        item.id = "search-suggestion-" + index;
+        item.setAttribute("role", "option");
+        item.setAttribute("aria-selected", "false");
+        return item;
+      }));
+      suggestionList.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+    } catch {
+      if (!request.signal.aborted) closeSuggestions();
+    }
+  }, 250);
+});
+
+input.addEventListener("keydown", (event) => {
+  if (suggestionList.hidden) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeSuggestions();
+  } else if (event.key === "Enter" && selectedSuggestion >= 0) {
+    event.preventDefault();
+    chooseSuggestion(suggestionList.children[selectedSuggestion]);
+  } else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+    event.preventDefault();
+    suggestionList.children[selectedSuggestion]?.setAttribute("aria-selected", "false");
+    const count = suggestionList.childElementCount;
+    const direction = event.key === "ArrowDown" ? 1 : -1;
+    selectedSuggestion = selectedSuggestion === -1 ? (direction === 1 ? 0 : count - 1)
+      : (selectedSuggestion + direction + count) % count;
+    const item = suggestionList.children[selectedSuggestion];
+    item.setAttribute("aria-selected", "true");
+    input.setAttribute("aria-activedescendant", item.id);
+    item.scrollIntoView({ block: "nearest" });
+  }
+});
+input.addEventListener("blur", closeSuggestions);
+suggestionList.addEventListener("mousedown", (event) => event.preventDefault());
+suggestionList.addEventListener("click", (event) => {
+  const item = event.target.closest('[role="option"]');
+  if (item) chooseSuggestion(item);
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

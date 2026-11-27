@@ -4,9 +4,11 @@ from decimal import Decimal, InvalidOperation
 from html import unescape
 from pathlib import Path
 
-from .catalog import Offer, catalog_elements
+from .catalog import Offer, catalog_elements, lexical_terms
 from .query import Condition, MEMORY_TYPE_PATTERN, brand_keys, number, product_type
 from .query_normalization import query_key
+from .recommendation_facts import Fields
+from .recommendation_licenses import office_scope
 
 
 _NUMBER = r"\d+(?:[.,]\d+)?"
@@ -53,7 +55,8 @@ _TEXT_PARAMS = {
     "installed_os": ("операционная система",), "connection": ("тип подключения", "подключение"),
 }
 _ATTR_KEYS = {key for keys in (*_NUMERIC_PARAMS.values(), *_TEXT_PARAMS.values()) for key in keys} | {
-    "тип устройства", "тип продукта",
+    "тип устройства", "тип продукта", "назначение", "модель процессора", "серия ноутбука",
+    "тип программного обеспечения", "состав комплекта",
 }
 _MODEL = re.compile(r"(?<!\w)(?:(?:rtx|gtx|rx)\s+)?\d{4}(?:\s+(?:ti|xt|super))?(?!\w)")
 _PRICE_CURRENCIES = {"price_rub": {"RUR", "RUB"}, "price_usd": {"USD"}, "price_eur": {"EUR"}}
@@ -161,6 +164,35 @@ class QueryCatalog:
         if offer.offer_id not in self._product_types:
             self._product_types[offer.offer_id] = self._classify_product(offer)
         return self._product_types[offer.offer_id]
+
+    def product_types(self, offer: Offer) -> frozenset[str]:
+        return frozenset(self._product_type(offer))
+
+    def purposes(self, offer: Offer) -> frozenset[str]:
+        detail = self.details.get(offer.offer_id)
+        return frozenset(
+            value for key in ("назначение", "назначение памяти") for value in detail.attributes.get(key, ())
+        ) if detail else frozenset()
+
+    def office_role(self, offer: Offer) -> str:
+        detail = self.details.get(offer.offer_id)
+        title = query_key(unescape(offer.name))
+        _, role = office_scope(Fields(detail.attributes if detail else {}, {}, title, "", ""), True)
+        if role == "not_office_suite":
+            # A project planner and a diagram editor may share the office category.
+            return " ".join(lexical_terms(title)[:2])
+        return role
+
+    def similar_model(self, offer: Offer) -> str:
+        title = query_key(unescape(offer.name))
+        detail = self.details.get(offer.offer_id)
+        processors = detail.attributes.get("модель процессора", ()) if detail else ()
+        series = detail.attributes.get("серия ноутбука", ()) if detail else ()
+        if len(processors) == len(series) == 1 and "laptop" in self._product_type(offer):
+            model, separator, _ = title.partition(processors[0])
+            if separator and re.search(rf"(?<!\w){re.escape(series[0])}(?!\w)", model):
+                title = model
+        return " ".join(title.strip(" ,.-").split())
 
     def _values(self, offer: Offer, field: str) -> set[str | Decimal]:
         if field == "product_type":
@@ -272,12 +304,19 @@ class QueryCatalog:
         source = title if field in {"devices", "users", "term_months"} else context
         return {value for match in re.finditer(pattern, source) if (value := _parse_quantity(match[1], field)) is not None}
 
-    def check(self, offer: Offer, condition: Condition) -> bool | None:
-        key = (offer.offer_id, condition.field)
+    def _cached_values(self, offer: Offer, field: str) -> set[str | Decimal]:
+        key = (offer.offer_id, field)
         values = self._cached.get(key)
         if values is None:
-            values = self._values(offer, condition.field)
+            values = self._values(offer, field)
             self._cached[key] = values
+        return values
+
+    def feature_values(self, offer: Offer, field: str) -> frozenset[str | Decimal]:
+        return frozenset(self._cached_values(offer, field))
+
+    def check(self, offer: Offer, condition: Condition) -> bool | None:
+        values = self._cached_values(offer, condition.field)
         expected = condition.value
         if not values:
             return None

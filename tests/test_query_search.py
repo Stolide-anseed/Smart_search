@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import closing
 from decimal import Decimal
 from pathlib import Path
@@ -35,6 +36,7 @@ class QuerySearchTests(TestCase):
             ("ram", "Оперативная память"), ("laptop", "Ноутбуки"),
             ("other", "Оптические приводы"), ("shredder", "Шредеры"),
             ("office", "Офисные пакеты программ Microsoft Office"), ("monitor", "Мониторы"),
+            ("gpu", "Видеокарты"), ("lenovo", "Ноутбуки Lenovo"),
         ):
             entry = SubElement(categories, "category", id=category)
             entry.text = label
@@ -58,11 +60,26 @@ class QuerySearchTests(TestCase):
         add("ddr3", "Оперативная память DDR3L 8 ГБ", "ram", "6500", attrs=(*laptop_memory, ("Тип памяти", "DDR3L")))
         add("memory16", "Оперативная память DDR4 16GB (1Gb*8)", "ram", "9500", attrs=(("Назначение памяти", "для ноутбука"),))
         add("notebook", "Ноутбук ASUS 16 ГБ", "laptop", "60000", vendor="ASUS")
+        add("tablet", "Планшет Example P1", "laptop", "30000")
+        add("design_gpu", "Видеокарта ModelOne", "gpu", "24000", attrs=(("Назначение", "проектирование"),))
+        add("design_copy", "Видеокарта ModelOne", "gpu", "24500", attrs=(("Назначение", "проектирование"),))
+        add("gaming_gpu", "Видеокарта ModelTwo", "gpu", "25000", attrs=(("Назначение", "игры"),))
+        add("design_alternative", "Видеокарта ModelThree", "gpu", "26000", attrs=(("Назначение", "проектирование"),))
+        for offer_id, model, processor in (
+            ("think_16", "Thinkbook 16 G8", "Intel Core 7 240H"),
+            ("think_16_other", "Thinkbook 16 G8", "Intel Core 5 210H"),
+            ("think_14", "Thinkbook 14 G8", "Intel Core 7 240H"),
+        ):
+            add(offer_id, f"Ноутбук Lenovo {model} {processor}", "lenovo", "95000", vendor="Lenovo",
+                attrs=(("Модель процессора", processor), ("Серия ноутбука", "ThinkBook")), code=offer_id)
         add("drive", "Привод ASUS", "other", "4000", vendor="ASUS", description="Ноутбук ASUS")
-        add("office12", "Microsoft Office 2024 на 12 ПК, бессрочная", "office", "18000", vendor="Microsoft")
+        add("office12", "Microsoft Office 2024 на 12 ПК, бессрочная", "office", "18000", vendor="Microsoft",
+            code="EP2-06605")
         add("office1", "Microsoft Office 2024 на 1 ПК, бессрочная", "office", "4000", vendor="Microsoft")
         add("office_subscription", "Microsoft Office 2024 на 20 ПК, подписка", "office", "5000", vendor="Microsoft")
         add("office_unknown", "Microsoft Office 2024 Standard, бессрочная", "office", "9000", vendor="Microsoft")
+        add("project", "Microsoft Project Standard 2024", "office", "12000", vendor="Microsoft")
+        add("office_home", "Microsoft Office для дома 2024 на 1 ПК, бессрочная", "office", "15000", vendor="Microsoft")
         add("cloud_service", "Облачная инфраструктура", "cloud", "9000", attrs=(("Тип продукта", "Софт"),))
         add("hardware", "Оборудование Example", "office", "9000", attrs=(("Тип продукта", "Оборудование"),))
         add("shredder", "Шредер Example", "shredder", "13000")
@@ -197,3 +214,109 @@ class QuerySearchTests(TestCase):
             scores = metrics(rows)["hybrid"]
             self.assertEqual(scores["HitRate@4"], 1)
             self.assertEqual(scores["Recall@4"], 1)
+
+    def test_lexical_expansion_respects_price_and_reports_shortage(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            result = index.search_checked("мониторами до 10 тыс. ₽", self.catalog, mode="bm25")
+            self.assertEqual({hit.offer.offer_id for hit in result.hits}, {"m1", "m2_white"})
+            self.assertEqual(set(result.alternatives), {"m1", "m2_white"})
+            self.assertEqual(result.shortage_reason, "insufficient_confirmed_families")
+            uncertain = index.search_checked("мониторами с 1920x1080 до 10 тыс. ₽", self.catalog, mode="bm25")
+            self.assertFalse(uncertain.alternatives)
+
+    def test_similar_uses_stored_vectors_and_preserves_budget_and_families(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            with patch("softline_search.index.E5Encoder", side_effect=AssertionError("E5 loaded for similar")):
+                alternatives = index.similar("m1", self.catalog, "монитор до 15 тыс. ₽", limit=10)
+            self.assertEqual(len(alternatives), 3)
+            self.assertEqual(len({index.family_key(item.offer) for item in alternatives}), 3)
+            self.assertTrue(all(index.family_key(item.offer) != ("group", "m1") for item in alternatives))
+            self.assertTrue(all(item.offer.category_id == "monitor" and 0 < Decimal(item.offer.price) <= 15000
+                                for item in alternatives))
+            self.assertTrue(any(item.label == "Цена" for hit in alternatives for item in hit.differences))
+            with self.assertRaises(KeyError):
+                index.similar("no-such-id", self.catalog)
+
+    def test_similar_checks_type_and_verified_purpose_within_category(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            self.assertFalse(index.similar("notebook", self.catalog))
+            self.assertEqual(
+                [hit.offer.offer_id for hit in index.similar("design_gpu", self.catalog)], ["design_alternative"]
+            )
+            self.assertEqual([hit.offer.offer_id for hit in index.similar("think_16", self.catalog)], ["think_14"])
+
+    def test_similar_office_excludes_standalone_apps_and_home_only_licenses(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            offers = index.similar("office12", self.catalog)
+            self.assertEqual({hit.offer.offer_id for hit in offers}, {"office1", "office_subscription", "office_unknown"})
+
+    def test_similar_ignores_selected_sku_and_keeps_explicit_license_and_budget(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            offers = index.similar("office12", self.catalog, "EP2-06605 до 6000 ₽ без подписки")
+            self.assertEqual([hit.offer.offer_id for hit in offers], ["office1"])
+
+    def test_exact_article_keeps_matches_and_adds_separately_marked_analogues(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            query = "EP2-06605 без подписки до 20 тыс. ₽"
+            result = index.search_checked(query, self.catalog, mode="bm25")
+            self.assertEqual([hit.offer.offer_id for hit in result.hits], ["office12"])
+            self.assertEqual({hit.offer.offer_id for hit in result.analogues}, {"office1", "office_unknown"})
+            self.assertEqual(result.reserve, [])
+            constrained = index.search_checked("EP2-06605 до 9 тыс. ₽", self.catalog, mode="bm25")
+            self.assertEqual(constrained.hits, [])
+            self.assertEqual(constrained.analogues, [])
+
+    def test_suggestions_reuse_catalog_prefixes_and_normalizer_without_encoder(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            with patch("softline_search.index.E5Encoder", side_effect=AssertionError("E5 loaded for suggest")):
+                self.assertFalse(index.suggest("м", self.catalog))
+                self.assertIn("Шредеры", index.suggest("ihtl", self.catalog))
+                slang = index.suggest("моник", self.catalog)
+                self.assertTrue(slang)
+                self.assertTrue(all("монитор" in text.casefold() for text in slang))
+                self.assertIn("Монитор Example B2", index.suggest("b2/w", self.catalog))
+                self.assertTrue(index.suggest("thinkb", self.catalog))
+                self.assertLessEqual(len(index.suggest("мон", self.catalog, limit=100)), 5)
+
+    def test_shared_index_allows_search_and_similar_from_request_threads(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index, ThreadPoolExecutor(max_workers=3) as executor:
+            tasks = [
+                executor.submit(index.search_checked, "монитор", self.catalog, mode="bm25"),
+                executor.submit(index.similar, "m1", self.catalog, "монитор до 15 тыс. ₽"),
+                executor.submit(index.similar, "design_gpu", self.catalog),
+            ]
+            self.assertEqual(len(tasks[0].result(timeout=5).hits), 4)
+            self.assertEqual(len(tasks[1].result(timeout=5)), 3)
+            self.assertEqual(len(tasks[2].result(timeout=5)), 1)
+
+    def test_agent_retrieval_scopes_each_hybrid_ranking(self) -> None:
+        with closing(SearchIndex(self.index_path)) as index:
+            ranking = [(row, 1.0) for row in range(len(index.offers))]
+            with patch.object(index, "_rankings", return_value=(ranking, list(reversed(ranking)))) as ranks:
+                hits = index.search_candidates("монитор", category_ids=("monitor",), limit=3)
+                missing = index.search_candidates("монитор", category_ids=("unknown",), limit=3)
+            self.assertEqual(len(hits), 3)
+            self.assertTrue(all(hit.offer.category_id == "monitor" for hit in hits))
+            self.assertFalse(missing)
+            ranks.assert_called_once_with("монитор", "hybrid")
+
+    def test_new_metrics_include_unmapped_queries_and_measure_reserve(self) -> None:
+        path = self.catalog.with_name("unmapped_eval.xlsx")
+        workbook = Workbook()
+        workbook.active.append(["query", "target_url", "target_type", "target_id"])
+        workbook.active.append(["монитор до 10 тыс. ₽", "https://example.test/unavailable", "offer", "unavailable"])
+        workbook.save(path)
+        workbook.close()
+        with closing(SearchIndex(self.index_path)) as index:
+            order = {"m1", "m2_white", "F6", "G7"}
+            ranking = [(row, 1.0) for row, offer in enumerate(index.offers) if offer.offer_id in order]
+            with patch.object(index, "_rankings", return_value=(ranking, ranking)):
+                rows = evaluate(index, path, catalog_path=self.catalog)
+            scores = metrics(rows)["hybrid"]
+            self.assertEqual(scores["FourProductRate"], 0.0)
+            self.assertEqual(scores["FourProductRateWithAlternatives"], 0.0)
+            self.assertEqual(scores["FourDisplayedProductRate"], 1.0)
+            self.assertEqual(scores["ConstraintSatisfactionRate"], 0.5)
+            self.assertGreaterEqual(scores["p95_ms"], 0)
+            self.assertEqual(rows[0].search_observations["hybrid"].shortage_reason, "unconfirmed_requirements")
+            self.assertNotIn("HitRate@4", scores)

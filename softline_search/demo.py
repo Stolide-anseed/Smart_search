@@ -1,14 +1,17 @@
 import json
+import logging
 import re
 import sqlite3
+from dataclasses import asdict
 from decimal import Decimal
 from http import HTTPStatus
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 from xml.etree.ElementTree import ParseError
 
 from .catalog import Offer
+from .cross_sell import DIRECTIONS
 from .index import SearchIndex, SearchMode
 from .query import Condition, number
 from .query_catalog import SOFTWARE_CATEGORY_ID
@@ -22,6 +25,7 @@ _ASSETS = {
     "/app.js": ("app.js", "text/javascript; charset=utf-8"),
 }
 _PLATFORMS = {"windows", "windows 10", "windows 11", "macos", "linux", "astra linux", "android", "ios"}
+_LOG = logging.getLogger(__name__)
 
 
 class _BadRequest(ValueError):
@@ -90,29 +94,95 @@ def _search_products(
     result = index.search_checked(query, catalog, mode=mode, filters=filters)
     products = []
     for hit in result.hits + result.reserve:
-        missing = result.unconfirmed.get(hit.offer.offer_id, ())
+        identifier = hit.offer.offer_id
+        missing = result.unconfirmed.get(identifier, ())
+        alternative = result.alternatives.get(identifier, "")
         products.append({
             **_product(hit.offer),
             "unconfirmed": missing,
             "can_recommend": not missing,
+            "can_compare": True,
+            "alternative": alternative,
+            "match_kind": "reserve" if missing else "confirmed_alternative" if alternative else "match",
         })
     return {
         "normalized": result.query.normalized,
         "conditions": list(dict.fromkeys(condition.source for condition in (*result.query.conditions, *filters))),
         "ambiguities": result.query.ambiguities,
+        "confirmed_count": len(result.hits),
+        "shortage_reason": result.shortage_reason,
         "products": products,
+        "analogues": [
+            {
+                **_product(item.offer), "reason": item.reason, "match_kind": "analogue",
+                "differences": [asdict(difference) for difference in item.differences],
+            }
+            for item in result.analogues
+        ],
     }
 
 
+def _recommendation_products(source: Offer, result) -> dict:
+    products = [
+        {
+            **_product(item.offer),
+            "price": item.offer.price if item.has_price else "",
+            "available": item.available,
+            "reason": item.reason,
+            "sources": item.sources,
+            "purchase_quantity": item.purchase_quantity,
+            "total_price": str(item.total_price) if item.total_price is not None else None,
+            "direction_id": item.direction_id,
+            "direction_label": item.direction_label,
+        }
+        for item in result.items
+    ]
+    direction_counts = {
+        direction: sum(item.direction_id == direction for item in result.items)
+        for direction in result.directions
+    }
+    response = {
+        "source": _product(source),
+        "scenario_id": result.scenario_id,
+        "scenario_ids": result.scenario_ids,
+        "directions": [
+            {
+                "id": direction,
+                "label": DIRECTIONS[direction].label if direction in DIRECTIONS else "",
+                "count": direction_counts.get(direction, 0),
+            }
+            for direction in result.directions if direction in DIRECTIONS
+        ],
+        "status": result.status,
+        "reason_code": result.reason_code,
+        "missing_context": result.missing_context,
+        "mode": result.mode,
+        "execution_status": result.execution_status,
+        "outcome_code": result.outcome_code,
+        "origins": result.origins,
+        "fallback_reason": result.fallback_reason,
+        "tools": result.tools,
+        "elapsed_ms": result.elapsed_ms,
+        "usage": result.usage,
+        "products": products,
+    }
+    if result.diagnostics is not None:
+        response["diagnostics"] = result.diagnostics
+    return response
+
+
 def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -> None:
+    from .llm_agent import LLMRecommendationAgent
+    from .llm_provider import LLMSettings
     from .recommendation import RecommendationAgent
+    from .vendor_evidence import VendorEvidenceService
 
     if not catalog.is_file():
         raise FileNotFoundError(f"Каталог {catalog} не найден.")
     if not 0 <= port <= 65535:
         raise ValueError("Номер порта должен быть от 0 до 65535.")
 
-    offer_ids = {offer.offer_id for offer in index.offers}
+    offers = {offer.offer_id: offer for offer in index.offers}
 
     class DemoHandler(BaseHTTPRequestHandler):
         def _send(self, data: bytes, content_type: str, status: HTTPStatus) -> None:
@@ -128,6 +198,9 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
         def _json(self, data: dict, status: HTTPStatus = HTTPStatus.OK) -> None:
             self._send(json.dumps(data, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8", status)
 
+        def log_request(self, code="-", size="-") -> None:
+            _LOG.info("%s %s %s", self.command, self.path.partition("?")[0], code)
+
         def do_GET(self) -> None:
             try:
                 url = urlsplit(self.path)
@@ -136,7 +209,10 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
                     self._send((_ASSET_ROOT / name).read_bytes(), content_type, HTTPStatus.OK)
                 elif url.path == "/api/filters":
                     self._json(filter_options)
-                elif url.path in {"/api/search", "/api/recommend"}:
+                elif url.path == "/api/suggest":
+                    parameters = parse_qs(url.query, keep_blank_values=True)
+                    self._json({"suggestions": index.suggest(_parameter(parameters, "q"), catalog)})
+                elif url.path in {"/api/search", "/api/recommend", "/api/similar"}:
                     parameters = parse_qs(url.query, keep_blank_values=True)
                     query = _parameter(parameters, "q")
                     filters = _filters(parameters, categories, vendors)
@@ -148,8 +224,20 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
                     offer_id = _parameter(parameters, "offer_id")
                     if not offer_id:
                         raise _BadRequest("Укажите товар для подбора.")
-                    if offer_id not in offer_ids:
+                    if offer_id not in offers:
                         self._json({"error": "Товар не найден в каталоге."}, HTTPStatus.NOT_FOUND)
+                        return
+                    if url.path == "/api/similar":
+                        self._json({
+                            "source": _product(offers[offer_id]),
+                            "products": [
+                                {
+                                    **_product(item.offer), "reason": item.reason,
+                                    "differences": [asdict(difference) for difference in item.differences],
+                                }
+                                for item in index.similar(offer_id, catalog, query, filters=filters)
+                            ],
+                        })
                         return
                     debug = _parameter(parameters, "debug")
                     if debug not in {"", "0", "1"}:
@@ -160,35 +248,16 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
                     except KeyError:
                         self._json({"error": "Товар не найден в каталоге."}, HTTPStatus.NOT_FOUND)
                         return
-                    response = {
-                        "scenario_id": result.scenario_id,
-                        "status": result.status,
-                        "reason_code": result.reason_code,
-                        "missing_context": result.missing_context,
-                        "products": [
-                            {
-                                **_product(item.offer),
-                                "price": item.offer.price if item.has_price else "",
-                                "available": item.available,
-                                "reason": item.reason,
-                                "sources": item.sources,
-                                "purchase_quantity": item.purchase_quantity,
-                                "total_price": str(item.total_price) if item.total_price is not None else None,
-                            }
-                            for item in result.items
-                        ],
-                    }
-                    if result.diagnostics is not None:
-                        response["diagnostics"] = result.diagnostics
-                    self._json(response)
+                    self._json(_recommendation_products(offers[offer_id], result))
                 else:
                     self.send_error(HTTPStatus.NOT_FOUND)
             except _BadRequest as error:
                 self._json({"error": str(error)}, HTTPStatus.BAD_REQUEST)
             except (OSError, ValueError, RuntimeError, sqlite3.Error, ParseError) as error:
-                self._json({"error": str(error)}, HTTPStatus.INTERNAL_SERVER_ERROR)
+                _LOG.warning("Ошибка при обработке запроса (%s)", type(error).__name__)
+                self._json({"error": "Внутренняя ошибка подбора."}, HTTPStatus.INTERNAL_SERVER_ERROR)
 
-    with HTTPServer(("127.0.0.1", port), DemoHandler) as server:
+    with ThreadingHTTPServer(("127.0.0.1", port), DemoHandler) as server:
         print("Подготавливаем каталог для поиска и допродаж.", flush=True)
         query_catalog = index.prepare_query_catalog(catalog)
         categories = {
@@ -208,9 +277,17 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
             ],
             "vendors": sorted(vendors, key=lambda vendor: (query_key(vendor), vendor)),
         }
-        agent = RecommendationAgent(catalog)
+        rules = RecommendationAgent(catalog)
+        try:
+            evidence = VendorEvidenceService()
+        except (OSError, sqlite3.Error) as error:
+            _LOG.warning("Кеш характеристик недоступен (%s)", type(error).__name__)
+            evidence = None
+        agent = LLMRecommendationAgent(index, catalog, rules, LLMSettings.from_env(), evidence)
         print(f"Демо открыто на http://127.0.0.1:{server.server_port}/", flush=True)
         try:
             server.serve_forever()
         except KeyboardInterrupt:
             pass
+        finally:
+            agent.close()

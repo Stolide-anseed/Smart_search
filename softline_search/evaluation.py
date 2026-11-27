@@ -1,7 +1,8 @@
 import json
-from dataclasses import dataclass
-from math import log2
+from dataclasses import dataclass, field
+from math import ceil, log2
 from pathlib import Path
+from time import perf_counter
 from urllib.parse import parse_qs, urlsplit
 
 from openpyxl import load_workbook
@@ -24,6 +25,19 @@ class EvaluationExample:
 
 
 @dataclass(frozen=True, slots=True)
+class SearchObservation:
+    confirmed_count: int
+    reserve_count: int
+    constraints_checked: int
+    constraints_satisfied: int
+    latency_ms: float
+    shortage_reason: str | None
+    offer_ids: tuple[str, ...]
+    reserve_offer_ids: tuple[str, ...]
+    alternatives_offer_ids: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True, slots=True)
 class QueryResult:
     query: str
     target_url: str
@@ -35,6 +49,7 @@ class QueryResult:
     target_type: str = ""
     target_name: str = ""
     cutoff: int = RESULT_LIMIT
+    search_observations: dict[SearchMode, SearchObservation] = field(default_factory=dict)
 
     @property
     def ranks(self) -> dict[SearchMode, int | None]:
@@ -118,6 +133,7 @@ def evaluate(index: SearchIndex, workbook_path: Path, *, catalog_path: Path | No
 
     indexed_offers = {offer.offer_id: offer for offer in index.offers}
     cutoff = RESULT_LIMIT if catalog_path is None else DEMO_RESULT_COUNT
+    catalog = index.prepare_query_catalog(catalog_path) if catalog_path is not None else None
     rows = []
     for query, references in by_query.items():
         first_reference = references[0]
@@ -137,6 +153,7 @@ def evaluate(index: SearchIndex, workbook_path: Path, *, catalog_path: Path | No
                 target_ids.update(_target_offers(ref.target_url, index.offers, product_groups))
 
         hit_positions = {}
+        observations = {}
         first_hybrid_result = ""
         matched_ids = target_ids & indexed_offers.keys()
         mapped = bool(matched_ids)
@@ -144,15 +161,31 @@ def evaluate(index: SearchIndex, workbook_path: Path, *, catalog_path: Path | No
             {index.family_key(indexed_offers[offer_id]) for offer_id in matched_ids}
             if catalog_path is not None else set()
         )
-        if mapped:
+        if mapped or catalog_path is not None:
             for mode in MODES:
-                hits = (index.search(query, mode=mode) if catalog_path is None
-                        else index.search_checked(query, catalog_path, mode=mode, limit=cutoff).hits)
-                hit_positions[mode] = tuple(
-                    rank for rank, hit in enumerate(hits, start=1)
-                    if (hit.offer.offer_id in target_ids if catalog_path is None
-                        else index.family_key(hit.offer) in target_families)
-                )
+                if catalog_path is None:
+                    hits = index.search(query, mode=mode)
+                else:
+                    started = perf_counter()
+                    result = index.search_checked(query, catalog_path, mode=mode, limit=cutoff)
+                    latency_ms = 1000 * (perf_counter() - started)
+                    hits = result.hits
+                    required = [condition for condition in result.query.conditions if condition.required]
+                    shown = hits + result.reserve if required else []
+                    observations[mode] = SearchObservation(
+                        len(hits), len(result.reserve), len(shown),
+                        sum(all(catalog.check(hit.offer, condition) is True for condition in required) for hit in shown),
+                        latency_ms, result.shortage_reason,
+                        tuple(hit.offer.offer_id for hit in hits),
+                        tuple(hit.offer.offer_id for hit in result.reserve),
+                        tuple(hit.offer.offer_id for hit in result.analogues),
+                    )
+                if mapped:
+                    hit_positions[mode] = tuple(
+                        rank for rank, hit in enumerate(hits, start=1)
+                        if (hit.offer.offer_id in target_ids if catalog_path is None
+                            else index.family_key(hit.offer) in target_families)
+                    )
                 if mode == "hybrid" and hits:
                     first_hybrid_result = hits[0].offer.name
         rows.append(QueryResult(
@@ -166,27 +199,30 @@ def evaluate(index: SearchIndex, workbook_path: Path, *, catalog_path: Path | No
             target_type=first_reference.target_type if len(target_types) == 1 else "mixed",
             target_name=first_reference.target_name,
             cutoff=cutoff,
+            search_observations=observations,
         ))
     return rows
 
 
 def metrics(rows: list[QueryResult]) -> dict[SearchMode, dict[str, float]]:
     mapped = [row for row in rows if row.mapped]
-    if not mapped:
+    if not rows or not mapped and not any(row.search_observations for row in rows):
         return {}
     # Product groups and categories represent alternatives for a hit, not an exhaustive set of labels.
     exact_labels = all(row.target_type == "offer" for row in mapped)
-    cutoff = mapped[0].cutoff
+    cutoff = (mapped or rows)[0].cutoff
     discounts = [1 / log2(rank + 1) for rank in range(1, cutoff + 1)]
     scores = {}
     for mode in MODES:
         positions = [row.hit_positions[mode] for row in mapped]
-        scores[mode] = {
-            "HitRate@1": sum(1 in ranks for ranks in positions) / len(mapped),
-            f"HitRate@{cutoff}": sum(bool(ranks) for ranks in positions) / len(mapped),
-            f"MRR@{cutoff}": sum(1 / ranks[0] for ranks in positions if ranks) / len(mapped),
-        }
-        if exact_labels:
+        scores[mode] = {}
+        if mapped:
+            scores[mode].update({
+                "HitRate@1": sum(1 in ranks for ranks in positions) / len(mapped),
+                f"HitRate@{cutoff}": sum(bool(ranks) for ranks in positions) / len(mapped),
+                f"MRR@{cutoff}": sum(1 / ranks[0] for ranks in positions if ranks) / len(mapped),
+            })
+        if mapped and exact_labels:
             scores[mode][f"Recall@{cutoff}"] = sum(
                 len(ranks) / row.relevant_count for ranks, row in zip(positions, mapped)
             ) / len(mapped)
@@ -194,4 +230,25 @@ def metrics(rows: list[QueryResult]) -> dict[SearchMode, dict[str, float]]:
                 sum(discounts[rank - 1] for rank in ranks) / sum(discounts[:row.relevant_count])
                 for ranks, row in zip(positions, mapped)
             ) / len(mapped)
+        observed = [row.search_observations[mode] for row in rows if mode in row.search_observations]
+        if observed:
+            scores[mode]["FourProductRate"] = sum(
+                sample.confirmed_count >= DEMO_RESULT_COUNT for sample in observed
+            ) / len(observed)
+            scores[mode]["FourProductRateWithAlternatives"] = sum(
+                sample.confirmed_count + len(sample.alternatives_offer_ids) >= DEMO_RESULT_COUNT
+                for sample in observed
+            ) / len(observed)
+            scores[mode]["FourDisplayedProductRate"] = sum(
+                sample.confirmed_count + len(sample.alternatives_offer_ids) + sample.reserve_count >= DEMO_RESULT_COUNT
+                for sample in observed
+            ) / len(observed)
+            checked = sum(sample.constraints_checked for sample in observed)
+            if checked:
+                scores[mode]["ConstraintSatisfactionRate"] = sum(
+                    sample.constraints_satisfied for sample in observed
+                ) / checked
+            times = sorted(sample.latency_ms for sample in observed)
+            scores[mode]["p50_ms"] = times[ceil(0.50 * len(times)) - 1]
+            scores[mode]["p95_ms"] = times[ceil(0.95 * len(times)) - 1]
     return scores

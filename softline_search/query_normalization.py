@@ -86,6 +86,11 @@ class QueryNormalizer:
             self.words.update(query_key(word) for word in _TOKEN.findall(canonical))
         self.words.update({key: 10 for key in _ALIASES if " " not in key})
 
+    def suggestion_prefixes(self, query: str) -> tuple[str, ...]:
+        normalized, _ = self.normalize(query)
+        alphabet = _TO_ENGLISH if any("а" <= char <= "я" for char in query_key(query)) else _TO_RUSSIAN
+        return tuple(dict.fromkeys(query_key(text) for text in (normalized, query.translate(alphabet))))
+
     def normalize(self, query: str) -> tuple[str, tuple[QueryChange, ...]]:
         text = " ".join(unicodedata.normalize("NFC", query).split())
         changes: list[QueryChange] = []

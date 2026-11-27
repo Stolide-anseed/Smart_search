@@ -1,5 +1,9 @@
 .venv/
+.env
+.env.*
+!.env.example
 __pycache__/
 .search-index.sqlite3
+.vendor-facts.sqlite3*
 .search-index-build-*/
 /Mindbox.yml.gz.xml

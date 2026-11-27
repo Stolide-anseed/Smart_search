@@ -1,0 +1,983 @@
+{
+  "run_at": "2026-11-27T18:08:55+03:00",
+  "catalog_size": 291988701,
+  "cases": [
+    {
+      "anchor": "530901",
+      "context": "default",
+      "scenario_id": "laptop_bag"
+    },
+    {
+      "anchor": "496397",
+      "context": "default",
+      "scenario_id": "laptop_bag"
+    },
+    {
+      "anchor": "538620",
+      "context": "default",
+      "scenario_id": "laptop_bag"
+    },
+    {
+      "anchor": "473582",
+      "context": "windows_one",
+      "scenario_id": "office_antivirus"
+    },
+    {
+      "anchor": "82106",
+      "context": "default",
+      "scenario_id": "ups_battery"
+    },
+    {
+      "anchor": "82161",
+      "context": "default",
+      "scenario_id": "ups_battery"
+    },
+    {
+      "anchor": "460304",
+      "context": "default",
+      "scenario_id": "laptop_bag"
+    },
+    {
+      "anchor": "489135",
+      "context": "default",
+      "scenario_id": "laptop_bag"
+    }
+  ],
+  "local": [
+    {
+      "anchor": "530901",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.43429999641375616,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "496397",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.17389999993611127,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "538620",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.24249999842140824,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 5.7853000034810975,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ]
+        },
+        {
+          "id": "399141",
+          "article": "PRO32-PSS-CLS-1Y-36-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 36 ПК, требуется 1.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "82106",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.05570000212173909,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "129441",
+          "article": "APCRBC141",
+          "available": true,
+          "has_price": true,
+          "reason": "Для ИБП указана сменная батарея RBC141. Ей соответствует артикул APCRBC141.",
+          "sources": [
+            "XML param"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "82161",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 0.035599994589574635,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "460304",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 0.1740000006975606,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": []
+    },
+    {
+      "anchor": "489135",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 0.18530000670580193,
+      "mode": null,
+      "fallback_reason": null,
+      "usage": {},
+      "tools": [],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ]
+        }
+      ]
+    }
+  ],
+  "live": [
+    {
+      "anchor": "530901",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 11384.576299999026,
+      "mode": "rule_based_fallback",
+      "fallback_reason": "no_confirmed_recommendations",
+      "usage": {
+        "llm_calls": 5,
+        "input_tokens": 9855,
+        "cached_input_tokens": 7918,
+        "output_tokens": 272,
+        "web_searches": 2,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 4,
+        "cache_hits": 0,
+        "cache_lookups": 3,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 1,
+        "external_lookups": 1,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 5,
+        "provider_elapsed_ms": 11373.755000000001,
+        "vendor_lookup_elapsed_ms": 5499.693,
+        "web_search_elapsed_ms": 5497.707
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 3.792,
+          "count": 1
+        },
+        {
+          "tool": "web_search",
+          "status": "empty",
+          "elapsed_ms": 5497.736,
+          "count": 0
+        },
+        {
+          "tool": "search_vendor_specs",
+          "status": "empty",
+          "elapsed_ms": 5499.837,
+          "count": 0,
+          "error_code": "source_unavailable"
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.874,
+          "count": 3
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.398,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.128,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.115,
+          "count": 1
+        },
+        {
+          "tool": "rule_based_recommendation",
+          "status": "ok",
+          "elapsed_ms": 1.39,
+          "count": 0
+        }
+      ],
+      "items": []
+    },
+    {
+      "anchor": "496397",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "UNKNOWN",
+      "reason_code": "missing_laptop_dimensions",
+      "latency_ms": 7982.399000000441,
+      "mode": "rule_based_fallback",
+      "fallback_reason": "no_confirmed_recommendations",
+      "usage": {
+        "llm_calls": 5,
+        "input_tokens": 9774,
+        "cached_input_tokens": 7946,
+        "output_tokens": 273,
+        "web_searches": 1,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 4,
+        "cache_hits": 0,
+        "cache_lookups": 3,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 1,
+        "external_lookups": 1,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 5,
+        "provider_elapsed_ms": 7976.701,
+        "vendor_lookup_elapsed_ms": 2803.903,
+        "web_search_elapsed_ms": 2802.899
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.938,
+          "count": 1
+        },
+        {
+          "tool": "web_search",
+          "status": "empty",
+          "elapsed_ms": 2802.926,
+          "count": 0
+        },
+        {
+          "tool": "search_vendor_specs",
+          "status": "empty",
+          "elapsed_ms": 2803.985,
+          "count": 0,
+          "error_code": "source_unavailable"
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.418,
+          "count": 3
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.453,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.175,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.118,
+          "count": 1
+        },
+        {
+          "tool": "rule_based_recommendation",
+          "status": "ok",
+          "elapsed_ms": 1.707,
+          "count": 0
+        }
+      ],
+      "items": []
+    },
+    {
+      "anchor": "538620",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 7144.870600001013,
+      "mode": "llm_agent",
+      "fallback_reason": null,
+      "usage": {
+        "llm_calls": 4,
+        "input_tokens": 6166,
+        "cached_input_tokens": 4196,
+        "output_tokens": 189,
+        "web_searches": 0,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 5,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 4,
+        "provider_elapsed_ms": 7142.127,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.249,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.481,
+          "count": 3
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.427,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.137,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.109,
+          "count": 1
+        },
+        {
+          "tool": "compare_products",
+          "status": "ok",
+          "elapsed_ms": 0.209,
+          "count": 2
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.005,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.195,
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,5 × 232,2 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://www.asus.com/laptops/for-work/expertbook/asus-expertbook-b1-b1503/techspec/",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "473582",
+      "context": "windows_one",
+      "expected_scenario": "office_antivirus",
+      "scenario_id": "office_antivirus",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 4056.302000004507,
+      "mode": "llm_agent",
+      "fallback_reason": null,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 3809,
+        "cached_input_tokens": 2335,
+        "output_tokens": 140,
+        "web_searches": 0,
+        "iterations": 3,
+        "tool_calls": 3,
+        "valid_tool_calls": 3,
+        "successful_tool_calls": 3,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 3,
+        "provider_elapsed_ms": 4044.2920000000004,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 1.002,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 9.173,
+          "count": 2
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.463,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.2,
+          "count": 1
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.004,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.423,
+          "count": 2
+        }
+      ],
+      "items": [
+        {
+          "id": "398852",
+          "article": "PRO32-PSA-CLS-1Y-5-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 5 ПК, требуется 1.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ]
+        },
+        {
+          "id": "399141",
+          "article": "PRO32-PSS-CLS-1Y-36-NS-RU",
+          "available": true,
+          "has_price": true,
+          "reason": "Поддерживается Windows. Корпоративная лицензия покрывает 36 ПК, требуется 1.",
+          "sources": [
+            "XML описание: платформа",
+            "XML param: к-во узлов",
+            "XML описание: к-во узлов",
+            "XML название",
+            "XML тип лицензии",
+            "XML тип клиента"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "82106",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 3664.5280000011553,
+      "mode": "llm_agent",
+      "fallback_reason": null,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 3371,
+        "cached_input_tokens": 2159,
+        "output_tokens": 86,
+        "web_searches": 0,
+        "iterations": 3,
+        "tool_calls": 2,
+        "valid_tool_calls": 2,
+        "successful_tool_calls": 2,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 3,
+        "provider_elapsed_ms": 3662.86,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.228,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.237,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.195,
+          "count": 1
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.003,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.139,
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "129441",
+          "article": "APCRBC141",
+          "available": true,
+          "has_price": true,
+          "reason": "Для ИБП указана сменная батарея RBC141. Ей соответствует артикул APCRBC141.",
+          "sources": [
+            "XML param"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "82161",
+      "context": "default",
+      "expected_scenario": "ups_battery",
+      "scenario_id": "ups_battery",
+      "status": "REJECTED",
+      "reason_code": "battery_not_in_catalog",
+      "latency_ms": 5033.068800003093,
+      "mode": "rule_based_fallback",
+      "fallback_reason": "repeated_tool_calls",
+      "usage": {
+        "llm_calls": 4,
+        "input_tokens": 6245,
+        "cached_input_tokens": 2642,
+        "output_tokens": 159,
+        "web_searches": 0,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 4,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 4,
+        "provider_elapsed_ms": 4750.408,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.109,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "empty",
+          "elapsed_ms": 0.2,
+          "count": 0
+        },
+        {
+          "tool": "search_catalog",
+          "status": "ok",
+          "elapsed_ms": 153.431,
+          "count": 8
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.534,
+          "count": 8
+        },
+        {
+          "tool": "search_catalog",
+          "status": "ok",
+          "elapsed_ms": 126.28,
+          "count": 8
+        },
+        {
+          "tool": "get_category_products",
+          "status": "skipped",
+          "elapsed_ms": 0.058,
+          "count": 0,
+          "error_code": "repeated_tool_call"
+        },
+        {
+          "tool": "rule_based_recommendation",
+          "status": "ok",
+          "elapsed_ms": 0.837,
+          "count": 0
+        }
+      ],
+      "items": []
+    },
+    {
+      "anchor": "460304",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 7327.662600000622,
+      "mode": "llm_agent",
+      "fallback_reason": null,
+      "usage": {
+        "llm_calls": 4,
+        "input_tokens": 5934,
+        "cached_input_tokens": 3914,
+        "output_tokens": 197,
+        "web_searches": 0,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 5,
+        "cache_hits": 0,
+        "cache_lookups": 3,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 1,
+        "verified_facts": 1,
+        "llm_calls_with_usage": 4,
+        "provider_elapsed_ms": 4701.601000000001,
+        "vendor_lookup_elapsed_ms": 2621.102,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.981,
+          "count": 1
+        },
+        {
+          "tool": "search_vendor_specs",
+          "status": "ok",
+          "elapsed_ms": 2621.235,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 1.38,
+          "count": 3
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.639,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.223,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.217,
+          "count": 1
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.003,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.431,
+          "count": 2
+        }
+      ],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        },
+        {
+          "id": "498146",
+          "article": "A08JWAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 359,2 × 236,5 × 19,9 мм. Предельные габариты для сумки 380 × 240 × 30 мм.",
+          "sources": [
+            "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_3_15IAU7/IdeaPad_3_15IAU7_Spec.PDF",
+            "https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/3-series/ideapad-3-15iau7/82rk/82rk013nrk/repair",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293041"
+          ]
+        }
+      ]
+    },
+    {
+      "anchor": "489135",
+      "context": "default",
+      "expected_scenario": "laptop_bag",
+      "scenario_id": "laptop_bag",
+      "status": "CONFIRMED",
+      "reason_code": "compatible",
+      "latency_ms": 5014.901100003044,
+      "mode": "llm_agent",
+      "fallback_reason": null,
+      "usage": {
+        "llm_calls": 4,
+        "input_tokens": 6038,
+        "cached_input_tokens": 4118,
+        "output_tokens": 189,
+        "web_searches": 0,
+        "iterations": 4,
+        "tool_calls": 5,
+        "valid_tool_calls": 5,
+        "successful_tool_calls": 5,
+        "cache_hits": 0,
+        "cache_lookups": 1,
+        "result_cache_hits": 0,
+        "result_cache_lookups": 1,
+        "web_search_attempts": 0,
+        "external_lookups": 0,
+        "verified_facts": 0,
+        "llm_calls_with_usage": 4,
+        "provider_elapsed_ms": 5012.1990000000005,
+        "vendor_lookup_elapsed_ms": 0,
+        "web_search_elapsed_ms": 0
+      },
+      "tools": [
+        {
+          "tool": "prepare_context",
+          "status": "ok",
+          "elapsed_ms": 0.174,
+          "count": 1
+        },
+        {
+          "tool": "get_category_products",
+          "status": "ok",
+          "elapsed_ms": 0.276,
+          "count": 3
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.383,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.135,
+          "count": 1
+        },
+        {
+          "tool": "check_compatibility",
+          "status": "ok",
+          "elapsed_ms": 0.106,
+          "count": 1
+        },
+        {
+          "tool": "compare_products",
+          "status": "ok",
+          "elapsed_ms": 0.344,
+          "count": 2
+        },
+        {
+          "tool": "choose_scenarios",
+          "status": "ok",
+          "elapsed_ms": 0.002,
+          "count": 1
+        },
+        {
+          "tool": "validate_final",
+          "status": "ok",
+          "elapsed_ms": 0.289,
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "id": "498147",
+          "article": "A08JXAA",
+          "available": true,
+          "has_price": true,
+          "reason": "Габариты ноутбука 318,6 × 224,4 × 17 мм. Предельные габариты для сумки 400 × 270 × 30 мм.",
+          "sources": [
+            "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08947328",
+            "https://www.hp.com/ie-en/products/accessories/product-details/product-specifications/2102293045"
+          ]
+        }
+      ]
+    }
+  ],
+  "live_status": "completed",
+  "bag_candidates": 30,
+  "verified_bag_dimensions": 2
+}

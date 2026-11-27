@@ -1,0 +1,38 @@
+{
+  "old": {
+    "q": "90NB14W1-M01Z50",
+    "category_id": "70824",
+    "vendor": "ASUS",
+    "offer_id": "530901"
+  },
+  "editedFormDidNotLeak": true,
+  "oldRequestAborted": true,
+  "staleResponseIgnored": true,
+  "fresh": {
+    "q": "90NB10N3-M02KZ0",
+    "category_id": "70824",
+    "vendor": "ASUS",
+    "offer_id": "496397"
+  },
+  "repeated": {
+    "q": "90NB10N3-M02KZ0",
+    "category_id": "70824",
+    "vendor": "ASUS",
+    "offer_id": "496397"
+  },
+  "similar": [
+    {
+      "id": "481907",
+      "name": "MobiSystems MobiOffice (лицензия Lifetime, Windows or MacOS),",
+      "reason": "Офисный пакет из смежной категории. Производитель Программы и лицензии Microsoft Corporation → MobiSystems. Цена 36584 ₽ → 10499 ₽."
+    }
+  ],
+  "noBattery": {
+    "mode": "local",
+    "reason": "battery_not_in_catalog"
+  },
+  "http": {
+    "unknownId": 404,
+    "invalidFilter": 400
+  }
+}

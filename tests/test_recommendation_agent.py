@@ -49,6 +49,16 @@ class RecommendationAgentTests(TestCase):
             description=f"Платформа: {platform} • Тип лицензии: {license_type} • К-во узлов {count}",
         )
 
+    def test_scenario_shortlist_prefers_smaller_sufficient_licenses(self):
+        self.office()
+        self.endpoint("a-larger", "25")
+        self.endpoint("z-sufficient", "5")
+        agent = self.agent()
+
+        options = agent.scenario_candidates("office", "office_antivirus", limit=1, category_id="650")
+        self.assertEqual([offer.offer_id for offer in options], ["z-sufficient"])
+        self.assertEqual(agent.scenario_candidates("office", "office_antivirus", category_id="1145"), ())
+
     def test_selects_all_confirmed_battery_families_in_the_priority_tier(self):
         self.offer("ups", "82080", "ИБП APC", vendor="APC", group="own",
                    fields=tuple(("Совместимая батарея", f"RBC{num}") for num in (10, 20, 30, 40, 50, 60)))
@@ -318,3 +328,59 @@ class RecommendationAgentTests(TestCase):
         self.assertEqual([item.offer.offer_id for item in agent.recommend("unknown_ups", request).items], ["battery"])
         with self.assertRaises(KeyError):
             agent.recommend("missing")
+    def test_asus_identity_is_available_without_xml_model_and_requires_exact_sku_binding(self):
+        for identifier, article, model in (
+            ("zenbook", "90NB14W1-M01Z50", "UX3405CA-ST1336"),
+            ("other_zenbook", "A-200", "UX3405MA-PP101"),
+            ("unknown_zenbook", "A-201", "UX3405CA-ST1336"),
+            ("vivobook", "90NB10N3-M02KZ0", "X1605VA-MB2106"),
+            ("expertbook", "90NX0801-M00EU0", "B1503CVA"),
+            ("tuf", "A-202", "FA808UM-S8050"),
+        ):
+            self.offer(identifier, "70824", f"Ноутбук ASUS {model}", vendor="ASUS", article=article)
+        agent = self.agent()
+        for identifier, expected, verified in (
+            ("zenbook", "UX3405CA", True), ("other_zenbook", "UX3405MA", False),
+            ("unknown_zenbook", "UX3405CA", False), ("vivobook", "X1605VA", True),
+            ("expertbook", "B1503CVA", True), ("tuf", "FA808UM", False),
+        ):
+            identity = agent.product_identity(identifier)
+            with self.subTest(identifier=identifier):
+                self.assertEqual(identity.offer_id, identifier)
+                self.assertEqual(identity.chassis_model, expected)
+                self.assertEqual(bool(identity.chassis_source), verified)
+                facts = agent.product_details(identifier)["facts"]["dimensions_mm"]
+                self.assertEqual(facts["value"] is not None, verified)
+
+    def test_endpoint_commercial_rank_checks_quantity_buyer_and_minimum(self):
+        self.offer("office", "1145", "Microsoft Office для бизнеса", description="Платформа: Windows")
+        common = (("Тип клиента", "Юрлицо"), ("Срок лицензии", "12 месяцев"))
+        for identifier, edition, nodes, price in (
+            ("advanced", "Advanced", 5, "15750"),
+            ("standard", "Standard", 36, "68400"),
+        ):
+            self.offer(identifier, "650", f"PRO32 Endpoint Security {edition} на {nodes} узлов",
+                       vendor="PRO32", price=price, group=identifier, fields=common,
+                       description=f"Платформа: Windows • Тип лицензии: Полная версия • К-во узлов {nodes} шт.")
+        self.offer("base", "650", "PRO32 Office Security Base на 1 устройство", vendor="PRO32", price="3790",
+                   article="PRO32-PUS-EKEY-3Y-1-NS-RU-AKS", fields=common,
+                   description="Платформа: Windows • Тип лицензии: Полная версия • К-во узлов 1 шт.")
+        self.endpoint("range-no-minimum", "от 1 до 40 узлов", additional_fields=(
+            ("Единица цены", "за узел"),
+        ))
+        self.endpoint("renewal", "1", license_type="Продление")
+        self.endpoint("migration", "1", license_type="Миграция")
+        agent = self.agent()
+        for devices, expected in ((1, "advanced"), (5, "advanced"), (36, "standard")):
+            with self.subTest(devices=devices):
+                filters = (Condition("devices", "ge", Decimal(devices), str(devices)),)
+                result = agent.recommend("office", filters=filters, debug=True)
+                self.assertEqual([item.offer.offer_id for item in result.items], [expected])
+                self.assertIn("юридическое лицо", result.items[0].reason)
+                self.assertEqual(result.diagnostics["reason_counts"]["unknown_minimum_purchase"], 2)
+                self.assertEqual(result.diagnostics["reason_counts"]["incompatible_license_type"], 2)
+                b2b = agent.recommend("office", filters=(*filters, Condition("customer_type", "eq", "b2b", "b2b")))
+                self.assertTrue(b2b.items)
+                b2c = agent.recommend("office", filters=(*filters, Condition("customer_type", "eq", "b2c", "b2c")))
+                self.assertEqual(b2c.reason_code, "restricted_customer")
+                self.assertFalse(b2c.items)
