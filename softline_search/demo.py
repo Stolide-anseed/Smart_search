@@ -175,13 +175,51 @@ def _recommendation_products(source: Offer, result) -> dict:
     return response
 
 
+def _recommendation_v3_products(source: Offer, result) -> dict:
+    response = {
+        "source": _product(source),
+        "mode": result.mode,
+        "status": result.status,
+        "reason_code": result.reason_code,
+        "outcome_code": result.reason_code,
+        "execution_status": result.execution_status,
+        "failure_reason": result.fallback_reason,
+        "elapsed_ms": result.elapsed_ms,
+        "usage": result.usage,
+        "tools": result.tools,
+        "products": [
+            {
+                **_product(item.offer),
+                "candidate_id": item.candidate_id,
+                "relationship": item.relationship,
+                "reason": item.reason,
+                "price": item.offer.price if item.has_price else "",
+                "available": item.available,
+                "verification_status": item.verification_status,
+                "missing_criteria": item.missing_criteria,
+            }
+            for item in result.items
+        ],
+    }
+    if result.diagnostics is not None:
+        response["diagnostics"] = result.diagnostics
+    return response
+
+
 def serve_demo(
     index: SearchIndex, catalog: Path, mode: SearchMode, port: int, *, env_path: Path | None = None,
+    agent_version: str = "v3",
 ) -> None:
-    from .autonomous_agent import DEFAULT_TOP_K, MAX_TOP_K, AutonomousRecommendationAgent
+    from .autonomous_agent import AutonomousRecommendationAgent
+    from .llm_agent_v3 import DEFAULT_TOP_K, MAX_TOP_K, LLMRecommendationAgentV3
     from .llm_provider import LLMSettings
     from .recommendation import RecommendationAgent
     from .vendor_evidence import VendorEvidenceService
+
+    agents = {"v3": LLMRecommendationAgentV3, "baseline": AutonomousRecommendationAgent}
+    if agent_version not in agents:
+        raise ValueError("Выберите версию агента v3 или baseline.")
+    serialize = _recommendation_v3_products if agent_version == "v3" else _recommendation_products
 
     if not catalog.is_file():
         raise FileNotFoundError(f"Каталог {catalog} не найден.")
@@ -261,7 +299,7 @@ def serve_demo(
                     except KeyError:
                         self._json({"error": "Товар не найден в каталоге."}, HTTPStatus.NOT_FOUND)
                         return
-                    self._json(_recommendation_products(offers[offer_id], result))
+                    self._json(serialize(offers[offer_id], result))
                 else:
                     self.send_error(HTTPStatus.NOT_FOUND)
             except _BadRequest as error:
@@ -297,7 +335,7 @@ def serve_demo(
             _LOG.warning("Кеш характеристик недоступен (%s)", type(error).__name__)
             evidence = None
         settings = LLMSettings.from_env(env_path) if env_path is not None else LLMSettings.from_env()
-        agent = AutonomousRecommendationAgent(index, catalog, rules, settings, evidence)
+        agent = agents[agent_version](index, catalog, rules, settings, evidence)
         print(f"Демо открыто на http://127.0.0.1:{server.server_port}/", flush=True)
         try:
             server.serve_forever()

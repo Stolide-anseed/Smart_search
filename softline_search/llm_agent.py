@@ -402,11 +402,7 @@ class _Run:
         self.filters = filters
         self.started = started
         self.deadline = started + agent.settings.timeout_seconds
-        legacy = tuple(item for item in agent.rules.applicable_scenarios(anchor.offer_id, query, filters=filters)
-                       if item in _SCENARIOS)
-        universal = tuple(item for item in agent.rules.applicable_directions(anchor.offer_id)
-                          if item in _SCENARIOS)
-        self.scenarios = tuple(dict.fromkeys((*legacy, *universal)))
+        self.scenarios = self._catalog_directions()
         self.known_offers = {anchor.offer_id}
         self.targets: tuple[tuple[str, str], ...] = ()
         self.plan_directions = False
@@ -423,6 +419,11 @@ class _Run:
         self._usage = dict.fromkeys(_USAGE_COUNTS, 0)
         self._events = []
         self._remaining_output_tokens = agent.settings.max_output_tokens
+
+    def _catalog_directions(self) -> tuple[str, ...]:
+        legacy = self.agent.rules.applicable_scenarios(self.anchor.offer_id, self.query, filters=self.filters)
+        universal = self.agent.rules.applicable_directions(self.anchor.offer_id)
+        return tuple(dict.fromkeys(item for item in (*legacy, *universal) if item in _SCENARIOS))
 
     def remaining(self) -> float:
         timeout = self.deadline - monotonic()

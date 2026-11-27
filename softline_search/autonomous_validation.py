@@ -70,15 +70,7 @@ def _known_validation(
     return None
 
 
-def validate_cross_sell(
-    source: Offer, candidate: Offer, catalog: QueryCatalog, rules: RecommendationAgent, *,
-    query: ParsedQuery | None = None, filters: tuple[Condition, ...] = (), facts: tuple[VendorFact, ...] = (),
-) -> Validation:
-    """Keep open catalogue directions provisional and apply available checks to known pairs."""
-    anchor = rules.get_offer(source.offer_id)
-    offered = rules.get_offer(candidate.offer_id)
-    if anchor is None or offered is None:
-        return Validation(Status.REJECTED, "unknown_offer")
+def catalog_identity_conflict(anchor: Offer, offered: Offer) -> Validation | None:
     if anchor.offer_id == offered.offer_id:
         return Validation(Status.REJECTED, "same_offer")
 
@@ -90,11 +82,11 @@ def validate_cross_sell(
     )
     if same_group or same_article:
         return Validation(Status.REJECTED, "same_product_family")
+    return None
 
-    known = _known_validation(anchor, offered, rules, query, filters, facts)
-    if known and known.status != Status.UNKNOWN:
-        return known
 
+def catalog_relevance_conflict(anchor: Offer, offered: Offer, catalog: QueryCatalog) -> Validation | None:
+    same_category = anchor.category_id == offered.category_id
     candidate_role = _complement_role(offered, catalog)
     adds_role = candidate_role and candidate_role != _complement_role(anchor, catalog)
     anchor_types = catalog.product_types(anchor)
@@ -111,6 +103,27 @@ def validate_cross_sell(
                           and bool(_software_types(anchor, catalog) & _software_types(offered, catalog)))
     if not adds_role and (shared_types or same_model or same_software_type):
         return Validation(Status.REJECTED, "substitute_product", "Товар выполняет ту же основную функцию.")
+    return None
+
+
+def validate_cross_sell(
+    source: Offer, candidate: Offer, catalog: QueryCatalog, rules: RecommendationAgent, *,
+    query: ParsedQuery | None = None, filters: tuple[Condition, ...] = (), facts: tuple[VendorFact, ...] = (),
+) -> Validation:
+    """Keep open catalogue directions provisional and apply available checks to known pairs."""
+    anchor = rules.get_offer(source.offer_id)
+    offered = rules.get_offer(candidate.offer_id)
+    if anchor is None or offered is None:
+        return Validation(Status.REJECTED, "unknown_offer")
+    if conflict := catalog_identity_conflict(anchor, offered):
+        return conflict
+
+    known = _known_validation(anchor, offered, rules, query, filters, facts)
+    if known and known.status != Status.UNKNOWN:
+        return known
+
+    if conflict := catalog_relevance_conflict(anchor, offered, catalog):
+        return conflict
 
     if known:
         return replace(known, reason=known.reason or _PARTIAL_REASON, missing=known.missing or ("compatibility",))

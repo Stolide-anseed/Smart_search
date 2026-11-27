@@ -1,0 +1,1500 @@
+{
+  "run_at": "2026-11-27T21:21:50+00:00",
+  "model": "gpt-6-luna",
+  "limits": {
+    "timeout_seconds": 10.0,
+    "iterations": 5,
+    "tool_calls": 12
+  },
+  "catalog": "Mindbox.yml.gz.xml",
+  "rows": {
+    "baseline": [
+      {
+        "id": "530901",
+        "name": "Ноутбук ASUS Zenbook 14 OLED UX3405CA Intel Core Ultra 7 255H (синий)",
+        "category": "Ноутбуки",
+        "mode": "autonomous_agent",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 8276.361,
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.01,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.42,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.404,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 195.248,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 157.22,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 108.213,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 158.161,
+            "count": 8
+          },
+          {
+            "tool": "check_compatibility_batch",
+            "status": "ok",
+            "elapsed_ms": 3.297,
+            "count": 8,
+            "compatibility": {
+              "checked": 8,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 8,
+              "errors": 0
+            }
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 3
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 1.492,
+            "count": 3,
+            "compatibility": {
+              "checked": 3,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 3,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "465337",
+            "name": "Мышь A4Tech Fstyler FB26CS Air2 серый/черный оптическая (2000dpi) silent беспроводная BT/Radio USB для ноутбука (4but)",
+            "article": "FB26CS AIR2 SMOKY GREY",
+            "category": "Клавиатуры, мыши, комплекты",
+            "relationship": "Компьютерные мыши",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "492528",
+            "name": "Сумка для ноутбука 14.5\" Digma N-370 серый/черный полиэстер (N370GBK)",
+            "article": "N370GBK",
+            "category": "Сумки и чехлы для ноутбуков",
+            "relationship": "Сумки для ноутбука",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "531689",
+            "name": "Док-станция/ Док-станция USB-C, 2xUSB 3.0, 1xUSB-C/PD 3.0, 1xUSB-C, 1x1000Base-T, 1xHDMI",
+            "article": "OU3340NPD/A1A",
+            "category": "Док-станции для ноутбуков",
+            "relationship": "Док-станции USB-C",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "autonomous_agent",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 7091.096,
+        "llm_calls": 5,
+        "tool_calls": 6,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.012,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.11,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "ok",
+            "elapsed_ms": 0.241,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 156.99,
+            "count": 7
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 102.275,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 111.149,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 102.099,
+            "count": 7
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 1
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 1.022,
+            "count": 1,
+            "compatibility": {
+              "checked": 1,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 1,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "366915",
+            "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+            "article": "1007",
+            "category": "Принтеры",
+            "relationship": "Принтеры чеков",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "autonomous_agent",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 6444.53,
+        "llm_calls": 5,
+        "tool_calls": 6,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.009,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.107,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "ok",
+            "elapsed_ms": 0.26,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.174,
+            "count": 0
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.155,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 170.362,
+            "count": 8
+          },
+          {
+            "tool": "check_compatibility_batch",
+            "status": "ok",
+            "elapsed_ms": 1.978,
+            "count": 8,
+            "compatibility": {
+              "checked": 8,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 8,
+              "errors": 0
+            }
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 4
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 1.186,
+            "count": 4,
+            "compatibility": {
+              "checked": 4,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 4,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "542156",
+            "name": "ASUS PRIME H610M-K D4, LGA1700, H610, 2*DDR4, 4*SATA, 1*M.2, 2*USB 3.2, 4*USB 2.0, 1*PCIx16, 1*PCIx1, HDMI+D-Sub, mATX;",
+            "article": "PRIME H610M-K D4",
+            "category": "Материнские платы",
+            "relationship": "Материнские платы DDR4",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "435472",
+            "name": "Материнская плата Gigabyte AM4 AMD A520 A520M DS3H V2",
+            "article": "A520M DS3H V2",
+            "category": "Материнские платы",
+            "relationship": "Материнские платы DDR4",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "525067",
+            "name": "Материнская плата Gigabyte AM4 AMD B550 B550M DS3H R2",
+            "article": "B550M DS3H R2",
+            "category": "Материнские платы",
+            "relationship": "Материнские платы DDR4",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "423829",
+            "name": "Материнская плата Gigabyte AM4 AMD B550 B550M K",
+            "article": "B550M K",
+            "category": "Материнские платы",
+            "relationship": "Материнские платы DDR4",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "423674",
+        "name": "HP Inc. LaserJet M111w",
+        "category": "Принтеры и МФУ",
+        "mode": "autonomous_agent",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 6847.143,
+        "llm_calls": 5,
+        "tool_calls": 6,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.02,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.215,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.653,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 195.265,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 182.249,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 69.978,
+            "count": 5
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 126.063,
+            "count": 4
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.511,
+            "count": 1,
+            "compatibility": {
+              "checked": 1,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 1,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "530966",
+            "name": "-/ Картридж NVP NV-W1500X для HP LaserJet M111 / M111a / M111w / M141 / M141a / M141w (2000k)",
+            "article": "NV-W1500X",
+            "category": "Расходные материалы",
+            "relationship": "Картриджи для принтера",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "97557",
+        "name": "Ламинатор Fellowes Saturn 3i A4",
+        "category": "Ламинаторы",
+        "mode": "autonomous_agent",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 5573.742,
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.006,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.099,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "ok",
+            "elapsed_ms": 0.264,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 207.427,
+            "count": 7
+          },
+          {
+            "tool": "check_compatibility_batch",
+            "status": "ok",
+            "elapsed_ms": 1.248,
+            "count": 3,
+            "compatibility": {
+              "checked": 3,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 3,
+              "errors": 0
+            }
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 3
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 1.675,
+            "count": 3,
+            "compatibility": {
+              "checked": 3,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 3,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "398726",
+            "name": "Гелеос Пленка ламинирования, LPA4-60",
+            "article": "LPA4-60",
+            "category": "Расходные материалы",
+            "relationship": "Пленка для ламинирования",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "398727",
+            "name": "Гелеос Пленка ламинирования, LPA4-150",
+            "article": "LPA4-150",
+            "category": "Расходные материалы",
+            "relationship": "Пленка для ламинирования",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "398732",
+            "name": "Гелеос Пленка ламинирования, LPA4-125",
+            "article": "LPA4-125",
+            "category": "Расходные материалы",
+            "relationship": "Пленка для ламинирования",
+            "reason": "Перед покупкой уточните совместимость по характеристикам производителя.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "366915",
+        "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+        "category": "Принтеры",
+        "mode": "autonomous_agent",
+        "reason_code": "no_relevant_recommendations",
+        "execution_status": "completed_empty",
+        "failure": null,
+        "elapsed_ms": 9230.958,
+        "llm_calls": 5,
+        "tool_calls": 6,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.009,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.191,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.675,
+            "count": 0
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.225,
+            "count": 0
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.225,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 164.458,
+            "count": 7
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 110.105,
+            "count": 8
+          },
+          {
+            "tool": "agent_selection",
+            "status": "empty",
+            "elapsed_ms": 0.002,
+            "count": 0
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "empty",
+            "elapsed_ms": 0.008,
+            "count": 0,
+            "compatibility": {
+              "checked": 0,
+              "confirmed": 0,
+              "rejected": 0,
+              "unknown": 0,
+              "errors": 0
+            }
+          }
+        ],
+        "items": []
+      },
+      {
+        "id": "82106",
+        "name": "ИБП APC Smart-UPS 2200VA (SRT2200RMXLI-NC)",
+        "category": "ИБП (Источники бесперебойного питания)",
+        "mode": "autonomous_agent",
+        "reason_code": "confirmed",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 8483.943,
+        "llm_calls": 5,
+        "tool_calls": 7,
+        "catalog_searches": null,
+        "search_retries": 0,
+        "diagnostics": {},
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.009,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.202,
+            "count": 1
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "ok",
+            "elapsed_ms": 0.497,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 178.538,
+            "count": 7
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 124.567,
+            "count": 8
+          },
+          {
+            "tool": "get_catalog_categories",
+            "status": "empty",
+            "elapsed_ms": 0.886,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 102.23,
+            "count": 7
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 108.055,
+            "count": 7
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 1
+          },
+          {
+            "tool": "validate_autonomous_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.979,
+            "count": 1,
+            "compatibility": {
+              "checked": 1,
+              "confirmed": 1,
+              "rejected": 0,
+              "unknown": 0,
+              "errors": 0
+            }
+          }
+        ],
+        "items": [
+          {
+            "id": "129441",
+            "name": "Сменная батарея для ИБП APC Батареи ИБП APCRBC141",
+            "article": "APCRBC141",
+            "category": "Сменные батареи для ИБП",
+            "relationship": "Запасная батарея для ИБП",
+            "reason": "Для ИБП указана сменная батарея RBC141. Ей соответствует артикул APCRBC141.",
+            "verification_status": "CONFIRMED",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      }
+    ],
+    "v3.1": [
+      {
+        "id": "530901",
+        "name": "Ноутбук ASUS Zenbook 14 OLED UX3405CA Intel Core Ultra 7 255H (синий)",
+        "category": "Ноутбуки",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 6876.774,
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": 2,
+        "search_retries": 0,
+        "diagnostics": {
+          "same_offer": 1
+        },
+        "searches": [
+          {
+            "query": "сумка или чехол для ноутбука ASUS Zenbook 14 OLED",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 3
+          },
+          {
+            "query": "USB-C хаб для ноутбука с дополнительными портами",
+            "category_id": "",
+            "retrieved": 4,
+            "eligible": 4
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.473,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 189.97,
+            "count": 3
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.228,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 192.505,
+            "count": 4
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.249,
+            "count": 4
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.266,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "501640",
+            "name": "Мультифункциональный хаб Vention USB-C 6 в 1, шт.",
+            "article": "TGNHB",
+            "category": "Док-станции для ноутбуков",
+            "relationship": "Периферийное расширение ноутбука для подключения устройств",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "492528",
+            "name": "Сумка для ноутбука 14.5\" Digma N-370 серый/черный полиэстер (N370GBK)",
+            "article": "N370GBK",
+            "category": "Сумки и чехлы для ноутбуков",
+            "relationship": "Аксессуар для переноски и защиты ноутбука",
+            "reason": "Сумка рассчитана на устройства с диагональю до 14,5″; перед покупкой проверьте, подходят ли внутренние размеры к ноутбуку.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "534617",
+        "name": "Ящик для денег Deli ET500 90x200x160 черный металл 1.2кг",
+        "category": "Денежные ящики",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 5482.079,
+        "llm_calls": 4,
+        "tool_calls": 3,
+        "catalog_searches": 3,
+        "search_retries": 1,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 13,
+          "same_offer": 1
+        },
+        "searches": [
+          {
+            "query": "кассовый денежный ящик для POS-системы кассовый аппарат",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "кассовый принтер чеков и POS-оборудование для работы с денежным ящиком",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "чековый принтер для кассы POS принтер чеков",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 2
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.357,
+            "count": 1
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "ok",
+            "elapsed_ms": 204.293,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 389.744,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 166.753,
+            "count": 2
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.109,
+            "count": 2
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 2
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.234,
+            "count": 2
+          }
+        ],
+        "items": [
+          {
+            "id": "366915",
+            "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+            "article": "1007",
+            "category": "Принтеры",
+            "relationship": "используется в кассовом рабочем месте с денежным ящиком",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "366917",
+            "name": "Чековый принтер MERTECH G80 (WiFi, Ethernet, RS232, USB) (black)",
+            "article": "1014",
+            "category": "Принтеры",
+            "relationship": "используется в кассовом рабочем месте с денежным ящиком",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "370916",
+        "name": "Оперативная память Foxline Desktop DDR4 3200МГц 16GB, FL3200D4U22S-16G",
+        "category": "Оперативная память",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 7395.347,
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": 4,
+        "search_retries": 1,
+        "diagnostics": {
+          "same_offer": 1,
+          "substitute_product": 17
+        },
+        "searches": [
+          {
+            "query": "модуль оперативной памяти для десктопа DDR4 3200 16 ГБ",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "совместимые компоненты для апгрейда и сборки настольного компьютера с памятью DDR4",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 0
+          },
+          {
+            "query": "охлаждение процессора и корпуса настольного ПК",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 8
+          },
+          {
+            "query": "материнская плата DDR4 для настольного компьютера",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 6
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.461,
+            "count": 1
+          },
+          {
+            "tool": "catalog_search_retry",
+            "status": "empty",
+            "elapsed_ms": 188.099,
+            "count": 0
+          },
+          {
+            "tool": "search_catalog",
+            "status": "empty",
+            "elapsed_ms": 353.392,
+            "count": 0,
+            "error_code": "no_relevant_catalog_candidates"
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 168.355,
+            "count": 8
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 177.64,
+            "count": 6
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.409,
+            "count": 6
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.003,
+            "count": 3
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.284,
+            "count": 3
+          }
+        ],
+        "items": [
+          {
+            "id": "542156",
+            "name": "ASUS PRIME H610M-K D4, LGA1700, H610, 2*DDR4, 4*SATA, 1*M.2, 2*USB 3.2, 4*USB 2.0, 1*PCIx16, 1*PCIx1, HDMI+D-Sub, mATX;",
+            "article": "PRIME H610M-K D4",
+            "category": "Материнские платы",
+            "relationship": "Основа настольного ПК с поддержкой оперативной памяти DDR4",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "435472",
+            "name": "Материнская плата Gigabyte AM4 AMD A520 A520M DS3H V2",
+            "article": "A520M DS3H V2",
+            "category": "Материнские платы",
+            "relationship": "Основа настольного ПК с поддержкой оперативной памяти DDR4",
+            "reason": "Плата на платформе AM4 с поддержкой DDR4 может дополнить память при сборке ПК; сверьте характеристики модуля и процессора с требованиями платы.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          },
+          {
+            "id": "493007",
+            "name": "Материнская плата Gigabyte AM4 AMD B550 B550M DS3H R2",
+            "article": "B550M DS3H R2",
+            "category": "Материнские платы",
+            "relationship": "Основа настольного ПК с поддержкой оперативной памяти DDR4",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "423674",
+        "name": "HP Inc. LaserJet M111w",
+        "category": "Принтеры и МФУ",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 3707.88,
+        "llm_calls": 3,
+        "tool_calls": 2,
+        "catalog_searches": 1,
+        "search_retries": 0,
+        "diagnostics": {
+          "substitute_product": 1,
+          "same_offer": 1
+        },
+        "searches": [
+          {
+            "query": "тонер-картридж для лазерного принтера HP LaserJet M111w",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 6
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.545,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 201.689,
+            "count": 6
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.179,
+            "count": 1
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.178,
+            "count": 1
+          }
+        ],
+        "items": [
+          {
+            "id": "530966",
+            "name": "-/ Картридж NVP NV-W1500X для HP LaserJet M111 / M111a / M111w / M141 / M141a / M141w (2000k)",
+            "article": "NV-W1500X",
+            "category": "Расходные материалы",
+            "relationship": "Расходный материал для печати",
+            "reason": "Картридж указан для HP LaserJet M111w; запасной картридж поможет продолжить печать после исчерпания тонера.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "97557",
+        "name": "Ламинатор Fellowes Saturn 3i A4",
+        "category": "Ламинаторы",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 3221.798,
+        "llm_calls": 3,
+        "tool_calls": 2,
+        "catalog_searches": 1,
+        "search_retries": 0,
+        "diagnostics": {
+          "same_offer": 1,
+          "query_target_not_found_in_catalog": 6
+        },
+        "searches": [
+          {
+            "query": "пленка для ламинирования A4 для ламинатора Fellowes Saturn 3i",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 1
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.451,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 177.503,
+            "count": 1
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.163,
+            "count": 1
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.002,
+            "count": 1
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.172,
+            "count": 1
+          }
+        ],
+        "items": [
+          {
+            "id": "398726",
+            "name": "Гелеос Пленка ламинирования, LPA4-60",
+            "article": "LPA4-60",
+            "category": "Расходные материалы",
+            "relationship": "расходные материалы для ламинирования документов",
+            "reason": "Перед покупкой сверьте параметры совместимости.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      },
+      {
+        "id": "366915",
+        "name": "Чековый принтер MERTECH G58 (RS232, USB) (black)",
+        "category": "Принтеры",
+        "mode": "single_agent_v3_1",
+        "reason_code": "model_selected_none",
+        "execution_status": "completed_empty",
+        "failure": null,
+        "elapsed_ms": 6131.297,
+        "llm_calls": 5,
+        "tool_calls": 5,
+        "catalog_searches": 3,
+        "search_retries": 0,
+        "diagnostics": {
+          "query_target_not_found_in_catalog": 16,
+          "same_offer": 2
+        },
+        "searches": [
+          {
+            "query": "рулон термобумаги для чекового принтера 58 мм",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 2
+          },
+          {
+            "query": "денежный ящик для кассы подключаемый к чековому принтеру",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 3
+          },
+          {
+            "query": "чековая термолента ширина 58 мм втулка рулон",
+            "category_id": "94694",
+            "retrieved": 8,
+            "eligible": 1
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.392,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 172.496,
+            "count": 2
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 198.753,
+            "count": 3
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.166,
+            "count": 2
+          },
+          {
+            "tool": "check_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.07,
+            "count": 3
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 120.789,
+            "count": 1
+          },
+          {
+            "tool": "agent_selection",
+            "status": "empty",
+            "elapsed_ms": 0.003,
+            "count": 0
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "empty",
+            "elapsed_ms": 0.023,
+            "count": 0
+          }
+        ],
+        "items": []
+      },
+      {
+        "id": "82106",
+        "name": "ИБП APC Smart-UPS 2200VA (SRT2200RMXLI-NC)",
+        "category": "ИБП (Источники бесперебойного питания)",
+        "mode": "single_agent_v3_1",
+        "reason_code": "partial_validation",
+        "execution_status": "completed_with_results",
+        "failure": null,
+        "elapsed_ms": 5827.93,
+        "llm_calls": 5,
+        "tool_calls": 4,
+        "catalog_searches": 2,
+        "search_retries": 0,
+        "diagnostics": {
+          "substitute_product": 5,
+          "query_target_not_found_in_catalog": 4
+        },
+        "searches": [
+          {
+            "query": "карта сетевого управления для ИБП APC Smart-UPS мониторинг ИБП по сети",
+            "category_id": "",
+            "retrieved": 8,
+            "eligible": 2
+          },
+          {
+            "query": "батарейный блок APC Smart-UPS SRT2200RMXLI внешняя батарея",
+            "category_id": "131130",
+            "retrieved": 8,
+            "eligible": 5
+          }
+        ],
+        "tools": [
+          {
+            "tool": "prepare_context",
+            "status": "ok",
+            "elapsed_ms": 0.387,
+            "count": 1
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 200.64,
+            "count": 2
+          },
+          {
+            "tool": "search_catalog",
+            "status": "ok",
+            "elapsed_ms": 120.528,
+            "count": 5
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.213,
+            "count": 1
+          },
+          {
+            "tool": "get_product_details",
+            "status": "ok",
+            "elapsed_ms": 0.165,
+            "count": 1
+          },
+          {
+            "tool": "agent_selection",
+            "status": "ok",
+            "elapsed_ms": 0.001,
+            "count": 1
+          },
+          {
+            "tool": "validate_v3_candidates",
+            "status": "ok",
+            "elapsed_ms": 0.155,
+            "count": 1
+          }
+        ],
+        "items": [
+          {
+            "id": "294255",
+            "name": "Стоечный блок распределения электропитания с функцией мониторинга 2G, 0U, 32A, 230В, (36) C13 и (6) C19",
+            "article": "AP8853",
+            "category": "Аксессуары для ИБП",
+            "relationship": "управление или обслуживание ИБП",
+            "reason": "Блок распределяет питание между подключённым оборудованием и позволяет отслеживать его параметры; перед покупкой стоит проверить соответствие разъёмов и допустимого тока вашей стойке.",
+            "verification_status": "UNKNOWN",
+            "available": true,
+            "has_price": true
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_run_at": "2026-11-27T21:15:24+00:00",
+  "judgments": {
+    "530901/465337": {
+      "relevant": true,
+      "note": "Мышь предназначена для ноутбуков."
+    },
+    "530901/492528": {
+      "relevant": true,
+      "note": "Сумка предназначена для ноутбуков близкой диагонали. Внутренний размер требует сверки."
+    },
+    "530901/531689": {
+      "relevant": true,
+      "note": "Док-станция расширяет набор интерфейсов. Поддержка конкретных функций USB-C требует сверки."
+    },
+    "530901/501640": {
+      "relevant": true,
+      "note": "Хаб USB-C добавляет порты для периферии. Поддержка конкретных функций USB-C требует сверки."
+    },
+    "534617/366915": {
+      "relevant": true,
+      "note": "Принтер чеков дополняет денежный ящик в кассовом рабочем месте. Прямое подключение не предполагается."
+    },
+    "534617/366917": {
+      "relevant": true,
+      "note": "Принтер чеков дополняет денежный ящик в кассовом рабочем месте. Прямое подключение не предполагается."
+    },
+    "370916/542156": {
+      "relevant": true,
+      "note": "Каталог указывает поддержку DDR4."
+    },
+    "370916/435472": {
+      "relevant": true,
+      "note": "Каталог указывает поддержку DDR4."
+    },
+    "370916/525067": {
+      "relevant": true,
+      "note": "Каталог указывает поддержку DDR4."
+    },
+    "370916/423829": {
+      "relevant": true,
+      "note": "Каталог указывает поддержку DDR4."
+    },
+    "370916/493007": {
+      "relevant": true,
+      "note": "Каталог указывает поддержку DDR4."
+    },
+    "423674/530966": {
+      "relevant": true,
+      "note": "В названии картриджа в каталоге явно перечислена модель M111w."
+    },
+    "97557/398726": {
+      "relevant": true,
+      "note": "Плёнка A4 для ламинирования документов."
+    },
+    "97557/398727": {
+      "relevant": null,
+      "note": "Ламинатор допускает до 125 мкм. Код плёнки предполагает 150 мкм, явного подтверждения толщины в проверенных полях нет."
+    },
+    "97557/398732": {
+      "relevant": true,
+      "note": "Плёнка для ламинирования A4. Маркировка 125 соответствует пределу из описания ламинатора."
+    },
+    "82106/129441": {
+      "relevant": true,
+      "note": "В описании ИБП указан артикул батареи RBC141."
+    },
+    "82106/294255": {
+      "relevant": false,
+      "note": "У PDU вход IEC 60309 на 32 А. В каталоге у ИБП выходы C13/C19. Пара для прямого подключения не подходит."
+    }
+  },
+  "summary": {
+    "baseline": {
+      "cases": 7,
+      "covered": 6,
+      "items": 13,
+      "judged": 12,
+      "relevant": 12,
+      "relevance_precision": 1.0,
+      "p50_ms": 7091.1,
+      "p95_ms": 9231.0,
+      "llm_calls": 35,
+      "search_retries": 0,
+      "failures": {},
+      "empty_reasons": {
+        "no_relevant_recommendations": 1
+      }
+    },
+    "v3.1": {
+      "cases": 7,
+      "covered": 6,
+      "items": 10,
+      "judged": 10,
+      "relevant": 9,
+      "relevance_precision": 0.9,
+      "p50_ms": 5827.9,
+      "p95_ms": 7395.3,
+      "llm_calls": 30,
+      "search_retries": 2,
+      "failures": {},
+      "empty_reasons": {
+        "model_selected_none": 1
+      }
+    }
+  },
+  "review": "Ручная оценка функциональной релевантности по каталогу. Явное противоречие учитывается как ошибка. Пары с недостатком данных для оценки исключены из знаменателя. Техническая совместимость измеряется отдельно."
+}

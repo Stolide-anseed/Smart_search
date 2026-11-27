@@ -251,7 +251,8 @@ function documentationLinks(sources) {
 }
 
 function directionLabel(product) {
-  return typeof product?.direction_label === "string" ? product.direction_label.trim() : "";
+  const label = product?.relationship ?? product?.direction_label;
+  return typeof label === "string" ? label.trim() : "";
 }
 
 function directionGroups(products, directions = []) {
@@ -353,7 +354,8 @@ function productCard(product, searchSnapshot = null, { showDirection = false, ti
   if (product.verification_status === "CONFIRMED") {
     card.append(element("p", "product-meta", "Совместимость подтверждена"));
   } else if (product.verification_status === "UNKNOWN") {
-    card.append(element("p", "warning", "Проверено частично"));
+    const state = product.relationship ? "Совместимость требует сверки" : "Проверено частично";
+    card.append(element("p", "warning", state));
     const criteria = (product.missing_criteria ?? [])
       .filter((field) => field !== "compatibility")
       .map((field) => criterionLabels[field]).filter(Boolean);
@@ -494,6 +496,9 @@ const toolLabels = {
   get_product_details: "Характеристики товара",
   get_catalog_categories: "Категории каталога",
   search_catalog: "Поиск по каталогу",
+  catalog_search_retry: "Поиск по другому запросу",
+  check_candidates: "Проверка найденных кандидатов",
+  validate_v3_candidates: "Проверка итоговых кандидатов",
   get_category_products: "Поиск в категории",
   get_verified_specs: "Проверка сохранённых характеристик",
   search_vendor_specs: "Поиск документации производителя",
@@ -514,6 +519,13 @@ const toolLabels = {
 };
 
 const outcomeLabels = {
+  llm_disabled: "Агент отключён в настройках.",
+  missing_api_key: "Ключ провайдера не настроен.",
+  no_catalog_search: "Агент не нашёл направление для поиска.",
+  no_catalog_matches: "По поисковым запросам нет товаров в каталоге.",
+  no_relevant_candidates: "Найденные товары не прошли проверку назначения.",
+  model_selected_none: "Агент не отобрал полезных дополнений из найденных позиций.",
+  all_candidates_rejected: "Предложенные позиции не прошли проверку.",
   no_compatible_products: "Сопутствующих товаров по этим условиям не найдено.",
   missing_product_facts: "Для проверки совместимости не хватает характеристик товара.",
   search_no_results: "Поиск не нашёл документацию с нужной характеристикой.",
@@ -595,6 +607,7 @@ async function loadProductOptions(product, button, action, searchSnapshot) {
     if (similar) return;
     const mode = ({
       autonomous_agent: "Направления выбрал агент",
+      single_agent_v3_1: "Single Agent V3.1",
       local: "Локальный подбор по правилам",
       llm_agent: "Агентный подбор",
       rule_based_fallback: "Резервный подбор по правилам",
