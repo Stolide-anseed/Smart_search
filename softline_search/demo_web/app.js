@@ -262,10 +262,11 @@ function directionGroups(products, directions = []) {
   const groups = new Map();
   for (const [index, product] of items.entries()) {
     const label = labels[index];
-    let group = groups.get(label);
+    const key = product.direction_id || label;
+    let group = groups.get(key);
     if (!group) {
       group = { label, products: [] };
-      groups.set(label, group);
+      groups.set(key, group);
     }
     group.products.push(product);
   }
@@ -275,12 +276,13 @@ function directionGroups(products, directions = []) {
   const seen = new Set();
   for (const direction of Array.isArray(directions) ? directions : []) {
     const label = typeof direction?.label === "string" ? direction.label.trim() : "";
-    if (!label || seen.has(label) || !groups.has(label)) continue;
-    ordered.push(groups.get(label));
-    seen.add(label);
+    const key = groups.has(direction?.id) ? direction.id : label;
+    if (seen.has(key) || !groups.has(key)) continue;
+    ordered.push(groups.get(key));
+    seen.add(key);
   }
-  for (const group of groups.values()) {
-    if (!seen.has(group.label)) ordered.push(group);
+  for (const [key, group] of groups) {
+    if (!seen.has(key)) ordered.push(group);
   }
   return ordered;
 }
@@ -288,6 +290,26 @@ function directionGroups(products, directions = []) {
 function productCountLabel(count) {
   return count + " " + productCountLabels[pluralRules.select(count)];
 }
+
+const criterionLabels = {
+  anchor_dimensions: "габариты исходного товара",
+  candidate_dimensions: "габариты дополнения",
+  laptop_dimensions: "габариты ноутбука",
+  bag_dimensions: "внутренние габариты сумки",
+  battery_articles: "артикул батареи",
+  required_article: "артикул комплектующей",
+  candidate_article: "артикул предложения",
+  interface: "интерфейс подключения",
+  ports: "порты подключения",
+  platform: "операционная система",
+  platform_version: "версия операционной системы",
+  capacity: "ёмкость",
+  required_capacity: "требуемая ёмкость",
+  minimum_purchase: "минимальный объём покупки",
+  term_months: "срок лицензии",
+  usb_c_pd: "поддержка USB-C Power Delivery",
+  usb_c_video: "поддержка передачи видео по USB-C",
+};
 
 function productCard(product, searchSnapshot = null, { showDirection = false, titleTag = "h3" } = {}) {
   const card = element("article", "product-card");
@@ -327,6 +349,15 @@ function productCard(product, searchSnapshot = null, { showDirection = false, ti
   }
   if (product.alternative) {
     card.append(element("p", "status", product.alternative));
+  }
+  if (product.verification_status === "CONFIRMED") {
+    card.append(element("p", "product-meta", "Совместимость подтверждена"));
+  } else if (product.verification_status === "UNKNOWN") {
+    card.append(element("p", "warning", "Проверено частично"));
+    const criteria = (product.missing_criteria ?? [])
+      .filter((field) => field !== "compatibility")
+      .map((field) => criterionLabels[field]).filter(Boolean);
+    if (criteria.length) card.append(element("p", "product-meta", "Нужно сверить — " + criteria.join(", ")));
   }
   if (product.reason) {
     card.append(element("p", "status compatibility", product.reason));
@@ -370,7 +401,7 @@ function renderRecommendations(products, directions) {
     title.id = headingId;
     heading.append(title, element("span", "direction-count", productCountLabel(group.products.length)));
     const list = element("div", "product-list");
-    list.append(...group.products.map((item) => productCard(item, null, { showDirection: true, titleTag: "h4" })));
+    list.append(...group.products.map((item) => productCard(item, null, { titleTag: "h4" })));
     section.append(heading, list);
     return section;
   }));
@@ -473,6 +504,7 @@ const toolLabels = {
   compare_products: "Сравнение предложений",
   prepare_context: "Подготовка данных товара",
   agent_selection: "Предложения агента для проверки",
+  validate_autonomous_candidates: "Проверка предложений агента",
   validate_final: "Проверка итоговой выдачи",
   web_search: "Поиск официального источника",
   rule_based_recommendation: "Подбор по правилам",
@@ -482,7 +514,7 @@ const toolLabels = {
 };
 
 const outcomeLabels = {
-  no_compatible_products: "В каталоге нет подтверждённого совместимого предложения по этим условиям.",
+  no_compatible_products: "Сопутствующих товаров по этим условиям не найдено.",
   missing_product_facts: "Для проверки совместимости не хватает характеристик товара.",
   search_no_results: "Поиск не нашёл документацию с нужной характеристикой.",
   source_unavailable: "Документ производителя не удалось загрузить.",
@@ -540,7 +572,7 @@ async function loadProductOptions(product, button, action, searchSnapshot) {
   recommendationSource.textContent = product.name;
   recommendationSource.hidden = false;
   recommendations.replaceChildren();
-  showStatus(recommendationStatus, similar ? "Ищем альтернативы в каталоге…" : "Подбираем совместимые товары…");
+  showStatus(recommendationStatus, similar ? "Ищем альтернативы в каталоге…" : "Ищем сопутствующие товары…");
   showStatus(recommendationContext, "");
   showStatus(recommendationMode, "");
   renderAgentTrace([]);
@@ -562,10 +594,12 @@ async function loadProductOptions(product, button, action, searchSnapshot) {
     showStatus(recommendationStatus, products.length ? "" : "Не найдено");
     if (similar) return;
     const mode = ({
-      local: "Локальный подбор",
-      llm_agent: "Агентный поиск характеристик и проверка",
-      rule_based_fallback: "Подтверждённый результат после остановки агента",
-      cached_result: "Подбор из кеша",
+      autonomous_agent: "Направления выбрал агент",
+      local: "Локальный подбор по правилам",
+      llm_agent: "Агентный подбор",
+      rule_based_fallback: "Резервный подбор по правилам",
+      cached_result: data.origins?.includes("autonomous_selection")
+        ? "Направления выбрал агент" : "Подбор из кеша",
     })[data.mode];
     if (mode) showStatus(recommendationMode, mode + " · " + formatNumber.format(Math.round(data.elapsed_ms)) + " мс");
     renderAgentTrace(data.tools ?? []);

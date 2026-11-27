@@ -40,6 +40,7 @@ def _argument_parser() -> argparse.ArgumentParser:
     demo.add_argument("--catalog", type=Path, default=_DEFAULT_CATALOG, help="Исходный XML")
     demo.add_argument("--mode", choices=MODES, default="hybrid", help="Способ поиска")
     demo.add_argument("--port", type=int, default=8765, help="Порт локальной страницы")
+    demo.add_argument("--env", type=Path, help="Локальный файл настроек провайдера")
 
     parse = commands.add_parser("parse-query", parents=[common], help="Показать нормализацию и условия запроса")
     parse.add_argument("query", help="Текст запроса")
@@ -160,7 +161,7 @@ def main() -> None:
             elif args.command == "demo":
                 from .demo import serve_demo
 
-                serve_demo(index, args.catalog, args.mode, args.port)
+                serve_demo(index, args.catalog, args.mode, args.port, env_path=args.env)
             elif args.command == "parse-query":
                 parsed = index.parse_query(args.query, args.catalog)
                 print(json.dumps(asdict(parsed), ensure_ascii=False, indent=2, default=str))

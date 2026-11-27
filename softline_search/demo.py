@@ -2,6 +2,7 @@ import json
 import logging
 import re
 import sqlite3
+from collections import Counter
 from dataclasses import asdict
 from decimal import Decimal
 from http import HTTPStatus
@@ -134,12 +135,14 @@ def _recommendation_products(source: Offer, result) -> dict:
             "total_price": str(item.total_price) if item.total_price is not None else None,
             "direction_id": item.direction_id,
             "direction_label": item.direction_label,
+            "verification_status": getattr(item, "verification_status", "CONFIRMED"),
+            "missing_criteria": getattr(item, "missing_criteria", ()),
         }
         for item in result.items
     ]
-    direction_counts = {
-        direction: sum(item.direction_id == direction for item in result.items)
-        for direction in result.directions
+    direction_counts = Counter(item.direction_id for item in result.items if item.direction_id)
+    direction_labels = {
+        item.direction_id: item.direction_label for item in result.items if item.direction_id and item.direction_label
     }
     response = {
         "source": _product(source),
@@ -148,10 +151,11 @@ def _recommendation_products(source: Offer, result) -> dict:
         "directions": [
             {
                 "id": direction,
-                "label": DIRECTIONS[direction].label if direction in DIRECTIONS else "",
+                "label": direction_labels.get(direction) or DIRECTIONS[direction].label,
                 "count": direction_counts.get(direction, 0),
             }
-            for direction in result.directions if direction in DIRECTIONS
+            for direction in dict.fromkeys((*result.directions, *direction_counts))
+            if direction in direction_labels or direction in DIRECTIONS
         ],
         "status": result.status,
         "reason_code": result.reason_code,
@@ -171,8 +175,10 @@ def _recommendation_products(source: Offer, result) -> dict:
     return response
 
 
-def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -> None:
-    from .llm_agent import LLMRecommendationAgent
+def serve_demo(
+    index: SearchIndex, catalog: Path, mode: SearchMode, port: int, *, env_path: Path | None = None,
+) -> None:
+    from .autonomous_agent import DEFAULT_TOP_K, MAX_TOP_K, AutonomousRecommendationAgent
     from .llm_provider import LLMSettings
     from .recommendation import RecommendationAgent
     from .vendor_evidence import VendorEvidenceService
@@ -242,9 +248,16 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
                     debug = _parameter(parameters, "debug")
                     if debug not in {"", "0", "1"}:
                         raise _BadRequest("Допустимые значения debug — 0 и 1.")
+                    limit = DEFAULT_TOP_K
+                    if "limit" in parameters:
+                        message = f"Укажите целое число предложений от 1 до {MAX_TOP_K}."
+                        requested_limit = _positive_number(_parameter(parameters, "limit"), message, integer=True)
+                        if requested_limit > MAX_TOP_K:
+                            raise _BadRequest(message)
+                        limit = int(requested_limit)
                     parsed = index.parse_query(query, catalog) if query else None
                     try:
-                        result = agent.recommend(offer_id, parsed, filters=filters, debug=debug == "1")
+                        result = agent.recommend(offer_id, parsed, filters=filters, debug=debug == "1", limit=limit)
                     except KeyError:
                         self._json({"error": "Товар не найден в каталоге."}, HTTPStatus.NOT_FOUND)
                         return
@@ -283,7 +296,8 @@ def serve_demo(index: SearchIndex, catalog: Path, mode: SearchMode, port: int) -
         except (OSError, sqlite3.Error) as error:
             _LOG.warning("Кеш характеристик недоступен (%s)", type(error).__name__)
             evidence = None
-        agent = LLMRecommendationAgent(index, catalog, rules, LLMSettings.from_env(), evidence)
+        settings = LLMSettings.from_env(env_path) if env_path is not None else LLMSettings.from_env()
+        agent = AutonomousRecommendationAgent(index, catalog, rules, settings, evidence)
         print(f"Демо открыто на http://127.0.0.1:{server.server_port}/", flush=True)
         try:
             server.serve_forever()

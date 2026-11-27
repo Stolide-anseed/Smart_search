@@ -3,7 +3,7 @@
 import hashlib
 import json
 from collections import OrderedDict
-from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
+from concurrent.futures import Future, ThreadPoolExecutor, TimeoutError as FutureTimeout
 from dataclasses import dataclass, field
 from decimal import Decimal
 from pathlib import Path
@@ -324,6 +324,20 @@ class LLMRecommendationAgent:
         future.add_done_callback(done)
         return run, future, True
 
+    @staticmethod
+    def _wait_for_run(run: "_Run", future: Future[None]) -> str | None:
+        try:
+            future.result(timeout=run.remaining())
+        except FutureTimeout:
+            return "agent_timeout"
+        except _StopAgent as error:
+            return str(error)
+        except ProviderFailure as error:
+            return str(error) if str(error) in _PROVIDER_ERRORS else "provider_unavailable"
+        except Exception:
+            return "agent_error"
+        return None
+
     def recommend(
         self, offer_id: str, query: ParsedQuery | None = None, *, filters: tuple[Condition, ...] = (),
         debug: bool = False,
@@ -358,17 +372,7 @@ class LLMRecommendationAgent:
             active, future, owner = self._enrichment_task(key, run)
         except _StopAgent as error:
             return run.result(local, "rule_based_fallback", debug=debug, failure=str(error))
-        failure = None
-        try:
-            future.result(timeout=run.remaining())
-        except FutureTimeout:
-            failure = "agent_timeout"
-        except (_StopAgent, ProviderFailure) as error:
-            failure = str(error)
-            if isinstance(error, ProviderFailure) and failure not in _PROVIDER_ERRORS:
-                failure = "provider_unavailable"
-        except Exception:
-            failure = "agent_error"
+        failure = self._wait_for_run(run, future)
 
         if not owner:
             run._remember(active.fact_snapshot())
@@ -385,6 +389,11 @@ class LLMRecommendationAgent:
 
 
 class _Run:
+    instructions = _INSTRUCTIONS
+    tool_definitions = _TOOL_DEFINITIONS
+    argument_schemas = _ARGUMENT_SCHEMAS
+    final_schema = _FINAL_SCHEMA
+
     def __init__(self, agent: LLMRecommendationAgent, anchor: Offer, query: ParsedQuery | None,
                  filters: tuple[Condition, ...], started: float) -> None:
         self.agent = agent
@@ -748,11 +757,11 @@ class _Run:
         verification = ({"checked": 0, "confirmed": 0, "rejected": 0, "unknown": 0, "errors": 1}
                         if name == "check_compatibility" else None)
         self.add_count("tool_calls")
-        if not isinstance(name, str) or name not in _ARGUMENT_SCHEMAS:
+        if not isinstance(name, str) or name not in self.argument_schemas:
             self.event("unknown_tool", "error", start, error_code="unknown_tool")
             return {"error": {"code": "unknown_tool"}}, False
         try:
-            arguments = _strict_json(raw, _ARGUMENT_SCHEMAS[name])
+            arguments = _strict_json(raw, self.argument_schemas[name])
         except ValueError:
             self.event(name, "error", start, error_code="invalid_arguments", compatibility=verification)
             return {"error": {"code": "invalid_arguments"}}, False
@@ -790,9 +799,13 @@ class _Run:
         if "code" in result:
             self.event(name, "empty", start, error_code=result["code"])
         else:
+            if name == "check_compatibility_batch":
+                verification = {"checked": count, "confirmed": 0, "rejected": 0, "unknown": 0, "errors": 0}
+                for check in result["checks"]:
+                    verification[check["status"].lower()] += 1
             self.add_count("successful_tool_calls")
             status = "cached" if result.get("status") == "cached" else "ok" if count else "empty"
-            self.event(name, status, start, count=count)
+            self.event(name, status, start, count=count, compatibility=verification)
         return result, False
 
     def select(self, pairs: tuple[tuple[str, str], ...]) -> list[Recommendation]:
@@ -806,12 +819,9 @@ class _Run:
         self.remaining()
         return items
 
-    def loop(self) -> None:
-        settings = self.agent.settings
-        provider = self.agent.provider
-        start = monotonic()
+    def _prepare_context(self) -> dict:
         self.known_offers.update(identifier for identifier, _ in self.targets)
-        context = {
+        return {
             "anchor": _brief(self.anchor), "product_facts": _detail_view(self._details(self.anchor.offer_id)),
             "conditions": _safe_context(self.query, self.filters),
             "scenarios": {name: _SCENARIOS[name] for name in self.scenarios},
@@ -819,6 +829,21 @@ class _Run:
             "enrichment_targets": [{"offer_id": identifier, "attribute": attribute}
                                    for identifier, attribute in self.targets],
         }
+
+    def _accept_final(self, returned: list[dict]) -> None:
+        selected = [value for value in returned
+                    if value["scenario_id"] in self.scenarios
+                    and value["candidate_id"] in self.known_offers
+                    and value["candidate_id"] != self.anchor.offer_id]
+        self.directions = tuple(dict.fromkeys(value["scenario_id"] for value in selected))
+        proposed = {value["candidate_id"] for value in selected}
+        self.event("agent_selection", "ok" if proposed else "empty", monotonic(), count=len(proposed))
+
+    def loop(self) -> None:
+        settings = self.agent.settings
+        provider = self.agent.provider
+        start = monotonic()
+        context = self._prepare_context()
         self.event("prepare_context", "ok", start, count=1)
         conversation = [{"role": "user", "content": _json(context)}]
         for iteration in range(settings.max_iterations):
@@ -833,8 +858,8 @@ class _Run:
             call_started = monotonic()
             try:
                 response = provider.respond(
-                    instructions=_INSTRUCTIONS, conversation=conversation,
-                    tools=_TOOL_DEFINITIONS if may_call_tools else [], final_schema=_FINAL_SCHEMA,
+                    instructions=self.instructions, conversation=conversation,
+                    tools=self.tool_definitions if may_call_tools else [], final_schema=self.final_schema,
                     timeout=timeout, max_output_tokens=budget,
                 )
             finally:
@@ -843,16 +868,10 @@ class _Run:
             self.remaining()
             if not response.calls:
                 try:
-                    returned = _strict_json(response.text, _FINAL_SCHEMA)["selections"]
+                    returned = _strict_json(response.text, self.final_schema)["selections"]
                 except ValueError:
                     raise _StopAgent("invalid_final_response") from None
-                selected = [value for value in returned
-                            if value["scenario_id"] in self.scenarios
-                            and value["candidate_id"] in self.known_offers
-                            and value["candidate_id"] != self.anchor.offer_id]
-                self.directions = tuple(dict.fromkeys(value["scenario_id"] for value in selected))
-                proposed = {value["candidate_id"] for value in selected}
-                self.event("agent_selection", "ok" if proposed else "empty", monotonic(), count=len(proposed))
+                self._accept_final(returned)
                 return
 
             if not may_call_tools:
