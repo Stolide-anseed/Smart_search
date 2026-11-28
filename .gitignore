@@ -7,3 +7,4 @@ __pycache__/
 .vendor-facts.sqlite3*
 .search-index-build-*/
 /Mindbox.yml.gz.xml
+/deployment-data/

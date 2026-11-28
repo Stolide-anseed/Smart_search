@@ -208,7 +208,7 @@ def _recommendation_v3_products(source: Offer, result) -> dict:
 
 def serve_demo(
     index: SearchIndex, catalog: Path, mode: SearchMode, port: int, *, env_path: Path | None = None,
-    agent_version: str = "v3.2",
+    agent_version: str = "v3.2", host: str = "127.0.0.1", public: bool = False, warmup: bool = False,
 ) -> None:
     from .autonomous_agent import AutonomousRecommendationAgent
     from .llm_agent_v3 import DEFAULT_TOP_K, MAX_TOP_K, LLMRecommendationAgentV3
@@ -245,7 +245,12 @@ def serve_demo(
             self._send(json.dumps(data, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8", status)
 
         def log_request(self, code="-", size="-") -> None:
-            _LOG.info("%s %s %s", self.command, self.path.partition("?")[0], code)
+            if not public:
+                _LOG.info("%s %s %s", self.command, self.path.partition("?")[0], code)
+
+        def log_error(self, format, *args) -> None:
+            if not public:
+                super().log_error(format, *args)
 
         def do_GET(self) -> None:
             try:
@@ -253,6 +258,8 @@ def serve_demo(
                 if url.path in _ASSETS:
                     name, content_type = _ASSETS[url.path]
                     self._send((_ASSET_ROOT / name).read_bytes(), content_type, HTTPStatus.OK)
+                elif url.path == "/healthz":
+                    self._json({"status": "ok"})
                 elif url.path == "/api/filters":
                     self._json(filter_options)
                 elif url.path == "/api/suggest":
@@ -288,6 +295,9 @@ def serve_demo(
                     debug = _parameter(parameters, "debug")
                     if debug not in {"", "0", "1"}:
                         raise _BadRequest("Допустимые значения debug — 0 и 1.")
+                    if public and debug == "1":
+                        self._json({"error": "Отладка отключена."}, HTTPStatus.FORBIDDEN)
+                        return
                     limit = DEFAULT_TOP_K
                     if "limit" in parameters:
                         message = f"Укажите целое число предложений от 1 до {MAX_TOP_K}."
@@ -301,7 +311,10 @@ def serve_demo(
                     except KeyError:
                         self._json({"error": "Товар не найден в каталоге."}, HTTPStatus.NOT_FOUND)
                         return
-                    self._json(serialize(offers[offer_id], result))
+                    payload = serialize(offers[offer_id], result)
+                    if public:
+                        payload.pop("diagnostics", None)
+                    self._json(payload)
                 else:
                     self.send_error(HTTPStatus.NOT_FOUND)
             except _BadRequest as error:
@@ -309,8 +322,15 @@ def serve_demo(
             except (OSError, ValueError, RuntimeError, sqlite3.Error, ParseError) as error:
                 _LOG.warning("Ошибка при обработке запроса (%s)", type(error).__name__)
                 self._json({"error": "Внутренняя ошибка подбора."}, HTTPStatus.INTERNAL_SERVER_ERROR)
+            except Exception:
+                if not public:
+                    raise
+                _LOG.warning("Ошибка при обработке запроса.")
+                self._json({"error": "Внутренняя ошибка подбора."}, HTTPStatus.INTERNAL_SERVER_ERROR)
 
-    with ThreadingHTTPServer(("127.0.0.1", port), DemoHandler) as server:
+    with ThreadingHTTPServer((host, port), DemoHandler, bind_and_activate=False) as server:
+        # Reserve the port now, but let health checks connect only after startup.
+        server.server_bind()
         print("Подготавливаем каталог для поиска и допродаж.", flush=True)
         query_catalog = index.prepare_query_catalog(catalog)
         categories = {
@@ -334,12 +354,18 @@ def serve_demo(
         try:
             evidence = VendorEvidenceService()
         except (OSError, sqlite3.Error) as error:
+            if public:
+                raise RuntimeError("Кеш характеристик недоступен.") from None
             _LOG.warning("Кеш характеристик недоступен (%s)", type(error).__name__)
             evidence = None
+        if warmup:
+            print("Прогреваем поиск.", flush=True)
+            index.search("прогрев поиска", mode=mode, limit=1)
         settings = LLMSettings.from_env(env_path) if env_path is not None else LLMSettings.from_env()
         agent = agents[agent_version](index, catalog, rules, settings, evidence)
-        print(f"Демо открыто на http://127.0.0.1:{server.server_port}/", flush=True)
         try:
+            server.server_activate()
+            print(f"Демо открыто на http://{host}:{server.server_port}/", flush=True)
             server.serve_forever()
         except KeyboardInterrupt:
             pass

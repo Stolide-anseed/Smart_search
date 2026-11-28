@@ -1,13 +1,13 @@
 # Развёртывание на Linux с Docker Compose
 
-Dockerfile и конфигурация Nginx находятся в ветке `feature/deployment`. Конфигурация проверялась для Ubuntu x86_64 с 8 CPU и 16 ГБ RAM. Для запуска нужны Docker Engine, Docker Compose и свободный порт 80. При сборке и первой загрузке модели нужен исходящий HTTPS.
+Dockerfile и конфигурация Nginx доступны в `main`. Конфигурация рассчитана на Ubuntu x86_64 с 8 CPU и 16 ГБ RAM. Для запуска нужны Docker Engine, Docker Compose и свободный порт 80. При сборке и первой загрузке модели нужен исходящий HTTPS.
 
 ## Подготовка
 
-В отдельном каталоге клонируйте ветку развёртывания.
+В отдельном каталоге клонируйте ветку `main`.
 
 ```bash
-git clone --branch feature/deployment https://github.com/Stolide-anseed/Smart_search.git
+git clone --branch main https://github.com/Stolide-anseed/Smart_search.git
 cd Smart_search
 install -m 600 .env.example .env
 mkdir -p deployment-data/snapshot deployment-data/state
@@ -53,4 +53,4 @@ curl -fsSG --data-urlencode 'q=7MD68A' http://127.0.0.1/api/search
 - Публичный режим отключает подробную диагностику через `debug=1`. Сайт работает по HTTP без аутентификации.
 - Перед обновлением сохраните версию приложения, пару XML и индекса, а также согласованную копию базы характеристик. Остановите приложение перед заменой открытых файлов SQLite. Для остановки с сохранением модели используйте `docker compose down`.
 
-[Ветка с конфигурацией](https://github.com/Stolide-anseed/Smart_search/tree/feature/deployment)
+[Dockerfile](../Dockerfile), [конфигурация Compose](../docker-compose.yml), [конфигурация Nginx](../deploy/nginx/nginx.conf)
