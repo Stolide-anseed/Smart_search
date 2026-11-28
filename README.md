@@ -384,3 +384,83 @@ py -3.13 -m venv .venv
 Демо по умолчанию использует гибридный поиск и текущий индекс. Характеристики поиска и справочник допродаж готовятся при запуске. Первый поиск загружает E5-large. Параметр `--port` меняет порт, `Ctrl+C` завершает запущенную в консоли команду.
 
 Индекс сохраняется в `.search-index.sqlite3`. Пересобирайте его после обновления каталога. Для отдельного запуска E5-large или BM25 добавьте `--mode e5` или `--mode bm25` к команде `search`.
+
+## Развёртывание демо на Ubuntu
+
+Конфигурация рассчитана на Ubuntu x86_64 с 8 CPU, 16 ГБ RAM, Docker Engine и Docker Compose. Nginx слушает публичный порт 80. Веб-приложение работает под UID/GID `10001:10001` внутри сети Compose и использует V3.2, гибридный поиск и E5-large на CPU. Локальная команда `demo` по умолчанию по-прежнему слушает `127.0.0.1:8765`.
+
+### Первый запуск
+
+1. Подключитесь к серверу через SSH. Убедитесь, что входящий TCP 80 доступен для участников демо, TCP 22 доступен для SSH, а порт 80 свободен. Серверу нужен исходящий HTTPS к реестрам образов, PyPI, репозиторию CPU-колёс PyTorch, Hugging Face и LLM-провайдеру.
+2. Получите ветку с конфигурацией из GitHub. Команда ниже предполагает, что `feature/deployment` опубликована в `origin`. После слияния используйте ветку релиза.
+
+   ```bash
+   git clone --branch feature/deployment https://github.com/Stolide-anseed/Smart_search.git
+   cd Smart_search
+   install -m 600 .env.example .env
+   mkdir -p deployment-data/snapshot deployment-data/state
+   ```
+
+3. Передайте по SCP или SFTP файлы из готового набора данных. Берите XML и индекс из одного снимка. Если база кеша открыта для записи, сначала сделайте согласованную копию SQLite, например командой `.backup` утилиты `sqlite3`.
+
+   | Файл на сервере | Назначение |
+   | --- | --- |
+   | `deployment-data/snapshot/Mindbox.yml.gz.xml` | XML-каталог |
+   | `deployment-data/snapshot/.search-index.sqlite3` | Готовый индекс для версии приложения и ревизии модели из `softline_search/encoder.py` |
+   | `deployment-data/state/.vendor-facts.sqlite3` | Готовый кеш характеристик |
+
+   ```bash
+   chmod 755 deployment-data/snapshot
+   chmod 644 deployment-data/snapshot/Mindbox.yml.gz.xml deployment-data/snapshot/.search-index.sqlite3
+   sudo chown 10001:10001 deployment-data/state deployment-data/state/.vendor-facts.sqlite3
+   sudo chmod 750 deployment-data/state
+   sudo chmod 640 deployment-data/state/.vendor-facts.sqlite3
+   ```
+
+   Для другого расположения задайте `SMART_SEARCH_SNAPSHOT_DIR` и `SMART_SEARCH_STATE_DIR` в `.env`. SQLite нужны права на запись в каталог состояния для временных файлов базы. Индекс монтируется только для чтения. Приложение проверяет его схему и ревизию модели при запуске.
+
+4. В редакторе заполните `OPENAI_API_KEY`, `OPENAI_BASE_URL` и `LLM_MODEL` в `.env` для провайдера с поддержкой Responses API. Для стенда задайте `AGENT_MAX_CONCURRENT_RUNS=2`. Используйте отдельный ключ и квоту или ограниченный баланс на стороне провайдера. Проверяйте Compose через `config --quiet`, поскольку полный вывод `config` содержит подставленные значения переменных.
+5. Соберите образы и дождитесь готовности. Приложение один раз выполняет гибридный запрос перед открытием HTTP-порта. При первом старте скачиваются веса E5-large, которые занимают около 2,2 ГБ. Последующие старты используют именованный том `hf-cache`. После успешного прогрева можно выставить `HF_HUB_OFFLINE=1` и перезапустить стек, если нужны запуски без обращения к Hugging Face.
+
+   ```bash
+   docker compose config --quiet
+   docker compose up -d --build --wait --wait-timeout 1200
+   docker compose ps
+   curl -fsS http://127.0.0.1/healthz
+   curl -fsSG --data-urlencode 'q=7MD68A' http://127.0.0.1/api/search
+   ```
+
+   Откройте `http://<адрес-сервера>/` и запросите допродажу на карточке. Это отдельная проверка ключа и провайдера. `/healthz` проверяет готовность веб-приложения после загрузки каталога и E5 и не обращается к LLM. При ошибке запуска используйте `docker compose ps` и `docker compose logs --tail=50 app nginx`.
+
+### Обновление и откат
+
+Оставляйте `.env`, каталог состояния и том Hugging Face в том же Compose-проекте. Сохраните предыдущий коммит и образы перед обновлением. Если меняются данные, сохраните копию прежней пары XML и индекса и резервную копию базы характеристик. Остановите приложение перед заменой файлов открытого SQLite-индекса или базы состояния.
+
+```bash
+git rev-parse HEAD > .git/previous-deploy
+docker image tag smart-search-app:latest smart-search-app:rollback
+docker image tag smart-search-nginx:latest smart-search-nginx:rollback
+git pull --ff-only
+docker compose config --quiet
+docker compose up -d --build --wait --wait-timeout 1200
+curl -fsS http://127.0.0.1/healthz
+```
+
+Для отката используйте сохранённый коммит и его образы. Если релиз менял снимок, остановите стек и верните совместимые файлы и пути в `.env` перед запуском.
+
+```bash
+git switch --detach "$(cat .git/previous-deploy)"
+docker image tag smart-search-app:rollback smart-search-app:latest
+docker image tag smart-search-nginx:rollback smart-search-nginx:latest
+docker compose up -d --no-build --pull never --wait --wait-timeout 1200
+curl -fsS http://127.0.0.1/healthz
+```
+
+После исправления релиза вернитесь на ветку развёртывания с помощью `git switch feature/deployment` или выберите её актуальное имя. Для сохранения модели при остановке стека используйте `docker compose down` без `-v`. На Ubuntu Docker должен запускаться при загрузке системы. Оба сервиса используют политику `unless-stopped`.
+
+### Нагрузка и ограничения
+
+- Приложение ограничено 7 CPU и 12 ГБ RAM, Nginx — 0,5 CPU и 128 МБ. Замена единственного контейнера приложения прерывает выдачу до повторного прогрева. Docker перезапускает завершившийся процесс. Статус `unhealthy` сам по себе перезапуск не вызывает.
+- Nginx ограничивает обычное API до 4 запросов в секунду с IP и 24 в секунду на весь стенд. Подбор допродаж ограничен до 6 запросов в минуту с IP, 20 в минуту на весь стенд и двух одновременно. Допустимы короткие всплески. При превышении лимита возвращается HTTP 429. V3.2 делает до трёх LLM-вызовов за подбор, включая исправление ответа. Таймаут и лимит выходных токенов задаются в `.env`, повторные попытки транспорта отключены. Денежная квота на стороне провайдера ограничивает накопленные расходы.
+- Публичный режим отключает `debug=1` и исключает внутреннюю диагностику из ответа. Nginx журналирует статус и длительность запроса и не передаёт входящие заголовки приложению. Секрет LLM хранится в `.env` и окружении контейнера. Администраторы Docker имеют доступ к окружению контейнера.
+- Стенд доступен по HTTP без аутентификации. Поиск зависит от совместимой пары XML и индекса, а допродажи V3.2 — от доступности и квоты LLM-провайдера.

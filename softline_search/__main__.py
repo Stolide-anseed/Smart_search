@@ -39,7 +39,10 @@ def _argument_parser() -> argparse.ArgumentParser:
     demo = commands.add_parser("demo", parents=[common], help="Запустить локальную страницу поиска и допродажи")
     demo.add_argument("--catalog", type=Path, default=_DEFAULT_CATALOG, help="Исходный XML")
     demo.add_argument("--mode", choices=MODES, default="hybrid", help="Способ поиска")
+    demo.add_argument("--host", default="127.0.0.1", help="IPv4-адрес для прослушивания")
     demo.add_argument("--port", type=int, default=8765, help="Порт локальной страницы")
+    demo.add_argument("--public", action="store_true", help="Отключить отладку и подробности ошибок HTTP")
+    demo.add_argument("--warmup", action="store_true", help="Прогреть поиск перед приёмом запросов")
     demo.add_argument("--env", type=Path, help="Локальный файл настроек провайдера")
     demo.add_argument("--recommendation-agent", choices=("v3", "v3.1", "v3.2", "baseline"), default="v3.2",
                       help="Режим агента допродаж")
@@ -164,7 +167,8 @@ def main() -> None:
                 from .demo import serve_demo
 
                 serve_demo(index, args.catalog, args.mode, args.port, env_path=args.env,
-                           agent_version=args.recommendation_agent)
+                           agent_version=args.recommendation_agent, host=args.host,
+                           public=args.public, warmup=args.warmup)
             elif args.command == "parse-query":
                 parsed = index.parse_query(args.query, args.catalog)
                 print(json.dumps(asdict(parsed), ensure_ascii=False, indent=2, default=str))

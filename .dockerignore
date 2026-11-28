@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!requirements.txt
+!softline_search/
+!softline_search/**
+**/__pycache__/
+**/.env*
+**/*.sqlite3*
+**/*.xml
